@@ -782,5 +782,17 @@
     "title": "Remake Heart Pieces — NintendoPress",
     "url": "https://nintendopress.com/in-deep/zelda-ocarina-of-time-all-36-heart-piece-locations-guide/",
     "status": 200
+  },
+  {
+    "title": "Remake Spiritual Stones and Medallions",
+    "id": "v6-medallions",
+    "status": 200,
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/medallions-and-spiritual-stones/"
+  },
+  {
+    "title": "Remake main story walkthrough",
+    "id": "v6-story",
+    "status": 200,
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-walkthrough-switch-2-remake"
   }
 ]

@@ -40,66 +40,57 @@ function applyGuide(e){
  const g=guideDatabase.entries[e.id];if(!g)return e;
  e.guide=g;e.name=g.name;e.area=g.area;e.age=g.age;e.steps=g.steps.join('\n');if(g.type)e.type=g.type;return e;
 }
-function guideRequirements(e){
- const g=e.guide;if(g?.requires)return g.requires.filter(knownGuideRequirement);
- let req=[...(g?.extraRequires||[])];if(e.age==='Adult')req.push('Adult access');
- const areaRequirements={'Deku Tree':['Deku Tree access'],'Forest Temple':['Adult access','Hookshot'],'Fire Temple':['Adult access','Hookshot'],'Water Temple':['Adult access','Iron Boots','Hookshot'],'Ice Cavern':['Adult access'],'Bottom of the Well':['Song of Storms'],'Shadow Temple':['Adult access','Lens of Truth','Magic'],'Spirit Temple':['Adult access'],'Ganon Castle':['Adult access']};
- req.push(...(areaRequirements[e.area]||(['Kokiri Forest','Lost Woods','Sacred Forest Meadow'].includes(e.area)?[]:['Hyrule Field access'])));
- if(['Death Mountain Trail','Goron City','Dodongo Cavern','Death Mountain Summit'].includes(e.area))req.push('Zelda Letter');
- if(e.type==='Mask')req.push('Mask access');
- for(const item of g?.equipment||[]){
-  if(/^(empty bottle|bottle|bottled bug|blue fire)$/i.test(item))req.push('Bottle');
-  const exact={'Slingshot':'Slingshot','Bomb Bag':'Bomb Bag','Boomerang':'Boomerang','Hookshot':'Hookshot','Longshot':'Longshot','Hammer':'Hammer','Iron Boots':'Iron Boots','Silver Gauntlets':'Silver Gauntlets','Golden Scale':'Golden Scale','Epona':'Epona','Bow':'Bow','Ocarina':'Ocarina','Zelda Lullaby':'Zelda Lullaby','Saria Song':'Saria Song','Sun Song':'Sun Song','Song of Time':'Song of Time','Song of Storms':'Song of Storms','Magic':'Magic','Magic Bean':'Magic Bean','Gerudo Card':'Gerudo Card'};
-  if(exact[item])req.push(exact[item]);
-  else if(knownGuideRequirement(item))req.push(item);
- }
- if(e.id==='Great Fairy:0')req=req.filter(r=>r!=='Magic');
- return [...new Set(req)].filter(r=>knownGuideRequirement(r)&&r!==e.milestone);
-}
-const guideMilestoneAliases={'Silver Gauntlets':['Upgrade:15'],'Golden Scale':['Upgrade:13'],'Magic':['Great Fairy:0'],'Epona':['Side Quest:1'],'Bottle':['Bottle:0','Bottle:1','Bottle:2','Bottle:3','Bottle:4'],'Goron Tunic':['Equipment:2'],'Zora Tunic':['Equipment:3'],'Hover Boots':['Equipment:4'],'Goron Bracelet':['Upgrade:14'],'Fire Arrows':['Side Quest:10'],'Skull Mask':['Mask:1'],'Mask of Truth':['Mask:4']};
 function knownGuideRequirement(r){
- if(r&&typeof r==='object')return (Array.isArray(r.any)||Array.isArray(r.all))&&(r.any||r.all).length>0&&(r.any||r.all).every(knownGuideRequirement);
- return typeof r==='string'&&!!(mMap[r]||guideDatabase.entries[r]||guideMilestoneAliases[r]||/^\d+ Gold Skulltula tokens$/.test(r));
+ if(r&&typeof r==='object'){
+  if(r.wallet)return Number.isFinite(r.wallet)&&r.wallet>0;
+  if(r.stage)return !!guideDatabase.entries[r.stage.id];
+  const list=r.any||r.all;return Array.isArray(list)&&list.length>0&&list.every(knownGuideRequirement);
+ }
+ return typeof r==='string'&&!!(mMap[r]||guideDatabase.entries[r]||guideDatabase.logic.aliases[r]||/^\d+ Gold Skulltula tokens$/.test(r));
 }
-function hasGuideMilestone(name){
- if(name&&typeof name==='object')return name.any?name.any.some(hasGuideMilestone):name.all.every(hasGuideMilestone);
- const tokens=/^(\d+) Gold Skulltula tokens$/.exec(name);
- if(tokens)return allItems.filter(e=>e.type==='Gold Skulltula'&&checked.has(e.id)).length>=Number(tokens[1]);
- if(name==='Hookshot'&&obtained.has('Longshot'))return true;
- if(name==='Ocarina'&&obtained.has('Song of Time'))return true;
- const upgrades={'Slingshot':['Upgrade:0','Upgrade:1'],'Bow':['Upgrade:2','Upgrade:3'],'Bomb Bag':['Upgrade:4','Upgrade:5'],'Silver Gauntlets':['Upgrade:16'],'Goron Bracelet':['Upgrade:15','Upgrade:16'],'Magic':['Great Fairy:3']};
- if((upgrades[name]||[]).some(id=>checked.has(id)))return true;
- return obtained.has(name)||checked.has(name)||(guideMilestoneAliases[name]||[]).some(id=>checked.has(id));
+function guideRequirements(e){
+ const req=e.guide?.requires;if(!Array.isArray(req))throw Error('Missing reviewed requirements: '+e.id);
+ for(const r of req)if(!knownGuideRequirement(r))throw Error('Unknown requirement for '+e.id+': '+JSON.stringify(r));
+ return req;
 }
+const guideMilestoneAliases=guideDatabase.logic.aliases;
+function hasGuideMilestone(r){return atlasProgress.has(r);}
 function guideRequirementLabel(r){
- if(r&&typeof r==='object')return '('+(r.any||r.all).map(guideRequirementLabel).join(r.any?' or ':' + ')+')';
+ if(r&&typeof r==='object'){
+  if(r.wallet)return 'Wallet capacity of at least '+r.wallet+' rupees';
+  if(r.stage)return (guideDatabase.entries[r.stage.id]?.name||r.stage.id)+' — '+r.stage.key;
+  return '('+(r.any||r.all).map(guideRequirementLabel).join(r.any?' or ':' + ')+')';
+ }
  if(r.startsWith('Magic Bean:'))return 'Bean planted — '+guideDatabase.entries[r].name.replace(/^Bean:\s*/,'');
  return guideDatabase.entries[r]?.name||r;
 }
 function timelineTag(e){
- if(e.guide?.crossTime)return '<span class="tag cross-time-tag" title="This route requires both timelines"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M12 3 2 21h20Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17.5" r="1" fill="currentColor"/></svg>Young + Adult</span>';
+ if(atlasProgress.plan(e).length)return '<span class="tag cross-time-tag"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M12 3 2 21h20Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="17.5" r="1" fill="currentColor"/></svg>Young ↔ Adult</span>';
  return '<span class="tag">'+(e.age==='Both'?'Either age':e.age==='Child'?'Young Link':'Adult Link')+'</span>';
 }
 function crossTimeWarning(e){
- const c=e.guide?.crossTime;if(!c)return '';
- const order=c.first==='Adult'?['Adult','Young']:['Young','Adult'];
- return '<div class="cross-time-warning"><strong>⚠ Both timelines required</strong>'+order.map(age=>'<p><b>'+age+'</b> '+escape(c[age.toLowerCase()])+'</p>').join('')+'</div>';
+ const stages=atlasProgress.plan(e);if(!stages.length)return '';
+ const n=atlasProgress.prefix(e),routes=e.guide.stageRoutes;
+ const chooser=routes?`<label class="stage-route">Route<select data-stage-route="${escape(e.id)}">${Object.entries(routes).map(([key,r])=>`<option value="${key}" ${atlasProgress.route(e)===key?'selected':''}>${escape(r.label)}</option>`).join('')}</select></label>`:'';
+ return `<section class="stage-tracker" aria-label="Timeline progress"><div class="stage-heading"><strong>Timeline progress</strong><span>${n} / ${stages.length} complete</span></div>${chooser}<p>Complete these stages in order. This check is finished after the last stage.</p><ol>${stages.map((s,i)=>{
+  const done=i<n,ready=atlasProgress.stageReady(e,i),missing=missingFor(e,i);
+  return `<li class="timeline-step ${done?'stage-done':ready?'stage-ready':'stage-waiting'}"><label><input type="checkbox" data-stage-check="${escape(e.id)}" data-stage-index="${i}" aria-label="Done as ${s.age==='Child'?'Young':'Adult'} Link: ${escape(s.title)}" ${done?'checked':''} ${!done&&!ready?'disabled':''}><span><small>Step ${i+1} · ${s.age==='Child'?'Young':'Adult'} Link</small><strong>${escape(s.title)}</strong><em>${done?'Done':ready?'Current stage · ready':escape(missing.join(' · ')||'Waiting for the previous stage')}</em></span></label></li>`;
+ }).join('')}</ol></section>`;
 }
 function guideHTML(e){
- const g=e.guide;if(!g)return `<div class="steps">${escape(e.steps)}</div>`;
- const equipment=(g.equipment.length?g.equipment.join(' · '):'No special item beyond normal access')+(e.type==='Bean Planting'?' · Check this entry when planted. Grown-bean rewards have their own checkboxes.':'');
- const sources=g.sources.map(id=>guideDatabase.sources[id]).filter(Boolean);
- const related=(g.related||[]).map(id=>allItems.find(e=>e.id===id)).filter(Boolean);
- return `<div class="steps guide-content"><div class="guide-topline"><span class="steptitle">HOW TO OBTAIN</span><span class="guide-time">${escape(g.time)}</span></div>${crossTimeWarning(e)}<p class="guide-start"><strong>Start here</strong>${escape(g.start||guideOrientations[e.area]||'Use the location and timeline shown above, then follow the route below.')}</p><p class="guide-gear"><strong>Bring / unlock</strong>${escape(equipment)}</p><ol class="guide-steps">${g.steps.map(s=>`<li>${escape(s)}</li>`).join('')}</ol>${g.note?`<p class="guide-note"><strong>Route note</strong>${escape(g.note)}</p>`:''}${related.length?`<div class="guide-related"><strong>Separate rewards</strong>${related.map(r=>`<button data-guide-jump="${escape(r.id)}">${isDone(r)?'✓ ':''}${escape(r.name)} <span aria-hidden="true">↗</span></button>`).join('')}</div>`:''}<div class="guide-sources"><span>Switch 2 remake · Sources reviewed Nov 6, 2026</span>${sources.map(s=>`<a href="${escape(s.url)}">${escape(s.title)} ↗</a>`).join('')}</div></div>`;
+ const g=e.guide,sources=g.sources.map(id=>guideDatabase.sources[id]).filter(Boolean);
+ const related=(g.related||[]).map(id=>allItems.find(r=>r.id===id)).filter(Boolean);
+ const req=atlasProgress.required(e,filterState.age).map(guideRequirementLabel);
+ const supplies=g.equipment.filter(x=>/rupee|cucco|bottled bug|full health|normal.*lure|fish|small key|time.*expir/i.test(x));
+ return `<div class="steps guide-content"><div class="guide-topline"><span class="steptitle">HOW TO OBTAIN</span><span class="guide-time">${escape(g.time)}</span></div>${crossTimeWarning(e)}<p class="guide-start"><strong>Start here</strong>${escape(g.start||guideOrientations[e.area]||'Start in the location shown above.')}</p><p class="guide-gear"><strong>Unlocks for the current stage</strong>${escape(req.join(' · ')||'No additional permanent item required')}</p>${supplies.length?`<p class="guide-gear"><strong>Bring / check in game</strong>${escape(supplies.join(' · '))}</p>`:''}${e.type==='Bean Planting'?'<p class="bean-planting-note">Check this when the bean is planted at this exact spot. The later pickup has its own completion.</p>':''}<ol class="guide-steps">${g.steps.map(s=>`<li>${escape(s)}</li>`).join('')}</ol>${g.note?`<p class="guide-note"><strong>Route note</strong>${escape(g.note)}</p>`:''}${related.length?`<div class="guide-related"><strong>Related checks</strong>${related.map(r=>`<button data-guide-jump="${escape(r.id)}">${isDone(r)?'✓ ':''}${escape(r.name)} ↗</button>`).join('')}</div>`:''}<div class="guide-sources"><span>Switch 2 remake · Requirements reviewed Nov 7, 2026</span>${sources.map(s=>`<a href="${escape(s.url)}">${escape(s.title)} ↗</a>`).join('')}</div></div>`;
 }
 document.addEventListener('click',event=>{
  const button=event.target.closest('[data-guide-jump]');if(!button)return;
- const entry=allItems.find(e=>e.id===button.dataset.guideJump);if(!entry)return;
- filterState.region=entry.area;filterState.type=entry.type;filterState.status='all';
- if(filterState.age&&entry.age!=='Both'&&entry.age!==filterState.age)filterState.age=entry.age;
- showLocked=true;$('search').value='';expanded.add(entry.id);render();save();
- requestAnimationFrame(()=>Array.from(document.querySelectorAll('[data-open]')).find(e=>e.dataset.open===entry.id)?.closest('article').scrollIntoView({block:'start'}));
+ const e=allItems.find(r=>r.id===button.dataset.guideJump);if(!e)return;
+ filterState.region=e.area;filterState.type=e.type;filterState.status='all';filterState.age='';
+ showLocked=true;$('search').value='';expanded.add(e.id);render();save();scrollToEntry(e.id);
 });
+
 function buildGuideArchive(){
  const retired=entries.filter(e=>e.guide?.retired);if(!retired.length)return;
  const archive=document.createElement('details');archive.className='panel guide-archive';archive.innerHTML=`<summary>Older checklist record (${retired.length})</summary><p>The old list contained an extra ranch description. It is kept here with its saved checkmark and excluded from the remake’s 100-token total.</p>${retired.map(e=>`<article><h3>${escape(e.name)}</h3><p>${checked.has(e.id)?'Previously marked complete':'Previously unmarked'} · saved record preserved</p>${guideHTML(e)}</article>`).join('')}`;

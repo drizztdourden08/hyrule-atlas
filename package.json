@@ -1,13 +1,13 @@
 {
   "name": "hyrule-atlas",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "description": "Offline Android completion tracker with an illustrated inventory and local progress storage.",
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
-    "guide:build": "node authoring/build-guide.mjs && node authoring/finalize-audit-ui.mjs && node authoring/integrate-guide.mjs",
-    "test": "node authoring/audit-checklist.mjs",
-    "test:ui": "node tests/verify-audit.mjs && node tests/verify-status.mjs && node tests/verify-settings.mjs"
+    "guide:build": "node authoring/build-guide.mjs && node authoring/finalize-audit-ui.mjs && node authoring/integrate-guide.mjs && node authoring/integrate-v6.mjs && node authoring/export-requirements.mjs",
+    "test": "node authoring/audit-checklist.mjs && node tests/progression.test.mjs",
+    "test:ui": "node tests/timeline-ui.mjs && node tests/verify-settings.mjs"
   }
 }

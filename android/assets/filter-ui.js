@@ -51,11 +51,11 @@ function updateFilterSummary(){
  $('coverageInfo').innerHTML=(hidden?`<p>${hidden} of ${matches.length} matching checks hidden${statusHidden?' · '+statusHidden+' by View':''}${lockedHidden?' · '+lockedHidden+' by requirements':''}.</p><button data-show-matches>Show all matching checks</button>`:'')+(hearts.length?`<div class="region-heart-coverage"><span>${hearts.length} Heart Pieces in this region / timeline${filterState.region==='Zora River'?' · 2 frog rewards':''}</span><button data-region-hearts>View all Heart Pieces here</button></div>`:'');
 }
 function updateRemainingSummary(){
- const context=allItems.filter(e=>matchesContext(e)),left=context.filter(e=>!isDone(e)),ready=left.filter(eligible);
+ const context=allItems.filter(e=>matchesScope(e)),left=context.filter(e=>!isDone(e)),ready=left.filter(e=>matchesContext(e)&&eligible(e));
  $('remainingTitle').textContent='What’s left · '+(filterState.region||'All regions');
  $('remainingCounts').textContent=`${left.length} left · ${ready.length} available · ${left.length-ready.length} waiting on requirements`;
  const types=[...new Set(left.map(e=>e.type))];
- $('remainingBody').innerHTML='<p>For the current timeline, region, item type and search.</p>'+(left.length?'<div class="remaining-grid">'+types.map(type=>{const list=left.filter(e=>e.type===type);return `<div class="remaining-category">${inventoryArt(type)}<span>${escape(type)}<small>${list.filter(eligible).length} available</small></span><strong>${list.length}</strong></div>`}).join('')+'</div>':'<p class="remaining-complete">All matching checks are complete.</p>');
+ $('remainingBody').innerHTML='<p>All unfinished checks in this scope, including later sequence and timeline stages.</p>'+(left.length?'<div class="remaining-grid">'+types.map(type=>{const list=left.filter(e=>e.type===type);return `<div class="remaining-category">${inventoryArt(type)}<span>${escape(type)}<small>${list.filter(e=>matchesContext(e)&&eligible(e)).length} available</small></span><strong>${list.length}</strong></div>`}).join('')+'</div>':'<p class="remaining-complete">All matching checks are complete.</p>');
 }
 function closeFilterPops(){
  document.querySelectorAll('.pop.shown').forEach(p=>p.classList.remove('shown'));

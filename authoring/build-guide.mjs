@@ -1,5 +1,7 @@
 import fs from 'node:fs';fs.mkdirSync('.build',{recursive:true});fs.mkdirSync('data',{recursive:true});import vm from 'node:vm';
 import {refineGuide} from './refine-guide.mjs';
+import {applyProgressionV6} from './requirements-v6.mjs';
+import {addTimelineStages} from './timeline-stages.mjs';
 const original=fs.readFileSync('authoring/pre-guide-index.html','utf8');
 const raw=original.slice(original.indexOf("'use strict';"),original.indexOf('let saved='));
 const milestones=original.slice(original.indexOf('const milestones='),original.indexOf('const mMap='));
@@ -10,11 +12,14 @@ const guide={};
 globalThis.rows=(type,records)=>{for(const [i,name,area,age,time,gear,steps,source,note='',extra={}]of records){const id=type==='Progression'?'progress:'+i:type+':'+i;if(guide[id])throw Error('Duplicate '+id);if(!sources[source])throw Error('Missing source '+source);guide[id]={name,area,age,time,equipment:gear?gear.split('|'):[],steps:steps.split('|'),sources:[source],note,...extra};}};
 for(const f of ['guide-skulltulas.mjs','guide-hearts.mjs','guide-items.mjs','guide-progression.mjs','guide-extras.mjs'])await import('./'+f+'?t='+Date.now());
 refineGuide(guide);
+const logic=applyProgressionV6(guide);
+addTimelineStages(guide);
+for(const[id,g]of Object.entries(guide))if(!base.some(e=>e.id===id))base.push({id,type:g.type,name:g.name,area:g.area,age:g.age});
 for(const g of Object.values(guide))if(g.area==='Market')g.area='Hyrule Castle Town';
 const missing=base.filter(e=>!guide[e.id]);if(missing.length)throw Error('Missing guides '+JSON.stringify(missing.map(e=>[e.id,e.name])));
 for(const [id,g]of Object.entries(guide)){if(g.steps.length<3||g.steps.some(s=>s.length<12))throw Error('Incomplete steps '+id);}
 const used=new Set(Object.values(guide).flatMap(g=>g.sources));
-const payload={version:4,edition:'Ocarina of Time — Nintendo Switch 2 remake',reviewed:'2026-11-06',sources:Object.fromEntries(Object.entries(sources).filter(([id])=>used.has(id))),entries:guide};
+const payload={version:6,edition:'Ocarina of Time — Nintendo Switch 2 remake',reviewed:'2026-11-07',logic,sources:Object.fromEntries(Object.entries(sources).filter(([id])=>used.has(id))),entries:guide};
 fs.writeFileSync('android/assets/guide-data.js','const guideDatabase='+JSON.stringify(payload,null,2)+';\n');
 fs.writeFileSync('data/guide-database.json',JSON.stringify(payload,null,2));
 fs.writeFileSync('.build/base-records.json',JSON.stringify(base,null,2));

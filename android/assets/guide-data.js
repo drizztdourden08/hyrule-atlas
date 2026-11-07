@@ -1,7 +1,213 @@
 const guideDatabase={
-  "version": 4,
+  "version": 6,
   "edition": "Ocarina of Time — Nintendo Switch 2 remake",
-  "reviewed": "2026-11-06",
+  "reviewed": "2026-11-07",
+  "logic": {
+    "aliases": {
+      "Hyrule Field access": [
+        "Adult access"
+      ],
+      "Deku Tree access": [
+        "Deku Tree cleared"
+      ],
+      "Sword": [
+        "Kokiri Sword",
+        "Adult access",
+        "Trade Sequence:11",
+        "Equipment:6"
+      ],
+      "Slingshot": [
+        "Upgrade:0",
+        "Upgrade:1"
+      ],
+      "Bow": [
+        "Upgrade:2",
+        "Upgrade:3"
+      ],
+      "Bomb Bag": [
+        "Upgrade:4",
+        "Upgrade:5"
+      ],
+      "Hookshot": [
+        "Longshot"
+      ],
+      "Silver Gauntlets": [
+        "Upgrade:15",
+        "Upgrade:16"
+      ],
+      "Golden Gauntlets": [
+        "Upgrade:16"
+      ],
+      "Goron Bracelet": [
+        "Upgrade:14",
+        "Upgrade:15",
+        "Upgrade:16"
+      ],
+      "Silver Scale": [
+        "Upgrade:12",
+        "Upgrade:13",
+        "Golden Scale"
+      ],
+      "Golden Scale": [
+        "Upgrade:13"
+      ],
+      "Goron Tunic": [
+        "Equipment:2"
+      ],
+      "Zora Tunic": [
+        "Equipment:3"
+      ],
+      "Mirror Shield": [
+        "Equipment:1"
+      ],
+      "Hover Boots": [
+        "Equipment:4"
+      ],
+      "Magic": [
+        "Great Fairy:0",
+        "Great Fairy:3"
+      ],
+      "Din Fire": [
+        "Great Fairy:0",
+        "progress:26"
+      ],
+      "Epona": [
+        "Side Quest:1"
+      ],
+      "Bottle": [
+        "Bottle:0",
+        "Bottle:1",
+        "Bottle:2",
+        "Bottle:3",
+        "Bottle:4"
+      ],
+      "Deku Sticks": [
+        "Equipment:8",
+        "Upgrade:6",
+        "Upgrade:7"
+      ],
+      "Deku Nuts": [
+        "Equipment:9",
+        "Upgrade:8",
+        "Upgrade:9"
+      ],
+      "Skull Mask": [
+        "Mask:1"
+      ],
+      "Mask of Truth": [
+        "Mask:4"
+      ],
+      "Fire Arrows": [
+        "Side Quest:10"
+      ]
+    },
+    "sequences": {
+      "Adult trading quest": [
+        "Trade Sequence:0",
+        "Trade Sequence:1",
+        "Trade Sequence:2",
+        "Trade Sequence:3",
+        "Trade Sequence:4",
+        "Trade Sequence:5",
+        "Trade Sequence:6",
+        "Trade Sequence:7",
+        "Trade Sequence:8",
+        "Trade Sequence:9",
+        "Trade Sequence:10",
+        "Trade Sequence:11"
+      ],
+      "Mask sales": [
+        "Mask:0",
+        "Mask:1",
+        "Mask:2",
+        "Mask:3"
+      ],
+      "Bombchu Bowling prizes": [
+        "Equipment:7",
+        "Upgrade:5",
+        "Heart Piece:12"
+      ],
+      "Horseback archery prizes": [
+        "Heart Piece:30",
+        "Upgrade:3"
+      ],
+      "Skulltula family rewards": [
+        "Upgrade:10",
+        "Equipment:10",
+        "Upgrade:11",
+        "Side Quest:13",
+        "Heart Piece:19",
+        "Side Quest:9"
+      ],
+      "Poe Collector rewards": [
+        "Bottle:4",
+        "Side Quest:6"
+      ],
+      "Deku Stick capacity": [
+        "Upgrade:6",
+        "Upgrade:7"
+      ],
+      "Deku Nut capacity": [
+        "Upgrade:8",
+        "Upgrade:9"
+      ]
+    },
+    "adultDungeonRewards": [
+      "Event:forest",
+      "Event:fire",
+      "Event:water",
+      "Event:shadow",
+      "Event:spirit"
+    ],
+    "migrationProofs": [
+      {
+        "if": "Adult access",
+        "grant": [
+          "progress:4",
+          "Event:dodongo",
+          "Event:jabu",
+          "Event:king-moved"
+        ]
+      },
+      {
+        "if": "Zelda Letter",
+        "grant": [
+          "Event:talon-awake"
+        ]
+      },
+      {
+        "if": {
+          "any": [
+            "Mask access",
+            "Upgrade:14"
+          ]
+        },
+        "grant": [
+          "Event:mountain-gate"
+        ]
+      },
+      {
+        "if": "Equipment:3",
+        "grant": [
+          "Event:blue-fire",
+          "Event:king-thawed"
+        ]
+      },
+      {
+        "if": "Iron Boots",
+        "grant": [
+          "Event:blue-fire"
+        ]
+      },
+      {
+        "if": "Prelude of Light",
+        "grant": [
+          "Event:forest",
+          "Event:time-travel"
+        ]
+      }
+    ]
+  },
   "sources": {
     "c01": {
       "title": "Kokiri Forest Walkthrough",
@@ -414,6 +620,14 @@ const guideDatabase={
     "np-hearts": {
       "title": "Remake Heart Pieces — NintendoPress",
       "url": "https://nintendopress.com/in-deep/zelda-ocarina-of-time-all-36-heart-piece-locations-guide/"
+    },
+    "v6-medallions": {
+      "title": "Remake Spiritual Stones and Medallions",
+      "url": "https://zeldacentral.com/games/ocarina-of-time-remake/medallions-and-spiritual-stones/"
+    },
+    "v6-story": {
+      "title": "Remake main story walkthrough",
+      "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-walkthrough-switch-2-remake"
     }
   },
   "entries": {
@@ -434,7 +648,11 @@ const guideDatabase={
       "sources": [
         "v01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Deku Tree access",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:1": {
       "name": "Basement vine wall",
@@ -453,7 +671,11 @@ const guideDatabase={
       "sources": [
         "v01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Deku Tree access",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:2": {
       "name": "Basement barred grate",
@@ -472,7 +694,11 @@ const guideDatabase={
       "sources": [
         "v01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Deku Tree access",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:3": {
       "name": "Guardhouse crate",
@@ -491,7 +717,11 @@ const guideDatabase={
       "sources": [
         "g03"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:4": {
       "name": "Castle-garden tree",
@@ -510,7 +740,11 @@ const guideDatabase={
       "sources": [
         "v04"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:5": {
       "name": "Graveyard soft soil",
@@ -530,7 +764,11 @@ const guideDatabase={
       "sources": [
         "v05"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Bottle"
+      ]
     },
     "Gold Skulltula:6": {
       "name": "Construction-site wall",
@@ -549,7 +787,11 @@ const guideDatabase={
       "sources": [
         "v05"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:7": {
       "name": "Outside the House of Skulltula",
@@ -568,7 +810,11 @@ const guideDatabase={
       "sources": [
         "v05"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:8": {
       "name": "Village entrance tree",
@@ -587,7 +833,11 @@ const guideDatabase={
       "sources": [
         "g05"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:9": {
       "name": "Watchtower ladder",
@@ -606,7 +856,11 @@ const guideDatabase={
       "sources": [
         "g05"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:10": {
       "name": "House below the mountain gate",
@@ -625,7 +879,11 @@ const guideDatabase={
       "sources": [
         "v05"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:11": {
       "name": "Ranch entrance tree",
@@ -644,7 +902,11 @@ const guideDatabase={
       "sources": [
         "v06"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:12": {
       "name": "Corral shelter — legacy duplicate",
@@ -661,7 +923,10 @@ const guideDatabase={
         "v06"
       ],
       "note": "The old ranch list counted an extra shelter. This archive preserves its checkmark without adding another remake token.",
-      "retired": true
+      "retired": true,
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Gold Skulltula:13": {
       "name": "Valley cow-ledge soft soil",
@@ -682,7 +947,11 @@ const guideDatabase={
       "sources": [
         "c09"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Bottle"
+      ]
     },
     "Gold Skulltula:14": {
       "name": "Lakeside Laboratory soft soil",
@@ -702,7 +971,11 @@ const guideDatabase={
       "sources": [
         "v15"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Bottle"
+      ]
     },
     "Gold Skulltula:15": {
       "name": "Southwest shore crawlspace",
@@ -721,7 +994,11 @@ const guideDatabase={
       "sources": [
         "v15"
       ],
-      "note": "This replaces the old “island pillar” directions; the remake route is a shore crawlspace."
+      "note": "This replaces the old “island pillar” directions; the remake route is a shore crawlspace.",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:16": {
       "name": "Know-It-All Brothers’ house",
@@ -740,7 +1017,10 @@ const guideDatabase={
       "sources": [
         "v02"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Sword"
+      ]
     },
     "Gold Skulltula:17": {
       "name": "Lost Woods first soil patch",
@@ -760,7 +1040,10 @@ const guideDatabase={
       "sources": [
         "v02"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Bottle"
+      ]
     },
     "Gold Skulltula:18": {
       "name": "Lost Woods Scrub clearing soil",
@@ -781,7 +1064,11 @@ const guideDatabase={
       "sources": [
         "v90"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Bottle",
+        "Deku Shield"
+      ]
     },
     "Gold Skulltula:19": {
       "name": "Behind the Kokiri Shop",
@@ -801,7 +1088,10 @@ const guideDatabase={
       "sources": [
         "v02"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Bottle"
+      ]
     },
     "Gold Skulltula:20": {
       "name": "Soil outside Dodongo Cavern",
@@ -821,7 +1111,12 @@ const guideDatabase={
       "sources": [
         "v07"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Bottle"
+      ]
     },
     "Gold Skulltula:21": {
       "name": "Bomb-staircase upper vines",
@@ -841,7 +1136,13 @@ const guideDatabase={
       "sources": [
         "v08"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Goron Bracelet",
+        "Event:mountain-gate",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:22": {
       "name": "Baby Dodongo hall side room",
@@ -861,7 +1162,14 @@ const guideDatabase={
       "sources": [
         "v08"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Goron Bracelet",
+        "Event:mountain-gate",
+        "Bomb Bag",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:23": {
       "name": "Block-puzzle room behind the skull",
@@ -880,7 +1188,13 @@ const guideDatabase={
       "sources": [
         "c13"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Goron Bracelet",
+        "Event:mountain-gate",
+        "Bomb Bag"
+      ]
     },
     "Gold Skulltula:24": {
       "name": "Cracked wall above the lower trail",
@@ -899,7 +1213,11 @@ const guideDatabase={
       "sources": [
         "v07"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Bomb Bag"
+      ]
     },
     "Gold Skulltula:25": {
       "name": "Goron City boulder-maze crate",
@@ -918,7 +1236,12 @@ const guideDatabase={
       "sources": [
         "c14"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Bomb Bag"
+      ]
     },
     "Gold Skulltula:26": {
       "name": "Crater entrance crate",
@@ -937,7 +1260,11 @@ const guideDatabase={
       "sources": [
         "v09"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate"
+      ]
     },
     "Gold Skulltula:27": {
       "name": "Bean Seller soft soil",
@@ -957,7 +1284,11 @@ const guideDatabase={
       "sources": [
         "v10"
       ],
-      "note": "The remake adds a soil token by the Bean Seller; the old “entrance tree” description was misleading."
+      "note": "The remake adds a soil token by the Bean Seller; the old “entrance tree” description was misleading.",
+      "requires": [
+        "Hyrule Field access",
+        "Bottle"
+      ]
     },
     "Gold Skulltula:28": {
       "name": "Lowest level below Domain entrance",
@@ -976,7 +1307,11 @@ const guideDatabase={
       "sources": [
         "g10"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:29": {
       "name": "Fountain’s southern tree",
@@ -995,7 +1330,13 @@ const guideDatabase={
       "sources": [
         "c17"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Event:king-moved",
+        "Sword"
+      ]
     },
     "Gold Skulltula:30": {
       "name": "Dungeon Map room vines",
@@ -1014,7 +1355,13 @@ const guideDatabase={
       "sources": [
         "v11"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:king-moved",
+        "Bottle",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:31": {
       "name": "Lower main chamber wall",
@@ -1033,7 +1380,13 @@ const guideDatabase={
       "sources": [
         "v11"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:king-moved",
+        "Bottle",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:32": {
       "name": "Hall toward Big Octo",
@@ -1052,7 +1405,13 @@ const guideDatabase={
       "sources": [
         "v11"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:king-moved",
+        "Bottle",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:33": {
       "name": "Vines before Barinade",
@@ -1072,7 +1431,14 @@ const guideDatabase={
       "sources": [
         "v11"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:king-moved",
+        "Bottle",
+        "Boomerang",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:34": {
       "name": "Fountain southern rock wall",
@@ -1091,7 +1457,13 @@ const guideDatabase={
       "sources": [
         "g10"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Event:king-moved",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:35": {
       "name": "Deku Tree web-side passage",
@@ -1111,7 +1483,12 @@ const guideDatabase={
       "sources": [
         "c02"
       ],
-      "note": "The remake removes the old Bombs/Boomerang backtracking requirement for this token."
+      "note": "The remake removes the old Bombs/Boomerang backtracking requirement for this token.",
+      "requires": [
+        "Deku Tree access",
+        "Deku Sticks",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:36": {
       "name": "Ranch entrance-building window",
@@ -1130,7 +1507,11 @@ const guideDatabase={
       "sources": [
         "v06"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:37": {
       "name": "Ranch ruined tower",
@@ -1149,7 +1530,11 @@ const guideDatabase={
       "sources": [
         "v06"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:38": {
       "name": "Under the first valley bridge",
@@ -1168,7 +1553,11 @@ const guideDatabase={
       "sources": [
         "c18"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:39": {
       "name": "Laboratory exterior wall",
@@ -1187,7 +1576,11 @@ const guideDatabase={
       "sources": [
         "v15"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:40": {
       "name": "Behind Dampé’s hut",
@@ -1206,7 +1599,11 @@ const guideDatabase={
       "sources": [
         "c18"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ]
     },
     "Gold Skulltula:41": {
       "name": "Upper Dodongo room",
@@ -1226,7 +1623,13 @@ const guideDatabase={
       "sources": [
         "v08"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Goron Bracelet",
+        "Bomb Bag",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:42": {
       "name": "Cliff above Impa’s house",
@@ -1245,7 +1648,12 @@ const guideDatabase={
       "sources": [
         "c31"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:43": {
       "name": "Ruins outside Ganon Castle",
@@ -1264,7 +1672,11 @@ const guideDatabase={
       "sources": [
         "n01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:44": {
       "name": "Twins’ house tree branch",
@@ -1283,7 +1695,11 @@ const guideDatabase={
       "sources": [
         "c22"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:45": {
       "name": "Lost Woods grown-bean ledge",
@@ -1309,14 +1725,33 @@ const guideDatabase={
       ],
       "requires": [
         "Adult access",
-        "Hookshot",
-        "Magic Bean:2"
+        "Hookshot"
       ],
-      "crossTime": {
-        "young": "Plant the bean at Lost Woods Scrub clearing.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: Lost Woods Scrub clearing",
+          "requires": [
+            "Magic Bean",
+            "Deku Shield"
+          ],
+          "evidence": "Magic Bean:2",
+          "completeAlso": [
+            "Magic Bean:2"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Lost Woods grown-bean ledge",
+          "requires": [
+            "Adult access",
+            "Hookshot"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:46": {
       "name": "Sacred Meadow east wall",
@@ -1335,7 +1770,11 @@ const guideDatabase={
       "sources": [
         "c22"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:47": {
       "name": "Forest Temple entrance vines",
@@ -1354,7 +1793,13 @@ const guideDatabase={
       "sources": [
         "v12"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hookshot",
+        "Saria Song",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:48": {
       "name": "Forest Temple north hall wall",
@@ -1373,7 +1818,13 @@ const guideDatabase={
       "sources": [
         "v12"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hookshot",
+        "Saria Song",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:49": {
       "name": "Northeast courtyard Scarecrow ledge",
@@ -1394,13 +1845,43 @@ const guideDatabase={
         "c23"
       ],
       "note": "This courtyard token needs the Scarecrow route in the remake; the older island-only directions were incomplete.",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        "Hookshot",
+        "Saria Song",
+        "Adult access",
+        "Hookshot",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Northeast courtyard Scarecrow ledge",
+          "requires": [
+            "Hookshot",
+            "Saria Song",
+            "Adult access",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Gold Skulltula:50": {
@@ -1420,7 +1901,13 @@ const guideDatabase={
       "sources": [
         "v12"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hookshot",
+        "Saria Song",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:51": {
       "name": "Rotating basement recess",
@@ -1439,7 +1926,13 @@ const guideDatabase={
       "sources": [
         "v12"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hookshot",
+        "Saria Song",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:52": {
       "name": "Baby Dodongo hall Scarecrow ledge",
@@ -1460,13 +1953,43 @@ const guideDatabase={
         "c25"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Goron Bracelet",
+        "Adult access",
+        "Hookshot",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Baby Dodongo hall Scarecrow ledge",
+          "requires": [
+            "Hyrule Field access",
+            "Goron Bracelet",
+            "Adult access",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Gold Skulltula:53": {
@@ -1486,7 +2009,12 @@ const guideDatabase={
       "sources": [
         "v07"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:54": {
       "name": "Crater warp-point soft soil",
@@ -1508,7 +2036,38 @@ const guideDatabase={
       "sources": [
         "v09"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Bottle",
+        "Bolero of Fire"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Bolero of Fire",
+          "requires": [
+            "Adult access",
+            "Goron Tunic",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "evidence": "progress:33",
+          "completeAlso": [
+            "progress:33"
+          ]
+        },
+        {
+          "key": "soil-token",
+          "age": "Child",
+          "title": "Crater warp-point soft soil",
+          "requires": [
+            "Bottle",
+            "Bolero of Fire"
+          ]
+        }
+      ],
+      "crossTime": true
     },
     "Gold Skulltula:55": {
       "name": "Lava-room Song of Time route",
@@ -1528,7 +2087,14 @@ const guideDatabase={
       "sources": [
         "v13"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Goron Tunic",
+        "Hookshot",
+        "Adult access",
+        "Hookshot",
+        "Song of Time"
+      ]
     },
     "Gold Skulltula:56": {
       "name": "Boulder-maze cracked wall",
@@ -1548,7 +2114,14 @@ const guideDatabase={
       "sources": [
         "v13"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Goron Tunic",
+        "Hookshot",
+        "Adult access",
+        "Hookshot",
+        "Bomb Bag"
+      ]
     },
     "Gold Skulltula:57": {
       "name": "Upper Scarecrow tower",
@@ -1569,13 +2142,43 @@ const guideDatabase={
         "v13"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        "Goron Tunic",
+        "Hookshot",
+        "Adult access",
+        "Hookshot",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Upper Scarecrow tower",
+          "requires": [
+            "Goron Tunic",
+            "Hookshot",
+            "Adult access",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Gold Skulltula:58": {
@@ -1597,13 +2200,43 @@ const guideDatabase={
         "v13"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        "Goron Tunic",
+        "Hookshot",
+        "Adult access",
+        "Hookshot",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Room beyond Scarecrow tower",
+          "requires": [
+            "Goron Tunic",
+            "Hookshot",
+            "Adult access",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Gold Skulltula:59": {
@@ -1624,7 +2257,14 @@ const guideDatabase={
       "sources": [
         "c26"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Goron Tunic",
+        "Hookshot",
+        "Adult access",
+        "Hookshot",
+        "Hammer"
+      ]
     },
     "Gold Skulltula:60": {
       "name": "Hammer rock near the crater",
@@ -1644,7 +2284,13 @@ const guideDatabase={
       "sources": [
         "v07"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot",
+        "Hammer"
+      ]
     },
     "Gold Skulltula:61": {
       "name": "Hammer rock near Goron City",
@@ -1664,7 +2310,13 @@ const guideDatabase={
       "sources": [
         "p01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot",
+        "Hammer"
+      ]
     },
     "Gold Skulltula:62": {
       "name": "River grown-bean ledge",
@@ -1689,15 +2341,36 @@ const guideDatabase={
         "Magic Bean:0"
       ],
       "requires": [
+        "Hyrule Field access",
         "Adult access",
-        "Hookshot",
-        "Magic Bean:0"
+        "Hookshot"
       ],
-      "crossTime": {
-        "young": "Plant the bean at beside the Zora River seller.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: beside the Zora River seller",
+          "requires": [
+            "Hyrule Field access",
+            "Magic Bean"
+          ],
+          "evidence": "Magic Bean:0",
+          "completeAlso": [
+            "Magic Bean:0"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "River grown-bean ledge",
+          "requires": [
+            "Hyrule Field access",
+            "Adult access",
+            "Hookshot"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:63": {
       "name": "High wall at the final river bridge",
@@ -1716,7 +2389,12 @@ const guideDatabase={
       "sources": [
         "v10"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:64": {
       "name": "Frozen Domain waterfall wall",
@@ -1735,7 +2413,13 @@ const guideDatabase={
       "sources": [
         "v10"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:65": {
       "name": "Ice Cavern spinning-blade room",
@@ -1754,7 +2438,12 @@ const guideDatabase={
       "sources": [
         "v14"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Zelda Lullaby",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Gold Skulltula:66": {
       "name": "Ice Cavern Compass-room wall",
@@ -1775,7 +2464,13 @@ const guideDatabase={
       "sources": [
         "v14"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Zelda Lullaby",
+        "Adult access",
+        "Hookshot",
+        "Event:blue-fire"
+      ]
     },
     "Gold Skulltula:67": {
       "name": "Ice Cavern sliding-block ceiling",
@@ -1794,7 +2489,13 @@ const guideDatabase={
       "sources": [
         "v14"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Zelda Lullaby",
+        "Adult access",
+        "Hookshot",
+        "Event:blue-fire"
+      ]
     },
     "Gold Skulltula:68": {
       "name": "Laboratory tank crate",
@@ -1815,7 +2516,14 @@ const guideDatabase={
       "sources": [
         "p01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot",
+        "Iron Boots",
+        "Zora Tunic"
+      ]
     },
     "Gold Skulltula:69": {
       "name": "Water Temple middle-level bomb wall",
@@ -1836,7 +2544,16 @@ const guideDatabase={
       "sources": [
         "v16"
       ],
-      "note": "The old “south corridor floor” description is replaced by the remake’s middle-level bomb-wall route."
+      "note": "The old “south corridor floor” description is replaced by the remake’s middle-level bomb-wall route.",
+      "requires": [
+        "Iron Boots",
+        "Zora Tunic",
+        "Hookshot",
+        "Zelda Lullaby",
+        "Adult access",
+        "Hookshot",
+        "Bomb Bag"
+      ]
     },
     "Gold Skulltula:70": {
       "name": "Longshot whirlpool river",
@@ -1856,7 +2573,15 @@ const guideDatabase={
       "sources": [
         "v16"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Iron Boots",
+        "Zora Tunic",
+        "Hookshot",
+        "Zelda Lullaby",
+        "Adult access",
+        "Longshot"
+      ]
     },
     "Gold Skulltula:71": {
       "name": "High-water basement route",
@@ -1876,7 +2601,15 @@ const guideDatabase={
       "sources": [
         "c30"
       ],
-      "note": "Remake guides describe a high-water basement route here; this replaces the old “waterfall room” directions."
+      "note": "Remake guides describe a high-water basement route here; this replaces the old “waterfall room” directions.",
+      "requires": [
+        "Iron Boots",
+        "Zora Tunic",
+        "Hookshot",
+        "Zelda Lullaby",
+        "Adult access",
+        "Longshot"
+      ]
     },
     "Gold Skulltula:72": {
       "name": "Top inside the central pillar",
@@ -1895,7 +2628,15 @@ const guideDatabase={
       "sources": [
         "v16"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Iron Boots",
+        "Zora Tunic",
+        "Hookshot",
+        "Zelda Lullaby",
+        "Adult access",
+        "Longshot"
+      ]
     },
     "Gold Skulltula:73": {
       "name": "Boss-Key rolling-ball tunnel",
@@ -1915,7 +2656,15 @@ const guideDatabase={
       "sources": [
         "v16"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Iron Boots",
+        "Zora Tunic",
+        "Hookshot",
+        "Zelda Lullaby",
+        "Adult access",
+        "Longshot"
+      ]
     },
     "Gold Skulltula:74": {
       "name": "Lake island treetop",
@@ -1935,7 +2684,13 @@ const guideDatabase={
       "sources": [
         "v15"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Longshot",
+        "Event:water"
+      ]
     },
     "Gold Skulltula:75": {
       "name": "Castle moat tree — Song of Storms grotto",
@@ -1957,11 +2712,35 @@ const guideDatabase={
         "v04"
       ],
       "note": "Start from the moat corner used during the Zelda infiltration, not the Castle Town gate. This entry previously said only “near the gate.”",
-      "crossTime": {
-        "young": "Play Song of Storms at the castle-moat tree and enter the grotto.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Castle moat tree — Song of Storms grotto",
+          "requires": [
+            "Hyrule Field access",
+            "Boomerang"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:76": {
       "name": "Well central coffin chamber",
@@ -1983,11 +2762,35 @@ const guideDatabase={
         "v17"
       ],
       "note": "The remake route is a coffin chamber; the old “west locked room behind pots” instructions were not reliable.",
-      "crossTime": {
-        "young": "Drain the well and follow its dungeon route.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Event:well-drained",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Well central coffin chamber",
+          "requires": [
+            "Event:well-drained",
+            "Boomerang"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:77": {
       "name": "Well central locked chamber",
@@ -2009,11 +2812,35 @@ const guideDatabase={
         "v17"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Drain the well and follow its dungeon route.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Event:well-drained",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Well central locked chamber",
+          "requires": [
+            "Event:well-drained",
+            "Boomerang"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:78": {
       "name": "Well Like Like room",
@@ -2034,11 +2861,35 @@ const guideDatabase={
         "v17"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Drain the well and follow its dungeon route.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Event:well-drained",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Well Like Like room",
+          "requires": [
+            "Event:well-drained",
+            "Boomerang"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:79": {
       "name": "Shadow Temple invisible blades",
@@ -2058,7 +2909,16 @@ const guideDatabase={
       "sources": [
         "v18"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Nocturne of Shadow",
+        "Magic",
+        "Din Fire",
+        "Adult access",
+        "Hookshot",
+        "Lens of Truth",
+        "Hover Boots"
+      ]
     },
     "Gold Skulltula:80": {
       "name": "Shadow Temple falling spikes",
@@ -2078,7 +2938,16 @@ const guideDatabase={
       "sources": [
         "v18"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Nocturne of Shadow",
+        "Magic",
+        "Din Fire",
+        "Adult access",
+        "Hookshot",
+        "Lens of Truth",
+        "Hover Boots"
+      ]
     },
     "Gold Skulltula:81": {
       "name": "Shadow Temple fan corridor",
@@ -2098,7 +2967,16 @@ const guideDatabase={
       "sources": [
         "v18"
       ],
-      "note": "This is the remake’s fan-corridor pickup, replacing the older “flaming skull room” directions."
+      "note": "This is the remake’s fan-corridor pickup, replacing the older “flaming skull room” directions.",
+      "requires": [
+        "Nocturne of Shadow",
+        "Magic",
+        "Din Fire",
+        "Adult access",
+        "Hookshot",
+        "Lens of Truth",
+        "Hover Boots"
+      ]
     },
     "Gold Skulltula:82": {
       "name": "Shadow Temple ferry Scarecrow",
@@ -2119,13 +2997,49 @@ const guideDatabase={
         "v18"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        "Nocturne of Shadow",
+        "Magic",
+        "Din Fire",
+        "Adult access",
+        "Longshot",
+        "Lens of Truth",
+        "Hover Boots",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Shadow Temple ferry Scarecrow",
+          "requires": [
+            "Nocturne of Shadow",
+            "Magic",
+            "Din Fire",
+            "Adult access",
+            "Longshot",
+            "Lens of Truth",
+            "Hover Boots",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Gold Skulltula:83": {
@@ -2147,7 +3061,17 @@ const guideDatabase={
       "sources": [
         "c34"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Nocturne of Shadow",
+        "Magic",
+        "Din Fire",
+        "Adult access",
+        "Longshot",
+        "Lens of Truth",
+        "Hover Boots",
+        "Bomb Bag"
+      ]
     },
     "Gold Skulltula:84": {
       "name": "Behind the carpenter camp",
@@ -2166,7 +3090,18 @@ const guideDatabase={
       "sources": [
         "v19"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Longshot",
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:85": {
       "name": "Carpenter-camp stone arch",
@@ -2185,7 +3120,18 @@ const guideDatabase={
       "sources": [
         "v19"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot",
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:86": {
       "name": "Fortress exterior high wall",
@@ -2205,7 +3151,18 @@ const guideDatabase={
       "sources": [
         "n01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
+        "Adult access",
+        "Longshot",
+        "Gerudo Card"
+      ]
     },
     "Gold Skulltula:87": {
       "name": "Archery-range far target",
@@ -2225,7 +3182,18 @@ const guideDatabase={
       "sources": [
         "n01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
+        "Adult access",
+        "Longshot",
+        "Gerudo Card"
+      ]
     },
     "Gold Skulltula:88": {
       "name": "Wasteland stone shelter",
@@ -2245,7 +3213,20 @@ const guideDatabase={
       "sources": [
         "v19"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Gerudo Card",
+        "Lens of Truth",
+        "Magic",
+        {
+          "any": [
+            "Longshot",
+            "Hover Boots"
+          ]
+        },
+        "Adult access",
+        "Longshot"
+      ]
     },
     "Gold Skulltula:89": {
       "name": "Spirit Temple entrance soil",
@@ -2266,7 +3247,47 @@ const guideDatabase={
       "sources": [
         "v19"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Requiem of Spirit",
+        "Event:time-travel",
+        "Bottle"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "child-task",
+          "age": "Child",
+          "title": "Spirit Temple entrance soil",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Bottle"
+          ]
+        }
+      ],
+      "crossTime": true
     },
     "Gold Skulltula:90": {
       "name": "Colossus grown-bean rock",
@@ -2290,14 +3311,92 @@ const guideDatabase={
         "Magic Bean:9"
       ],
       "requires": [
-        "Adult access",
-        "Magic Bean:9"
+        {
+          "any": [
+            "Requiem of Spirit",
+            {
+              "all": [
+                "Gerudo Card",
+                "Lens of Truth",
+                "Magic",
+                {
+                  "any": [
+                    "Longshot",
+                    "Hover Boots"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Adult access"
       ],
-      "crossTime": {
-        "young": "Plant the bean at Spirit Temple entrance.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: Spirit Temple entrance",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Magic Bean",
+            "Requiem of Spirit"
+          ],
+          "evidence": "Magic Bean:9",
+          "completeAlso": [
+            "Magic Bean:9"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Colossus grown-bean rock",
+          "requires": [
+            {
+              "any": [
+                "Requiem of Spirit",
+                {
+                  "all": [
+                    "Gerudo Card",
+                    "Lens of Truth",
+                    "Magic",
+                    {
+                      "any": [
+                        "Longshot",
+                        "Hover Boots"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Adult access"
+          ]
+        }
+      ]
     },
     "Gold Skulltula:91": {
       "name": "Colossus northern bird wall",
@@ -2316,7 +3415,29 @@ const guideDatabase={
       "sources": [
         "c36"
       ],
-      "note": "The remake area guide places this token on the northern rock wall, not an oasis palm."
+      "note": "The remake area guide places this token on the northern rock wall, not an oasis palm.",
+      "requires": [
+        {
+          "any": [
+            "Requiem of Spirit",
+            {
+              "all": [
+                "Gerudo Card",
+                "Lens of Truth",
+                "Magic",
+                {
+                  "any": [
+                    "Longshot",
+                    "Hover Boots"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Adult access",
+        "Longshot"
+      ]
     },
     "Gold Skulltula:92": {
       "name": "Spirit child-side grating",
@@ -2335,7 +3456,47 @@ const guideDatabase={
       "sources": [
         "v20"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Requiem of Spirit",
+        "Event:time-travel",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "child-task",
+          "age": "Child",
+          "title": "Spirit child-side grating",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Boomerang"
+          ]
+        }
+      ],
+      "crossTime": true
     },
     "Gold Skulltula:93": {
       "name": "Spirit five-crystal exit",
@@ -2354,7 +3515,47 @@ const guideDatabase={
       "sources": [
         "v20"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Requiem of Spirit",
+        "Event:time-travel",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "child-task",
+          "age": "Child",
+          "title": "Spirit five-crystal exit",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Boomerang"
+          ]
+        }
+      ],
+      "crossTime": true
     },
     "Gold Skulltula:94": {
       "name": "Spirit statue-side passage",
@@ -2373,7 +3574,47 @@ const guideDatabase={
       "sources": [
         "p01"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Requiem of Spirit",
+        "Event:time-travel",
+        "Boomerang"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "child-task",
+          "age": "Child",
+          "title": "Spirit statue-side passage",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Boomerang"
+          ]
+        }
+      ],
+      "crossTime": true
     },
     "Gold Skulltula:95": {
       "name": "Spirit adult rolling-boulder nook",
@@ -2393,7 +3634,31 @@ const guideDatabase={
       "sources": [
         "v20"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        {
+          "any": [
+            "Requiem of Spirit",
+            {
+              "all": [
+                "Gerudo Card",
+                "Lens of Truth",
+                "Magic",
+                {
+                  "any": [
+                    "Longshot",
+                    "Hover Boots"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Adult access",
+        "Hookshot",
+        "Silver Gauntlets",
+        "Song of Time"
+      ]
     },
     "Gold Skulltula:96": {
       "name": "Spirit statue Scarecrow ledge",
@@ -2414,13 +3679,77 @@ const guideDatabase={
         "v20"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        {
+          "any": [
+            "Requiem of Spirit",
+            {
+              "all": [
+                "Gerudo Card",
+                "Lens of Truth",
+                "Magic",
+                {
+                  "any": [
+                    "Longshot",
+                    "Hover Boots"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Adult access",
+        "Longshot",
+        "Silver Gauntlets",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Spirit statue Scarecrow ledge",
+          "requires": [
+            {
+              "any": [
+                "Requiem of Spirit",
+                {
+                  "all": [
+                    "Gerudo Card",
+                    "Lens of Truth",
+                    "Magic",
+                    {
+                      "any": [
+                        "Longshot",
+                        "Hover Boots"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Adult access",
+            "Longshot",
+            "Silver Gauntlets",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Gold Skulltula:97": {
@@ -2442,7 +3771,15 @@ const guideDatabase={
       "sources": [
         "c39"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Adult access",
+        "Hookshot",
+        "Silver Gauntlets",
+        "Lens of Truth"
+      ]
     },
     "Gold Skulltula:98": {
       "name": "Field tree near Kokiri entrance",
@@ -2461,7 +3798,11 @@ const guideDatabase={
       "sources": [
         "v03"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Sword"
+      ]
     },
     "Gold Skulltula:99": {
       "name": "Southern woodland grotto",
@@ -2481,7 +3822,12 @@ const guideDatabase={
       "sources": [
         "v03"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Bomb Bag",
+        "Slingshot"
+      ]
     },
     "Gold Skulltula:100": {
       "name": "Marsh grotto: child then adult",
@@ -2502,11 +3848,31 @@ const guideDatabase={
         "v03"
       ],
       "note": "The child visit is required; arriving only as an adult can leave this pickup unavailable.",
-      "crossTime": {
-        "young": "Complete the marsh grotto’s child visit described below.",
-        "adult": "Return to that same grotto to collect the token.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Adult access"
+      ],
+      "timelineStages": [
+        {
+          "key": "prepare-grotto",
+          "age": "Child",
+          "title": "Bomb open the marsh grotto and defeat its ordinary spider",
+          "requires": [
+            "Hyrule Field access",
+            "Bomb Bag"
+          ]
+        },
+        {
+          "key": "collect-token",
+          "age": "Adult",
+          "title": "Marsh grotto: child then adult",
+          "requires": [
+            "Hyrule Field access",
+            "Adult access"
+          ]
+        }
+      ]
     },
     "Heart Piece:0": {
       "name": "Kakariko rooftop man",
@@ -2525,7 +3891,16 @@ const guideDatabase={
       "sources": [
         "c06"
       ],
-      "note": "The Cucco route works as Young Link. Adult Link can reach the rooftop using the Hookshot."
+      "note": "The Cucco route works as Young Link. Adult Link can reach the rooftop using the Hookshot.",
+      "requires": [
+        "Hyrule Field access"
+      ],
+      "perAgeRequires": {
+        "Child": [],
+        "Adult": [
+          "Hookshot"
+        ]
+      }
     },
     "Heart Piece:1": {
       "name": "Dampé’s grave-digging prize",
@@ -2544,7 +3919,10 @@ const guideDatabase={
       "sources": [
         "ni-heart"
       ],
-      "note": "Correction: this is not guaranteed on the fourth dig. First-hand remake reports describe random results, including rocks after extra payment. Bring spare rupees and follow the price in your game."
+      "note": "Correction: this is not guaranteed on the fourth dig. First-hand remake reports describe random results, including rocks after extra payment. Bring spare rupees and follow the price in your game.",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:2": {
       "name": "Ranch storeroom crawlspace",
@@ -2561,7 +3939,10 @@ const guideDatabase={
       "sources": [
         "c08"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:3": {
       "name": "Valley chest ledge",
@@ -2580,7 +3961,10 @@ const guideDatabase={
       "sources": [
         "c09"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:4": {
       "name": "Valley waterfall-side chamber",
@@ -2597,7 +3981,10 @@ const guideDatabase={
       "sources": [
         "c09"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:5": {
       "name": "Child fishing prize",
@@ -2617,7 +4004,10 @@ const guideDatabase={
       "sources": [
         "c10"
       ],
-      "note": "The remake guide records a 56 cm winning fish. Use the owner’s current record and reward dialogue; fish caught with the banned sinking lure do not qualify."
+      "note": "The remake guide records a 56 cm winning fish. Use the owner’s current record and reward dialogue; fish caught with the banned sinking lure do not qualify.",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:6": {
       "name": "Return Richard the white dog",
@@ -2634,7 +4024,10 @@ const guideDatabase={
       "sources": [
         "c11"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:7": {
       "name": "Skull Kids’ memory game",
@@ -2653,7 +4046,10 @@ const guideDatabase={
       "sources": [
         "p02"
       ],
-      "note": "You need three completed sessions, not just three individual phrases. A failed phrase may restart that session."
+      "note": "You need three completed sessions, not just three individual phrases. A failed phrase may restart that session.",
+      "requires": [
+        "Ocarina"
+      ]
     },
     "Heart Piece:8": {
       "name": "Play Saria’s Song for Skull Kid",
@@ -2673,7 +4069,11 @@ const guideDatabase={
       "sources": [
         "r02"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Ocarina",
+        "Saria Song"
+      ]
     },
     "Heart Piece:9": {
       "name": "Goron City spinning pot",
@@ -2694,7 +4094,13 @@ const guideDatabase={
       "sources": [
         "g06"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Goron Bracelet",
+        "Deku Sticks"
+      ]
     },
     "Heart Piece:10": {
       "name": "Crater net-wall nook",
@@ -2714,7 +4120,13 @@ const guideDatabase={
       "sources": [
         "c14"
       ],
-      "note": "The child Business Scrub purchase is a separate piece."
+      "note": "The child Business Scrub purchase is a separate piece.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Goron Tunic",
+        "Hookshot"
+      ]
     },
     "Heart Piece:11": {
       "name": "Roof below the owl landing",
@@ -2733,7 +4145,12 @@ const guideDatabase={
       "sources": [
         "g08"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Bomb Bag"
+      ]
     },
     "Heart Piece:12": {
       "name": "Bombchu Bowling Heart Piece",
@@ -2755,8 +4172,10 @@ const guideDatabase={
       ],
       "note": "The remake route lists 10 rupees per round and the Heart Piece after the first two prizes. Check the prize being offered before paying for another round.",
       "requires": [
-        "Bomb Bag",
-        "Upgrade:5"
+        "Hyrule Field access",
+        "Equipment:7",
+        "Upgrade:5",
+        "Event:dodongo"
       ]
     },
     "Heart Piece:13": {
@@ -2777,7 +4196,11 @@ const guideDatabase={
       "sources": [
         "np-hearts"
       ],
-      "note": "Use the high island; a low riverbank jump can fall short."
+      "note": "Use the high island; a low riverbank jump can fall short.",
+      "requires": [
+        "Hyrule Field access",
+        "Bomb Bag"
+      ]
     },
     "Heart Piece:14": {
       "name": "River waterfall platform",
@@ -2795,7 +4218,10 @@ const guideDatabase={
       "sources": [
         "np-hearts"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:15": {
       "name": "Zora Domain torch chest",
@@ -2814,7 +4240,12 @@ const guideDatabase={
       "sources": [
         "g09"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Deku Sticks"
+      ]
     },
     "Heart Piece:16": {
       "name": "Graveyard grown-bean ledge",
@@ -2838,14 +4269,34 @@ const guideDatabase={
         "Magic Bean:4"
       ],
       "requires": [
-        "Adult access",
-        "Magic Bean:4"
+        "Hyrule Field access",
+        "Adult access"
       ],
-      "crossTime": {
-        "young": "Plant the bean at Graveyard upper soil.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: Graveyard upper soil",
+          "requires": [
+            "Hyrule Field access",
+            "Magic Bean"
+          ],
+          "evidence": "Magic Bean:4",
+          "completeAlso": [
+            "Magic Bean:4"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Graveyard grown-bean ledge",
+          "requires": [
+            "Hyrule Field access",
+            "Adult access"
+          ]
+        }
+      ]
     },
     "Heart Piece:17": {
       "name": "Windmill upper platform",
@@ -2864,7 +4315,12 @@ const guideDatabase={
       "sources": [
         "c21"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Heart Piece:18": {
       "name": "Dampé race under one minute",
@@ -2883,7 +4339,12 @@ const guideDatabase={
       "sources": [
         "c21"
       ],
-      "note": "The first race gives the Hookshot; this Heart Piece is the faster repeat-race reward."
+      "note": "The first race gives the Hookshot; this Heart Piece is the faster repeat-race reward.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hookshot"
+      ]
     },
     "Heart Piece:19": {
       "name": "House of Skulltula: 50 tokens",
@@ -2929,23 +4390,69 @@ const guideDatabase={
         "Magic Bean:7"
       ],
       "requires": [
-        "Adult access",
-        {
-          "any": [
-            "Magic Bean:7",
+        "Hyrule Field access",
+        "Adult access"
+      ],
+      "crossTime": true,
+      "stageRoutes": {
+        "bean": {
+          "label": "Planted laboratory bean",
+          "stages": [
             {
-              "all": [
-                "Side Quest:8",
+              "key": "plant",
+              "age": "Child",
+              "title": "Plant the bean: Lakeside Laboratory",
+              "requires": [
+                "Hyrule Field access",
+                "Magic Bean"
+              ],
+              "evidence": "Magic Bean:7",
+              "completeAlso": [
+                "Magic Bean:7"
+              ]
+            },
+            {
+              "key": "collect",
+              "age": "Adult",
+              "title": "Lake watchtower deck",
+              "requires": [
+                "Hyrule Field access",
+                "Adult access"
+              ]
+            }
+          ]
+        },
+        "scarecrow": {
+          "label": "Scarecrow + Hookshot",
+          "stages": [
+            {
+              "key": "teach",
+              "age": "Child",
+              "title": "Teach Bonooru the custom Scarecrow tune",
+              "requires": [
+                "Hyrule Field access",
+                "Ocarina"
+              ],
+              "evidence": "Side Quest:7",
+              "completeAlso": [
+                "Side Quest:7"
+              ]
+            },
+            {
+              "key": "collect",
+              "age": "Adult",
+              "title": "Activate the Scarecrow tune and Hookshot to the roof",
+              "requires": [
+                "Adult access",
+                "Ocarina",
                 "Hookshot"
+              ],
+              "completeAlso": [
+                "Side Quest:8"
               ]
             }
           ]
         }
-      ],
-      "crossTime": {
-        "young": "Plant the laboratory bean, or teach the Scarecrow tune.",
-        "adult": "Ride the grown bean to the roof, or activate the Scarecrow tune and Hookshot up.",
-        "first": "Young"
       }
     },
     "Heart Piece:21": {
@@ -2965,7 +4472,12 @@ const guideDatabase={
       "sources": [
         "r13"
       ],
-      "note": "Do the qualifying dive with the Golden Scale; simply sinking with Iron Boots is not a substitute for the diving reward."
+      "note": "Do the qualifying dive with the Golden Scale; simply sinking with Iron Boots is not a substitute for the diving reward.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Golden Scale"
+      ]
     },
     "Heart Piece:22": {
       "name": "Mountain grown-bean route",
@@ -2989,14 +4501,35 @@ const guideDatabase={
         "Magic Bean:5"
       ],
       "requires": [
-        "Adult access",
-        "Magic Bean:5"
+        "Hyrule Field access",
+        "Adult access"
       ],
-      "crossTime": {
-        "young": "Plant the bean at outside Dodongo Cavern.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: outside Dodongo Cavern",
+          "requires": [
+            "Hyrule Field access",
+            "Event:mountain-gate",
+            "Magic Bean"
+          ],
+          "evidence": "Magic Bean:5",
+          "completeAlso": [
+            "Magic Bean:5"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Mountain grown-bean route",
+          "requires": [
+            "Hyrule Field access",
+            "Adult access"
+          ]
+        }
+      ]
     },
     "Heart Piece:23": {
       "name": "Crater lava-island bean ride",
@@ -3022,16 +4555,53 @@ const guideDatabase={
         "Magic Bean:6"
       ],
       "requires": [
+        "Hyrule Field access",
         "Adult access",
-        "Magic Bean:6",
         "Goron Tunic",
         "Bolero of Fire"
       ],
-      "crossTime": {
-        "young": "Plant the bean at crater warp point.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Bolero of Fire",
+          "requires": [
+            "Adult access",
+            "Goron Tunic",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "evidence": "progress:33",
+          "completeAlso": [
+            "progress:33"
+          ]
+        },
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: crater warp point",
+          "requires": [
+            "Magic Bean",
+            "Bolero of Fire"
+          ],
+          "evidence": "Magic Bean:6",
+          "completeAlso": [
+            "Magic Bean:6"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Crater lava-island bean ride",
+          "requires": [
+            "Hyrule Field access",
+            "Adult access",
+            "Goron Tunic",
+            "Bolero of Fire"
+          ]
+        }
+      ]
     },
     "Heart Piece:24": {
       "name": "Fountain ice-floe ledge",
@@ -3048,7 +4618,12 @@ const guideDatabase={
       "sources": [
         "c28"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Adult access"
+      ]
     },
     "Heart Piece:25": {
       "name": "Fountain underwater cave",
@@ -3068,7 +4643,14 @@ const guideDatabase={
       "sources": [
         "c28"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Adult access",
+        "Zora Tunic",
+        "Iron Boots"
+      ]
     },
     "Heart Piece:26": {
       "name": "Frogs 1 of 2 — Song of Storms",
@@ -3093,11 +4675,37 @@ const guideDatabase={
       "related": [
         "Heart Piece:27"
       ],
-      "crossTime": {
-        "young": "Play Song of Storms for the river frogs.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Ocarina",
+        "Song of Storms"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Frogs 1 of 2 — Song of Storms",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina",
+            "Song of Storms"
+          ]
+        }
+      ]
     },
     "Heart Piece:27": {
       "name": "Frogs 2 of 2 — insect-catching game",
@@ -3126,6 +4734,15 @@ const guideDatabase={
       "start": "Use the same northern river alcove and musical log as the Song of Storms reward. Both rewards are collected as Young Link.",
       "related": [
         "Heart Piece:26"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Ocarina",
+        "Zelda Lullaby",
+        "Saria Song",
+        "Epona Song",
+        "Sun Song",
+        "Song of Time"
       ]
     },
     "Heart Piece:28": {
@@ -3148,11 +4765,37 @@ const guideDatabase={
         "c33"
       ],
       "note": "Refill magic before entering. A wrong chest ends the run, so inspect before opening.",
-      "crossTime": {
-        "young": "Obtain the Lens in the drained well, then complete the night chest game.",
-        "adult": "Learn Song of Storms so the well can be drained in the past.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Lens of Truth",
+        "Magic"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Treasure Box Shop final chest",
+          "requires": [
+            "Hyrule Field access",
+            "Lens of Truth",
+            "Magic"
+          ]
+        }
+      ]
     },
     "Heart Piece:29": {
       "name": "Fortress high-terrace chest",
@@ -3174,13 +4817,53 @@ const guideDatabase={
         "c35"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Teach the custom Scarecrow tune.",
-        "adult": "Activate the tune, summon the Scarecrow and use the grappling route.",
-        "first": "Young"
-      },
-      "extraRequires": [
+      "crossTime": true,
+      "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
+        "Adult access",
+        "Longshot",
+        "Gerudo Card",
         "Side Quest:8"
+      ],
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Activate the Scarecrow tune, then Fortress high-terrace chest",
+          "requires": [
+            {
+              "any": [
+                "Longshot",
+                "Epona"
+              ]
+            },
+            "Adult access",
+            "Longshot",
+            "Gerudo Card",
+            "Ocarina"
+          ],
+          "completeAlso": [
+            "Side Quest:8"
+          ]
+        }
       ]
     },
     "Heart Piece:30": {
@@ -3203,7 +4886,19 @@ const guideDatabase={
       "sources": [
         "r02"
       ],
-      "note": "The route guide reports 750 points; published sources disagree. Use the attendant’s displayed Heart Piece target. The quiver is a separate prize."
+      "note": "The route guide reports 750 points; published sources disagree. Use the attendant’s displayed Heart Piece target. The quiver is a separate prize.",
+      "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
+        "Adult access",
+        "Epona",
+        "Bow",
+        "Gerudo Card"
+      ]
     },
     "Heart Piece:31": {
       "name": "Colossus stone-arch bean ride",
@@ -3227,14 +4922,92 @@ const guideDatabase={
         "Magic Bean:9"
       ],
       "requires": [
-        "Adult access",
-        "Magic Bean:9"
+        {
+          "any": [
+            "Requiem of Spirit",
+            {
+              "all": [
+                "Gerudo Card",
+                "Lens of Truth",
+                "Magic",
+                {
+                  "any": [
+                    "Longshot",
+                    "Hover Boots"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Adult access"
       ],
-      "crossTime": {
-        "young": "Plant the bean at Spirit Temple entrance.",
-        "adult": "Return to the grown plant and collect this reward.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Plant the bean: Spirit Temple entrance",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Magic Bean",
+            "Requiem of Spirit"
+          ],
+          "evidence": "Magic Bean:9",
+          "completeAlso": [
+            "Magic Bean:9"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Adult",
+          "title": "Colossus stone-arch bean ride",
+          "requires": [
+            {
+              "any": [
+                "Requiem of Spirit",
+                {
+                  "all": [
+                    "Gerudo Card",
+                    "Lens of Truth",
+                    "Magic",
+                    {
+                      "any": [
+                        "Longshot",
+                        "Hover Boots"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Adult access"
+          ]
+        }
+      ]
     },
     "Heart Piece:32": {
       "name": "Graveyard movable-headstone chest",
@@ -3251,7 +5024,10 @@ const guideDatabase={
       "sources": [
         "ni-heart"
       ],
-      "note": "This replaces the vague “crypt chest” route and removes the blanket Bomb Bag requirement. If the first grave is empty, check the other movable graves in the same right-hand row."
+      "note": "This replaces the vague “crypt chest” route and removes the blanket Bomb Bag requirement. If the first grave is empty, check the other movable graves in the same right-hand row.",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Heart Piece:33": {
       "name": "Field moat-side Business Scrub",
@@ -3273,14 +5049,31 @@ const guideDatabase={
         "nl-heart"
       ],
       "note": "This grotto is outside Castle Town. It is different from the castle-grounds Song of Storms tree where Talon slept.",
-      "crossTime": {
-        "young": "Return to the grotto, give its password and buy the Heart Piece.",
-        "adult": "Read the Fairy Note by the field-side castle moat grotto.",
-        "first": "Adult"
-      },
+      "crossTime": true,
       "requires": [
-        "Adult access",
+        "Hyrule Field access",
         "Bomb Bag"
+      ],
+      "timelineStages": [
+        {
+          "key": "read-note",
+          "age": "Adult",
+          "title": "Read the Fairy Note by the castle-moat Scrub grotto",
+          "requires": [
+            "Adult access",
+            "Hyrule Field access",
+            "Bomb Bag"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Return, give the password and buy the Heart Piece",
+          "requires": [
+            "Hyrule Field access",
+            "Bomb Bag"
+          ]
+        }
       ]
     },
     "Heart Piece:34": {
@@ -3301,13 +5094,28 @@ const guideDatabase={
         "nl-heart"
       ],
       "note": "The adult visit explains the unlocked chest. This is by the Gerudo-side field exit, not beside the Castle Town moat.",
-      "crossTime": {
-        "young": "Return to the western field chest and open it.",
-        "adult": "Read the Fairy Note beside the already-open chest near Gerudo Valley.",
-        "first": "Adult"
-      },
+      "crossTime": true,
       "requires": [
-        "Adult access"
+        "Hyrule Field access"
+      ],
+      "timelineStages": [
+        {
+          "key": "read-note",
+          "age": "Adult",
+          "title": "Read the Fairy Note beside the western field chest",
+          "requires": [
+            "Adult access",
+            "Hyrule Field access"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Return to the chest and collect the Heart Piece",
+          "requires": [
+            "Hyrule Field access"
+          ]
+        }
       ]
     },
     "Heart Piece:35": {
@@ -3329,7 +5137,12 @@ const guideDatabase={
       "sources": [
         "r02"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Deku Shield"
+      ]
     },
     "Bottle:0": {
       "name": "Potion Shop escaped-bug bottle",
@@ -3347,7 +5160,10 @@ const guideDatabase={
       "sources": [
         "r03"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Bottle:1": {
       "name": "Cucco Lady’s seven-Cucco bottle",
@@ -3367,7 +5183,10 @@ const guideDatabase={
       "sources": [
         "v91"
       ],
-      "note": "All seven are outdoors in Kakariko. If a bird is on the brick pile, glide over using another Cucco or knock it down with the Slingshot."
+      "note": "All seven are outdoors in Kakariko. If a bird is on the brick pile, glide over using another Cucco or knock it down with the Slingshot.",
+      "requires": [
+        "Hyrule Field access"
+      ]
     },
     "Bottle:2": {
       "name": "Talon’s Super Cucco bottle",
@@ -3387,7 +5206,11 @@ const guideDatabase={
       "sources": [
         "c08"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:talon-awake"
+      ]
     },
     "Bottle:3": {
       "name": "Ruto’s Letter bottle",
@@ -3407,7 +5230,11 @@ const guideDatabase={
       "sources": [
         "c16"
       ],
-      "note": "The letter is a story item inside the bottle. Merely buying or catching a fish does not clear the letter before you show it to King Zora."
+      "note": "The letter is a story item inside the bottle. Merely buying or catching a fish does not clear the letter before you show it to King Zora.",
+      "requires": [
+        "Hyrule Field access",
+        "Silver Scale"
+      ]
     },
     "Bottle:4": {
       "name": "Poe Collector’s fifth bottle",
@@ -3429,7 +5256,14 @@ const guideDatabase={
       "sources": [
         "c24"
       ],
-      "note": "Regular Poes do not substitute for the Big Poe point requirement. The 1,000-point prize is a separate reward."
+      "note": "Regular Poes do not substitute for the Big Poe point requirement. The 1,000-point prize is a separate reward.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Epona",
+        "Bow",
+        "Bottle"
+      ]
     },
     "Mask:0": {
       "name": "Keaton Mask",
@@ -3520,7 +5354,7 @@ const guideDatabase={
       "note": "Do not confuse the runner with the adult race challenge. His payment and stopping behavior differ from old-version descriptions; use the offer shown in your game.",
       "requires": [
         "Mask:2",
-        "Song of Time"
+        "Event:jabu"
       ]
     },
     "Mask:4": {
@@ -3628,7 +5462,10 @@ const guideDatabase={
       "sources": [
         "v90"
       ],
-      "note": "Your earlier checkmark stays with this Lost Woods activity. The two venue prizes advance your capacity: the first upgrade is 40 seeds and the second is 50."
+      "note": "Your earlier checkmark stays with this Lost Woods activity. The two venue prizes advance your capacity: the first upgrade is 40 seeds and the second is 50.",
+      "requires": [
+        "Slingshot"
+      ]
     },
     "Upgrade:1": {
       "name": "Town gallery — seed-bag upgrade",
@@ -3648,7 +5485,11 @@ const guideDatabase={
       "sources": [
         "c04"
       ],
-      "note": "Your earlier checkmark stays with the town gallery. The capacity awarded depends on whether you already won the Lost Woods target game; complete both venues."
+      "note": "Your earlier checkmark stays with the town gallery. The capacity awarded depends on whether you already won the Lost Woods target game; complete both venues.",
+      "requires": [
+        "Hyrule Field access",
+        "Slingshot"
+      ]
     },
     "Upgrade:2": {
       "name": "Bigger Quiver — 40 arrows",
@@ -3668,7 +5509,12 @@ const guideDatabase={
       "sources": [
         "r04"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Bow"
+      ]
     },
     "Upgrade:3": {
       "name": "Biggest Quiver — 50 arrows",
@@ -3692,6 +5538,12 @@ const guideDatabase={
       ],
       "note": "Sources disagree on archery thresholds: this remake walkthrough records 1,400, while older guides use 1,500. Use the attendant’s displayed target.",
       "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
         "Adult access",
         "Bow",
         "Epona",
@@ -3716,7 +5568,12 @@ const guideDatabase={
       "sources": [
         "r04"
       ],
-      "note": "This is the large child-timeline roller. The small adult-timeline Goron gives the Goron Tunic instead."
+      "note": "This is the large child-timeline roller. The small adult-timeline Goron gives the Goron Tunic instead.",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Bomb Bag"
+      ]
     },
     "Upgrade:5": {
       "name": "Biggest Bomb Bag — 40 bombs",
@@ -3738,8 +5595,9 @@ const guideDatabase={
       ],
       "note": "The remake route uses 10 rupees per play. Check the offered prize before replaying so you do not confuse this with the later Heart Piece.",
       "requires": [
-        "Bomb Bag",
-        "Equipment:7"
+        "Hyrule Field access",
+        "Equipment:7",
+        "Event:dodongo"
       ]
     },
     "Upgrade:6": {
@@ -3760,7 +5618,10 @@ const guideDatabase={
       "sources": [
         "v90"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Deku Shield"
+      ]
     },
     "Upgrade:7": {
       "name": "Deku Stick capacity — 30",
@@ -3805,7 +5666,11 @@ const guideDatabase={
       "sources": [
         "c18"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Deku Shield",
+        "Bomb Bag"
+      ]
     },
     "Upgrade:9": {
       "name": "Deku Nut capacity — 40",
@@ -3893,7 +5758,11 @@ const guideDatabase={
       "sources": [
         "g09"
       ],
-      "note": "Current remake guides disagree on the timer length. Use the countdown and fee, if any, displayed by your instructor."
+      "note": "Current remake guides disagree on the timer length. Use the countdown and fee, if any, displayed by your instructor.",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby"
+      ]
     },
     "Upgrade:13": {
       "name": "Golden Scale",
@@ -3913,7 +5782,11 @@ const guideDatabase={
       "sources": [
         "rk-scale"
       ],
-      "note": "The remake walkthrough records a threshold over 60 cm. A larger catch on the banned lure still does not qualify."
+      "note": "The remake walkthrough records a threshold over 60 cm. A larger catch on the banned lure still does not qualify.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access"
+      ]
     },
     "Upgrade:14": {
       "name": "Goron Bracelet",
@@ -3934,7 +5807,14 @@ const guideDatabase={
       "sources": [
         "c12"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Ocarina",
+        "Zelda Lullaby",
+        "Saria Song"
+      ]
     },
     "Upgrade:15": {
       "name": "Silver Gauntlets",
@@ -3957,11 +5837,50 @@ const guideDatabase={
         "c37"
       ],
       "note": "",
-      "crossTime": {
-        "young": "Warp to the Colossus for the child-side task.",
-        "adult": "Learn Requiem of Spirit first.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Requiem of Spirit",
+        "Event:time-travel",
+        "Requiem of Spirit",
+        "Boomerang",
+        "Bomb Bag"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "child-task",
+          "age": "Child",
+          "title": "Silver Gauntlets",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Requiem of Spirit",
+            "Boomerang",
+            "Bomb Bag"
+          ]
+        }
+      ]
     },
     "Upgrade:16": {
       "name": "Golden Gauntlets",
@@ -3985,7 +5904,19 @@ const guideDatabase={
       "sources": [
         "c40"
       ],
-      "note": "These lift the enormous dark pillars; the Silver Gauntlets are not strong enough for those."
+      "note": "These lift the enormous dark pillars; the Silver Gauntlets are not strong enough for those.",
+      "requires": [
+        "Adult access",
+        "Event:ganon-bridge",
+        "Bow",
+        "Lens of Truth",
+        {
+          "any": [
+            "Hookshot",
+            "Hover Boots"
+          ]
+        }
+      ]
     },
     "Great Fairy:0": {
       "name": "Summit Fairy — magic and Din’s Fire",
@@ -4006,7 +5937,13 @@ const guideDatabase={
       "sources": [
         "c14"
       ],
-      "note": "The remake gives Din’s Fire at this summit visit. This entry is for the first magic upgrade, not the later doubled meter."
+      "note": "The remake gives Din’s Fire at this summit visit. This entry is for the first magic upgrade, not the later doubled meter.",
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Bomb Bag",
+        "Zelda Lullaby"
+      ]
     },
     "Great Fairy:1": {
       "name": "Castle Fairy — enhanced Spin Attack",
@@ -4029,7 +5966,13 @@ const guideDatabase={
       "sources": [
         "nl-fairy"
       ],
-      "note": "The summit fairy gives Din’s Fire; this visit gives the Spin Attack."
+      "note": "The summit fairy gives Din’s Fire; this visit gives the Spin Attack.",
+      "requires": [
+        "Hyrule Field access",
+        "Bomb Bag",
+        "Zelda Lullaby",
+        "Magic"
+      ]
     },
     "Great Fairy:2": {
       "name": "Fountain Fairy — Farore’s Wind",
@@ -4051,7 +5994,15 @@ const guideDatabase={
       "sources": [
         "g10"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Zelda Lullaby",
+        "Event:king-moved",
+        "Bomb Bag",
+        "Zelda Lullaby",
+        "Magic"
+      ]
     },
     "Great Fairy:3": {
       "name": "Crater Fairy — doubled magic",
@@ -4074,7 +6025,16 @@ const guideDatabase={
       "sources": [
         "c27"
       ],
-      "note": ""
+      "note": "",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Hammer",
+        "Hookshot",
+        "Goron Tunic",
+        "Zelda Lullaby",
+        "Magic"
+      ]
     },
     "Great Fairy:4": {
       "name": "Colossus Fairy — Nayru’s Love",
@@ -4096,7 +6056,34 @@ const guideDatabase={
       "sources": [
         "nl-fairy"
       ],
-      "note": "The remake-specific location guide describes a bombable northern wall. This replaces the earlier instruction to use the Hammer."
+      "note": "The remake-specific location guide describes a bombable northern wall. This replaces the earlier instruction to use the Hammer.",
+      "requires": [
+        {
+          "any": [
+            "Requiem of Spirit",
+            {
+              "all": [
+                "Gerudo Card",
+                "Lens of Truth",
+                "Magic",
+                {
+                  "any": [
+                    "Longshot",
+                    "Hover Boots"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Adult access",
+        "Bomb Bag",
+        "Zelda Lullaby",
+        "Magic",
+        {
+          "wallet": 300
+        }
+      ]
     },
     "Great Fairy:5": {
       "name": "Castle Fairy — halved damage",
@@ -4117,7 +6104,17 @@ const guideDatabase={
       "sources": [
         "c40"
       ],
-      "note": "The 500-rupee offering requires enough wallet capacity. The exact route is outside the castle, to the left after its bridge."
+      "note": "The 500-rupee offering requires enough wallet capacity. The exact route is outside the castle, to the left after its bridge.",
+      "requires": [
+        "Adult access",
+        "Event:ganon-bridge",
+        "Golden Gauntlets",
+        "Zelda Lullaby",
+        "Magic",
+        {
+          "wallet": 500
+        }
+      ]
     },
     "Trade Sequence:0": {
       "name": "Pocket Egg",
@@ -4280,8 +6277,8 @@ const guideDatabase={
         "Trade Sequence:5",
         {
           "any": [
-            "Epona",
-            "Longshot"
+            "Longshot",
+            "Epona"
           ]
         },
         "Hammer"
@@ -4333,7 +6330,7 @@ const guideDatabase={
       "requires": [
         "Adult access",
         "Trade Sequence:7",
-        "Bottle"
+        "Event:king-thawed"
       ]
     },
     "Trade Sequence:9": {
@@ -4357,8 +6354,7 @@ const guideDatabase={
       "note": "The remake walkthrough records a 3:30 eye-drop timer. Plan the mountain ascent before starting the frog delivery.",
       "requires": [
         "Adult access",
-        "Trade Sequence:8",
-        "Epona"
+        "Trade Sequence:8"
       ]
     },
     "Trade Sequence:10": {
@@ -4431,6 +6427,10 @@ const guideDatabase={
       "type": "Bean Planting",
       "related": [
         "Gold Skulltula:62"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Magic Bean"
       ]
     },
     "Magic Bean:1": {
@@ -4452,7 +6452,10 @@ const guideDatabase={
       ],
       "note": "",
       "type": "Bean Planting",
-      "related": []
+      "related": [],
+      "requires": [
+        "Magic Bean"
+      ]
     },
     "Magic Bean:2": {
       "name": "Bean: Lost Woods Scrub clearing",
@@ -4476,6 +6479,10 @@ const guideDatabase={
       "type": "Bean Planting",
       "related": [
         "Gold Skulltula:45"
+      ],
+      "requires": [
+        "Magic Bean",
+        "Deku Shield"
       ]
     },
     "Magic Bean:3": {
@@ -4497,7 +6504,10 @@ const guideDatabase={
       ],
       "note": "This is behind the shop, not either of the two plantable clearings inside the Lost Woods.",
       "type": "Bean Planting",
-      "related": []
+      "related": [],
+      "requires": [
+        "Magic Bean"
+      ]
     },
     "Magic Bean:4": {
       "name": "Bean: Graveyard upper soil",
@@ -4520,6 +6530,10 @@ const guideDatabase={
       "type": "Bean Planting",
       "related": [
         "Heart Piece:16"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Magic Bean"
       ]
     },
     "Magic Bean:5": {
@@ -4543,6 +6557,11 @@ const guideDatabase={
       "type": "Bean Planting",
       "related": [
         "Heart Piece:22"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Event:mountain-gate",
+        "Magic Bean"
       ]
     },
     "Magic Bean:6": {
@@ -4569,11 +6588,37 @@ const guideDatabase={
       "related": [
         "Heart Piece:23"
       ],
-      "crossTime": {
-        "young": "Warp to the crater and plant this soil patch.",
-        "adult": "Learn Bolero of Fire first.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Magic Bean",
+        "Bolero of Fire"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Bolero of Fire",
+          "requires": [
+            "Adult access",
+            "Goron Tunic",
+            "Hookshot",
+            "Ocarina"
+          ],
+          "evidence": "progress:33",
+          "completeAlso": [
+            "progress:33"
+          ]
+        },
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Bean: crater warp point",
+          "requires": [
+            "Magic Bean",
+            "Bolero of Fire"
+          ]
+        }
+      ]
     },
     "Magic Bean:7": {
       "name": "Bean: Lakeside Laboratory",
@@ -4596,6 +6641,10 @@ const guideDatabase={
       "type": "Bean Planting",
       "related": [
         "Heart Piece:20"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Magic Bean"
       ]
     },
     "Magic Bean:8": {
@@ -4618,7 +6667,11 @@ const guideDatabase={
       ],
       "note": "",
       "type": "Bean Planting",
-      "related": []
+      "related": [],
+      "requires": [
+        "Hyrule Field access",
+        "Magic Bean"
+      ]
     },
     "Magic Bean:9": {
       "name": "Bean: Spirit Temple entrance",
@@ -4644,11 +6697,48 @@ const guideDatabase={
         "Gold Skulltula:90",
         "Heart Piece:31"
       ],
-      "crossTime": {
-        "young": "Warp to the Colossus for the child-side task.",
-        "adult": "Learn Requiem of Spirit first.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Requiem of Spirit",
+        "Event:time-travel",
+        "Magic Bean",
+        "Requiem of Spirit"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "plant",
+          "age": "Child",
+          "title": "Bean: Spirit Temple entrance",
+          "requires": [
+            "Requiem of Spirit",
+            "Event:time-travel",
+            "Magic Bean",
+            "Requiem of Spirit"
+          ]
+        }
+      ]
     },
     "Side Quest:0": {
       "name": "Return all seven Cuccos",
@@ -4671,6 +6761,9 @@ const guideDatabase={
       "note": "This is the same activity as the Cucco Lady bottle entry, not a second bottle reward.",
       "related": [
         "Bottle:1"
+      ],
+      "requires": [
+        "Hyrule Field access"
       ]
     },
     "Side Quest:1": {
@@ -4693,11 +6786,37 @@ const guideDatabase={
         "nl-epona"
       ],
       "note": "You need both wins and the escape. Just calling or mounting Epona inside the paid paddock does not complete ownership.",
-      "crossTime": {
-        "young": "Learn Epona’s Song from Malon.",
-        "adult": "Win Ingo’s races and claim Epona.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Epona Song"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-song",
+          "age": "Child",
+          "title": "Learn Epona’s Song from Malon",
+          "requires": [
+            "Ocarina",
+            "Event:talon-awake"
+          ],
+          "evidence": "Epona Song",
+          "completeAlso": [
+            "progress:30"
+          ]
+        },
+        {
+          "key": "win-races",
+          "age": "Adult",
+          "title": "Win Epona from Ingo",
+          "requires": [
+            "Hyrule Field access",
+            "Adult access",
+            "Epona Song"
+          ]
+        }
+      ]
     },
     "Side Quest:2": {
       "name": "Malon’s ranch-course cow prize",
@@ -4718,7 +6837,13 @@ const guideDatabase={
       "sources": [
         "c34"
       ],
-      "note": "The remake walkthrough records a 40-second lap target. Use Malon’s displayed rules if your current challenge differs."
+      "note": "The remake walkthrough records a 40-second lap target. Use Malon’s displayed rules if your current challenge differs.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Epona",
+        "Event:ranch-restored"
+      ]
     },
     "Side Quest:3": {
       "name": "Frog choir’s two Heart Pieces",
@@ -4745,11 +6870,42 @@ const guideDatabase={
         "Heart Piece:26",
         "Heart Piece:27"
       ],
-      "crossTime": {
-        "young": "Play Song of Storms for the river frogs.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Heart Piece:26",
+        "Heart Piece:27"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "both-frogs",
+          "age": "Child",
+          "title": "Collect both separate frog Heart Pieces",
+          "requires": [
+            "Heart Piece:26",
+            "Heart Piece:27"
+          ],
+          "evidence": {
+            "all": [
+              "Heart Piece:26",
+              "Heart Piece:27"
+            ]
+          }
+        }
+      ]
     },
     "Side Quest:4": {
       "name": "All Bombchu Bowling prizes",
@@ -4775,6 +6931,11 @@ const guideDatabase={
         "Equipment:7",
         "Upgrade:5",
         "Heart Piece:12"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Heart Piece:12",
+        "Upgrade:5"
       ]
     },
     "Side Quest:5": {
@@ -4805,7 +6966,29 @@ const guideDatabase={
       "sources": [
         "c38"
       ],
-      "note": "This is a multi-room course. Keep keys for its chained-door route and use the linked full walkthrough for individual room maps; leaving and re-entering costs another fee."
+      "note": "This is a multi-room course. Keep keys for its chained-door route and use the linked full walkthrough for individual room maps; leaving and re-entering costs another fee.",
+      "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
+        "Gerudo Card",
+        "Adult access",
+        "Bow",
+        "Longshot",
+        "Hammer",
+        "Magic",
+        "Zora Tunic",
+        "Iron Boots",
+        {
+          "any": [
+            "Fire Arrows",
+            "Din Fire"
+          ]
+        }
+      ]
     },
     "Side Quest:6": {
       "name": "Poe Collector — ten Big Poes",
@@ -4830,6 +7013,14 @@ const guideDatabase={
       "note": "A bottle can hold only one spirit at a time. Regular Poe sales do not replace the Big Poe scoring requirement.",
       "related": [
         "Bottle:4"
+      ],
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Epona",
+        "Bow",
+        "Bottle",
+        "Bottle:4"
       ]
     },
     "Side Quest:7": {
@@ -4850,7 +7041,11 @@ const guideDatabase={
       "sources": [
         "c10"
       ],
-      "note": "Teaching the tune and activating it seven years later are separate checklist steps. Use the remembered tune, not one of the standard warp songs."
+      "note": "Teaching the tune and activating it seven years later are separate checklist steps. Use the remembered tune, not one of the standard warp songs.",
+      "requires": [
+        "Hyrule Field access",
+        "Ocarina"
+      ]
     },
     "Side Quest:8": {
       "name": "Activate the adult Scarecrow song",
@@ -4872,15 +7067,36 @@ const guideDatabase={
       ],
       "note": "If he does not recognize the tune, return to the past and teach a memorable one again before retrying as an adult.",
       "requires": [
+        "Hyrule Field access",
         "Adult access",
-        "Ocarina",
-        "Side Quest:7"
+        "Side Quest:7",
+        "Ocarina"
       ],
-      "crossTime": {
-        "young": "Teach Bonooru your custom tune.",
-        "adult": "Return and play the exact same tune to activate it.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "teach",
+          "age": "Child",
+          "title": "Teach Bonooru the custom Scarecrow tune",
+          "requires": [
+            "Hyrule Field access",
+            "Ocarina"
+          ],
+          "evidence": "Side Quest:7",
+          "completeAlso": [
+            "Side Quest:7"
+          ]
+        },
+        {
+          "key": "activate",
+          "age": "Adult",
+          "title": "Play the same tune to adult Bonooru",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ]
+        }
+      ]
     },
     "Side Quest:9": {
       "name": "House of Skulltula — 100-token reward",
@@ -4932,7 +7148,13 @@ const guideDatabase={
       "sources": [
         "nl-arrows"
       ],
-      "note": "Wait for the sunrise position described by the stone. Shooting randomly into the daytime sky will not trigger the reward."
+      "note": "Wait for the sunrise position described by the stone. Shooting randomly into the daytime sky will not trigger the reward.",
+      "requires": [
+        "Hyrule Field access",
+        "Adult access",
+        "Bow",
+        "Event:water"
+      ]
     },
     "Side Quest:11": {
       "name": "Complete the Treasure Box Shop",
@@ -4954,11 +7176,35 @@ const guideDatabase={
         "c33"
       ],
       "note": "This is the same run that awards the Treasure Box Shop Heart Piece. The two tracker entries describe one activity.",
-      "crossTime": {
-        "young": "Obtain the Lens in the drained well, then complete the night chest game.",
-        "adult": "Learn Song of Storms so the well can be drained in the past.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "requires": [
+        "Hyrule Field access",
+        "Heart Piece:28"
+      ],
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "collect",
+          "age": "Child",
+          "title": "Complete the Treasure Box Shop",
+          "requires": [
+            "Hyrule Field access",
+            "Heart Piece:28"
+          ]
+        }
+      ]
     },
     "Side Quest:12": {
       "name": "Both horseback archery prizes",
@@ -4983,6 +7229,17 @@ const guideDatabase={
       ],
       "note": "The remake walkthrough records 1,400 for the quiver, rather than the old 1,500. Confirm the score target displayed in your game. Current published guides disagree on archery thresholds. The attendant’s displayed target takes priority; treat 750 / 1,400 as route-guide reports, not a guaranteed target in every version.",
       "related": [
+        "Heart Piece:30",
+        "Upgrade:3"
+      ],
+      "requires": [
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        },
+        "Adult access",
         "Heart Piece:30",
         "Upgrade:3"
       ]
@@ -5071,11 +7328,12 @@ const guideDatabase={
       ],
       "note": "This item lets you shoot spiders off climbable vines. Clear the vines before starting a long climb.",
       "requires": [
-        "Deku Tree access"
+        "Deku Tree access",
+        "Deku Shield"
       ]
     },
     "progress:4": {
-      "name": "Defeat Gohma and clear the Deku Tree",
+      "name": "Clear Great Deku Tree — Kokiri’s Emerald",
       "area": "Deku Tree",
       "age": "Child",
       "time": "Any time",
@@ -5097,8 +7355,12 @@ const guideDatabase={
       ],
       "note": "The completion condition is defeating Gohma and taking the exit warp. Reaching the basement alone is not the clear.",
       "requires": [
-        "Slingshot"
-      ]
+        "Deku Tree access",
+        "Slingshot",
+        "Deku Shield",
+        "Deku Sticks"
+      ],
+      "type": "Event"
     },
     "progress:5": {
       "name": "Leave Kokiri Forest for Hyrule Field",
@@ -5145,7 +7407,9 @@ const guideDatabase={
       ],
       "note": "If the egg has not hatched, let a night-to-day cycle pass outdoors. The town drawbridge guard is not the guard who receives Zelda’s Letter.",
       "requires": [
-        "Hyrule Field access"
+        "Hyrule Field access",
+        "Ocarina",
+        "Event:talon-awake"
       ]
     },
     "progress:7": {
@@ -5218,9 +7482,10 @@ const guideDatabase={
       ],
       "note": "The dungeon entrance Bomb Flower does not give you a bag. You must reach the large item chest inside.",
       "requires": [
-        "Zelda Letter",
-        "Saria Song",
-        "Slingshot"
+        "Event:mountain-gate",
+        "Goron Bracelet",
+        "Slingshot",
+        "Deku Shield"
       ]
     },
     "progress:10": {
@@ -5244,8 +7509,8 @@ const guideDatabase={
       ],
       "note": "This is taught by Impa after the meeting. Replaying the song near a guard does not substitute for showing Zelda’s Letter.",
       "requires": [
-        "Ocarina",
-        "Zelda Letter"
+        "Zelda Letter",
+        "Ocarina"
       ],
       "type": "Song"
     },
@@ -5273,8 +7538,9 @@ const guideDatabase={
       ],
       "note": "The reward is not in the first map chest. Follow the Ruto-carrying route until the Stinger room.",
       "requires": [
-        "Bomb Bag",
-        "Bottle"
+        "Event:king-moved",
+        "Bottle",
+        "Slingshot"
       ]
     },
     "progress:12": {
@@ -5298,15 +7564,15 @@ const guideDatabase={
       "note": "You need the dungeon-clear story rewards, not merely the three dungeon items. Use the in-game story log if the drawbridge scene does not trigger.",
       "requires": [
         "Deku Tree cleared",
-        "Bomb Bag",
-        "Boomerang"
+        "Event:dodongo",
+        "Event:jabu"
       ],
       "type": "Song"
     },
     "progress:13": {
-      "name": "Draw the Master Sword / become Adult Link",
+      "name": "Draw Master Sword — Light Medallion / Adult Link",
       "area": "Temple of Time",
-      "age": "Both",
+      "age": "Child",
       "time": "Any time",
       "equipment": [
         "Song of Time",
@@ -5324,8 +7590,12 @@ const guideDatabase={
       ],
       "note": "Later, after the story allows it, returning the sword to this pedestal takes you back to the child timeline.",
       "requires": [
-        "Song of Time"
-      ]
+        "Song of Time",
+        "Deku Tree cleared",
+        "Event:dodongo",
+        "Event:jabu"
+      ],
+      "type": "Event"
     },
     "progress:14": {
       "name": "Hookshot from Dampé’s race",
@@ -5373,13 +7643,34 @@ const guideDatabase={
       ],
       "note": "This is the same reward as the Epona side quest. The ownership scene and escape are what make the horse available outside the ranch.",
       "requires": [
-        "Adult access"
+        "Adult access",
+        "Epona Song"
       ],
-      "crossTime": {
-        "young": "Learn Epona’s Song from Malon.",
-        "adult": "Win Ingo’s races and claim Epona.",
-        "first": "Young"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "learn-song",
+          "age": "Child",
+          "title": "Learn Epona’s Song from Malon",
+          "requires": [
+            "Ocarina",
+            "Event:talon-awake"
+          ],
+          "evidence": "Epona Song",
+          "completeAlso": [
+            "progress:30"
+          ]
+        },
+        {
+          "key": "win-races",
+          "age": "Adult",
+          "title": "Obtain Epona",
+          "requires": [
+            "Adult access",
+            "Epona Song"
+          ]
+        }
+      ]
     },
     "progress:16": {
       "name": "Fairy Bow",
@@ -5433,8 +7724,9 @@ const guideDatabase={
       "note": "Do not require the Hammer to enter the Fire Temple. It is obtained partway through the dungeon and then opens the remaining routes.",
       "requires": [
         "Adult access",
+        "Goron Tunic",
         "Hookshot",
-        "Bow"
+        "Bomb Bag"
       ]
     },
     "progress:18": {
@@ -5460,8 +7752,8 @@ const guideDatabase={
       "note": "Blue Fire must be carried in a bottle. Ordinary fire and Din’s Fire do not melt the red ice.",
       "requires": [
         "Adult access",
-        "Hookshot",
-        "Bottle"
+        "Bottle",
+        "Event:blue-fire"
       ]
     },
     "progress:19": {
@@ -5492,7 +7784,7 @@ const guideDatabase={
         "Adult access",
         "Iron Boots",
         "Hookshot",
-        "Bow",
+        "Zora Tunic",
         "Zelda Lullaby"
       ]
     },
@@ -5545,14 +7837,40 @@ const guideDatabase={
       ],
       "note": "Bring magic-refilling supplies. The well’s Small Keys are for its extra rooms and tokens; they are not a substitute for draining the inner water.",
       "requires": [
-        "Song of Storms",
-        "Zelda Lullaby"
+        "Event:well-drained",
+        "Slingshot",
+        "Deku Sticks"
       ],
-      "crossTime": {
-        "young": "Drain the well and follow its dungeon route.",
-        "adult": "Learn Song of Storms in the windmill.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "lens",
+          "age": "Child",
+          "title": "Drain the well, defeat Dead Hand and collect the Lens",
+          "requires": [
+            "Song of Storms",
+            "Ocarina",
+            "Slingshot",
+            "Deku Sticks"
+          ],
+          "completeAlso": [
+            "Event:well-drained"
+          ]
+        }
+      ]
     },
     "progress:22": {
       "name": "Learn Sun’s Song",
@@ -5604,15 +7922,47 @@ const guideDatabase={
       ],
       "note": "This is the same item as the Silver Gauntlets upgrade entry. Keeping both entries does not mean there are two pairs.",
       "requires": [
-        "Adult access",
+        "Requiem of Spirit",
         "Boomerang",
-        "Bomb Bag"
+        "Bomb Bag",
+        "Event:time-travel"
       ],
-      "crossTime": {
-        "young": "Warp to the Colossus for the child-side task.",
-        "adult": "Learn Requiem of Spirit first.",
-        "first": "Adult"
-      }
+      "crossTime": true,
+      "timelineStages": [
+        {
+          "key": "learn-warp",
+          "age": "Adult",
+          "title": "Learn Requiem of Spirit",
+          "requires": [
+            "Adult access",
+            "Ocarina",
+            "Gerudo Card",
+            "Lens of Truth",
+            "Magic",
+            {
+              "any": [
+                "Longshot",
+                "Hover Boots"
+              ]
+            }
+          ],
+          "evidence": "progress:36",
+          "completeAlso": [
+            "progress:36"
+          ]
+        },
+        {
+          "key": "child-task",
+          "age": "Child",
+          "title": "Collect the Silver Gauntlets",
+          "requires": [
+            "Requiem of Spirit",
+            "Boomerang",
+            "Bomb Bag",
+            "Event:time-travel"
+          ]
+        }
+      ]
     },
     "progress:24": {
       "name": "Gerudo Pass / Membership Card",
@@ -5639,8 +7989,14 @@ const guideDatabase={
       "note": "You need all four carpenters. Entering the fortress or winning only one guard fight does not grant the pass.",
       "requires": [
         "Adult access",
-        "Longshot"
-      ]
+        {
+          "any": [
+            "Longshot",
+            "Epona"
+          ]
+        }
+      ],
+      "type": "Event"
     },
     "progress:25": {
       "name": "Win the Golden Scale",
@@ -5688,6 +8044,7 @@ const guideDatabase={
       ],
       "note": "This is the same first-fairy visit as the summit Great Fairy entry. You do not need an existing magic meter to unlock it.",
       "requires": [
+        "Event:mountain-gate",
         "Bomb Bag",
         "Zelda Lullaby"
       ]
@@ -5755,7 +8112,7 @@ const guideDatabase={
       ],
       "note": "This is the Death Mountain guard in Kakariko, not a guard outside Hyrule Castle.",
       "requires": [
-        "Zelda Letter"
+        "Event:mountain-gate"
       ]
     },
     "Equipment:0": {
@@ -5799,7 +8156,9 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
-        "Silver Gauntlets"
+        "Silver Gauntlets",
+        "Hookshot",
+        "Zelda Lullaby"
       ]
     },
     "Equipment:2": {
@@ -5844,7 +8203,7 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
-        "Bottle"
+        "Event:king-thawed"
       ]
     },
     "Equipment:4": {
@@ -5867,6 +8226,7 @@ const guideDatabase={
       "requires": [
         "Adult access",
         "Nocturne of Shadow",
+        "Din Fire",
         "Lens of Truth",
         "Magic"
       ]
@@ -5885,12 +8245,16 @@ const guideDatabase={
         "Complete Zelda’s story scene and receive the Light Arrows."
       ],
       "sources": [
-        "c40"
+        "nl-arrows"
       ],
       "note": "",
       "requires": [
         "Adult access",
-        "Bow"
+        "Event:forest",
+        "Event:fire",
+        "Event:water",
+        "Event:shadow",
+        "Event:spirit"
       ]
     },
     "Equipment:6": {
@@ -5933,8 +8297,7 @@ const guideDatabase={
       ],
       "note": "",
       "requires": [
-        "Hyrule Field access",
-        "Bomb Bag"
+        "Event:dodongo"
       ]
     },
     "Equipment:8": {
@@ -5976,7 +8339,8 @@ const guideDatabase={
       ],
       "note": "",
       "requires": [
-        "Deku Tree access"
+        "Deku Tree access",
+        "Sword"
       ]
     },
     "Equipment:10": {
@@ -6020,7 +8384,8 @@ const guideDatabase={
       ],
       "note": "",
       "requires": [
-        "Ocarina"
+        "Ocarina",
+        "Event:talon-awake"
       ],
       "type": "Song"
     },
@@ -6044,8 +8409,9 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
-        "Ocarina",
-        "Hookshot"
+        "Hookshot",
+        "Saria Song",
+        "Ocarina"
       ],
       "type": "Song"
     },
@@ -6069,6 +8435,7 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
+        "Event:forest",
         "Ocarina"
       ],
       "type": "Song"
@@ -6095,6 +8462,8 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
+        "Goron Tunic",
+        "Hookshot",
         "Ocarina"
       ],
       "type": "Song"
@@ -6120,8 +8489,8 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
-        "Ocarina",
-        "Bottle"
+        "Iron Boots",
+        "Ocarina"
       ],
       "type": "Song"
     },
@@ -6146,6 +8515,9 @@ const guideDatabase={
       "note": "",
       "requires": [
         "Adult access",
+        "Event:forest",
+        "Event:fire",
+        "Event:water",
         "Ocarina"
       ],
       "type": "Song"
@@ -6173,7 +8545,15 @@ const guideDatabase={
       "requires": [
         "Adult access",
         "Ocarina",
-        "Gerudo Card"
+        "Gerudo Card",
+        "Lens of Truth",
+        "Magic",
+        {
+          "any": [
+            "Longshot",
+            "Hover Boots"
+          ]
+        }
       ],
       "type": "Song"
     },
@@ -6198,6 +8578,391 @@ const guideDatabase={
         "40 Gold Skulltula tokens",
         "Upgrade:11"
       ]
+    },
+    "Event:dodongo": {
+      "name": "Clear Dodongo Cavern — Goron’s Ruby",
+      "area": "Dodongo Cavern",
+      "age": "Child",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Goron Bracelet",
+        "Bomb Bag",
+        "Deku Shield"
+      ],
+      "steps": [
+        "Defeat King Dodongo in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Goron’s Ruby."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:jabu": {
+      "name": "Clear Jabu-Jabu — Zora’s Sapphire",
+      "area": "Jabu-Jabu Belly",
+      "age": "Child",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Event:king-moved",
+        "Boomerang",
+        "Slingshot"
+      ],
+      "steps": [
+        "Defeat Barinade in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Zora’s Sapphire."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:forest": {
+      "name": "Clear Forest Temple — Forest Medallion",
+      "area": "Forest Temple",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Hookshot",
+        "Bow",
+        "Saria Song"
+      ],
+      "steps": [
+        "Defeat Phantom Ganon in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Forest Medallion."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:fire": {
+      "name": "Clear Fire Temple — Fire Medallion",
+      "area": "Fire Temple",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Goron Tunic",
+        "Hookshot",
+        "Hammer"
+      ],
+      "steps": [
+        "Defeat Volvagia in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Fire Medallion."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:water": {
+      "name": "Clear Water Temple — Water Medallion",
+      "area": "Water Temple",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Iron Boots",
+        "Zora Tunic",
+        "Longshot",
+        "Zelda Lullaby"
+      ],
+      "steps": [
+        "Defeat Morpha in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Water Medallion."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:shadow": {
+      "name": "Clear Shadow Temple — Shadow Medallion",
+      "area": "Shadow Temple",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Nocturne of Shadow",
+        "Din Fire",
+        "Lens of Truth",
+        "Magic",
+        "Hover Boots",
+        "Bow",
+        "Hookshot"
+      ],
+      "steps": [
+        "Defeat Bongo Bongo in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Shadow Medallion."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:spirit": {
+      "name": "Clear Spirit Temple — Spirit Medallion",
+      "area": "Spirit Temple",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Silver Gauntlets",
+        "Mirror Shield",
+        "Longshot",
+        "Zelda Lullaby"
+      ],
+      "steps": [
+        "Defeat Twinrova in this dungeon.",
+        "Enter the blue exit warp after the fight.",
+        "Finish the scene and receive the Spirit Medallion."
+      ],
+      "sources": [
+        "v6-medallions"
+      ],
+      "note": ""
+    },
+    "Event:talon-awake": {
+      "name": "Wake Talon at the castle moat",
+      "area": "Hyrule Castle",
+      "age": "Child",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Hyrule Field access"
+      ],
+      "steps": [
+        "Get Malon’s egg and let it hatch.",
+        "Use the Cucco beside sleeping Talon at the castle moat.",
+        "Finish his conversation so he returns to the ranch."
+      ],
+      "sources": [
+        "c05"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:mountain-gate": {
+      "name": "Show Zelda’s Letter — open mountain gate",
+      "area": "Kakariko",
+      "age": "Child",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Zelda Letter"
+      ],
+      "steps": [
+        "Approach the guard above Kakariko.",
+        "Show him Zelda’s Letter and finish the conversation.",
+        "Confirm the gate toward Death Mountain is open."
+      ],
+      "sources": [
+        "g03"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:king-moved": {
+      "name": "Deliver Ruto’s Letter — King Zora moves",
+      "area": "Zora Domain",
+      "age": "Child",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Bottle:3",
+        "Zelda Lullaby"
+      ],
+      "steps": [
+        "Find King Zora on the upper throne platform.",
+        "Show Ruto’s Letter from its bottle.",
+        "Wait for him to move and open the fountain route."
+      ],
+      "sources": [
+        "g09"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:blue-fire": {
+      "name": "Reach Blue Fire in the Ice Cavern",
+      "area": "Ice Cavern",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Bottle",
+        "Zelda Lullaby"
+      ],
+      "steps": [
+        "Cross the frozen fountain to the Ice Cavern.",
+        "Reach its first Blue Fire source with a bottle.",
+        "Bottle the flame; this records access to refills, not current stock."
+      ],
+      "sources": [
+        "nl-ice"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:king-thawed": {
+      "name": "Thaw King Zora with Blue Fire",
+      "area": "Zora Domain",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Event:blue-fire",
+        "Bottle"
+      ],
+      "steps": [
+        "Return to the frozen king with bottled Blue Fire.",
+        "Release it beside his red ice.",
+        "Wait until the ice melts and speak to him."
+      ],
+      "sources": [
+        "v6-story"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:time-travel": {
+      "name": "Unlock return to Young Link",
+      "area": "Temple of Time",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Event:forest",
+        "Prelude of Light"
+      ],
+      "steps": [
+        "Return to the sword pedestal after the Forest Temple.",
+        "Finish Sheik’s explanation of returning to childhood.",
+        "Place the Master Sword in its pedestal to become Young Link."
+      ],
+      "sources": [
+        "v6-story"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:well-drained": {
+      "name": "Drain Kakariko’s well",
+      "area": "Windmill",
+      "age": "Child",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Song of Storms",
+        "Ocarina"
+      ],
+      "steps": [
+        "Enter the windmill as Young Link.",
+        "Play Song of Storms to the musician.",
+        "Finish the scene and confirm the village well has drained."
+      ],
+      "sources": [
+        "c32"
+      ],
+      "note": "Check after receiving the stated reward or completing this event.",
+      "timelineStages": [
+        {
+          "key": "learn-storms",
+          "age": "Adult",
+          "title": "Learn Song of Storms",
+          "requires": [
+            "Adult access",
+            "Ocarina"
+          ],
+          "evidence": "progress:20",
+          "completeAlso": [
+            "progress:20"
+          ]
+        },
+        {
+          "key": "drain",
+          "age": "Child",
+          "title": "Drain Kakariko’s well",
+          "requires": [
+            "Song of Storms",
+            "Ocarina"
+          ]
+        }
+      ],
+      "crossTime": true
+    },
+    "Event:ranch-restored": {
+      "name": "Return to Malon after winning Epona",
+      "area": "Lon Lon Ranch",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Epona"
+      ],
+      "steps": [
+        "Leave the ranch after winning Epona.",
+        "Return during daylight after the ranch scene has settled.",
+        "Speak to Malon to open her riding-course challenge."
+      ],
+      "sources": [
+        "nl-epona"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
+    },
+    "Event:ganon-bridge": {
+      "name": "Open the sages’ bridge to Ganon Castle",
+      "area": "Ganon Castle",
+      "age": "Adult",
+      "type": "Event",
+      "time": "Story event",
+      "equipment": [],
+      "requires": [
+        "Adult access",
+        "Equipment:5",
+        "Event:forest",
+        "Event:fire",
+        "Event:water",
+        "Event:shadow",
+        "Event:spirit"
+      ],
+      "steps": [
+        "Receive Zelda’s Light Arrows at the Temple of Time.",
+        "Return to the ruined castle grounds.",
+        "Watch the sages create the bridge and cross it."
+      ],
+      "sources": [
+        "v6-story"
+      ],
+      "note": "Check after receiving the stated reward or completing this event."
     }
   }
 };

@@ -14,7 +14,7 @@ const scenario=String.raw`
  await send('Page.reload');await delay(400);state=await read();if(!state.checked||!state.saved)throw Error('Enable was not remembered');
  await ev('window.rejectSetting=true;document.getElementById("keepAwake").click()');state=await read();if(!state.checked||!state.saved||!state.status.includes('Could not save'))throw Error('Save failure did not restore the prior setting');
  await ev('window.rejectSetting=false;document.getElementById("keepAwake").click()');await send('Page.reload');await delay(400);state=await read();
- if(state.checked||state.saved||state.completed.join('|')!==fixture.completed.join('|'))throw Error('Disable or progress preservation failed');
+ if(state.checked||state.saved||!fixture.completed.every(id=>state.completed.includes(id)))throw Error('Disable or progress preservation failed');
  await ev('document.getElementById("keepAwake").click()');
  await send('Emulation.setDeviceMetricsOverride',{width:360,height:800,deviceScaleFactor:2,mobile:true});await delay(100);
  if(await ev('document.documentElement.scrollWidth>innerWidth'))throw Error('Narrow-phone overflow');

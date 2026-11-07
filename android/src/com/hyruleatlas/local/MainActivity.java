@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
             return true;
         }
         @JavascriptInterface public String read() { return store.getString("state", "{}"); }
+        @JavascriptInterface public String readPreviousState() { return store.getString("state_before_stages_v6", "{}"); }
         @JavascriptInterface public boolean write(String json) {
             try { new JSONObject(json); return store.edit().putString("state", json).commit(); }
             catch (Exception e) { return false; }
@@ -49,6 +50,11 @@ public class MainActivity extends Activity {
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         store = getSharedPreferences("atlas", MODE_PRIVATE);
+        // Keep an untouched private copy before the first staged-progress save.
+        if (!store.contains("state_before_stages_v6")) {
+            String previous = store.getString("state", "{}");
+            if (!"{}".equals(previous)) store.edit().putString("state_before_stages_v6", previous).commit();
+        }
         if (state != null) pendingExport = state.getString("export");
         getWindow().setStatusBarColor(Color.rgb(16,13,9));
         getWindow().setNavigationBarColor(Color.rgb(16,13,9));

@@ -1,5 +1,5 @@
 import fs from 'node:fs';fs.mkdirSync('.build',{recursive:true});fs.mkdirSync('data',{recursive:true});
-for(const file of ['authoring/pre-guide-index.html','android/assets/index.html']){
+for(const file of ['authoring/pre-guide-index.html']){
  let h=fs.readFileSync(file,'utf8');
  h=h.replace("let showLocked=saved.visibilityVersion===2?saved.showLocked!==false:true,", "let showLocked=typeof saved.showLocked==='boolean'?saved.showLocked:true,");
  const start=h.indexOf('function matchesContext('),end=h.indexOf('const chevron=',start);
