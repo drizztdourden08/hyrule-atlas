@@ -1,0 +1,22 @@
+import fs from 'node:fs';fs.mkdirSync('.build',{recursive:true});fs.mkdirSync('data',{recursive:true});import vm from 'node:vm';
+import {refineGuide} from './refine-guide.mjs';
+const original=fs.readFileSync('authoring/pre-guide-index.html','utf8');
+const raw=original.slice(original.indexOf("'use strict';"),original.indexOf('let saved='));
+const milestones=original.slice(original.indexOf('const milestones='),original.indexOf('const mMap='));
+const base=vm.runInNewContext(`${raw}\n${milestones}\n[...entries,...milestones.map((m,i)=>({id:'progress:'+i,type:'Progression',name:m[0],area:m[1],milestone:m[0],age:['Adult access','Hookshot','Bow','Hammer','Iron Boots','Longshot','Epona','Gerudo Card','Golden Scale'].includes(m[0])?'Adult':'Both',steps:m[2],requires:m[3]}))]`);
+const sourceList=JSON.parse(fs.readFileSync('authoring/sources.json','utf8')).filter(s=>s.status===200);
+const sources=Object.fromEntries(sourceList.map(s=>[s.id,{title:s.title,url:s.url}]));
+const guide={};
+globalThis.rows=(type,records)=>{for(const [i,name,area,age,time,gear,steps,source,note='',extra={}]of records){const id=type==='Progression'?'progress:'+i:type+':'+i;if(guide[id])throw Error('Duplicate '+id);if(!sources[source])throw Error('Missing source '+source);guide[id]={name,area,age,time,equipment:gear?gear.split('|'):[],steps:steps.split('|'),sources:[source],note,...extra};}};
+for(const f of ['guide-skulltulas.mjs','guide-hearts.mjs','guide-items.mjs','guide-progression.mjs','guide-extras.mjs'])await import('./'+f+'?t='+Date.now());
+refineGuide(guide);
+for(const g of Object.values(guide))if(g.area==='Market')g.area='Hyrule Castle Town';
+const missing=base.filter(e=>!guide[e.id]);if(missing.length)throw Error('Missing guides '+JSON.stringify(missing.map(e=>[e.id,e.name])));
+for(const [id,g]of Object.entries(guide)){if(g.steps.length<3||g.steps.some(s=>s.length<12))throw Error('Incomplete steps '+id);}
+const used=new Set(Object.values(guide).flatMap(g=>g.sources));
+const payload={version:4,edition:'Ocarina of Time — Nintendo Switch 2 remake',reviewed:'2026-11-06',sources:Object.fromEntries(Object.entries(sources).filter(([id])=>used.has(id))),entries:guide};
+fs.writeFileSync('android/assets/guide-data.js','const guideDatabase='+JSON.stringify(payload,null,2)+';\n');
+fs.writeFileSync('data/guide-database.json',JSON.stringify(payload,null,2));
+fs.writeFileSync('.build/base-records.json',JSON.stringify(base,null,2));
+const stats={entries:base.length,active:base.filter(e=>!guide[e.id].retired).length,steps:Object.values(guide).reduce((n,g)=>n+g.steps.length,0),sources:new Set(Object.values(guide).flatMap(g=>g.sources)).size,notes:Object.values(guide).filter(g=>g.note).length,retired:base.filter(e=>guide[e.id].retired).map(e=>e.id)};
+fs.writeFileSync('.build/guide-stats.json',JSON.stringify(stats,null,2));console.log(stats);

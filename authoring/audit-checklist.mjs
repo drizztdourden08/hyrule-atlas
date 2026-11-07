@@ -1,0 +1,27 @@
+import fs from 'node:fs';fs.mkdirSync('.build',{recursive:true});fs.mkdirSync('data',{recursive:true});
+const db=JSON.parse(fs.readFileSync('data/guide-database.json','utf8'));
+const records=Object.entries(db.entries).map(([id,g])=>({id,...g,type:g.type||(id.startsWith('progress:')?'Progression':id.split(':')[0])}));
+const active=records.filter(g=>!g.retired),group=type=>active.filter(g=>g.type===type);
+const expect=(ok,message)=>{if(!ok)throw Error(message)};
+// Independent one-to-one mapping to Nintendo Life's numbered remake list.
+const hearts=[2,8,7,11,17,0,19,32,1,16,18,13,14,26,27,15,24,25,4,3,5,20,21,22,9,23,10,35,6,28,12,29,30,31,34,33];
+expect(new Set(hearts).size===36&&group('Heart Piece').length===36,'Heart Piece count or crosswalk collision');
+expect(hearts.every(n=>db.entries['Heart Piece:'+n]&&!db.entries['Heart Piece:'+n].retired),'Missing mapped Heart Piece');
+const skullCounts={'Kokiri Forest':3,'Deku Tree':4,'Hyrule Field':3,'Hyrule Castle Town':1,'Hyrule Castle':2,'Ganon Castle':1,'Kakariko':6,'Graveyard':2,'Lon Lon Ranch':3,'Gerudo Valley':4,'Lake Hylia':5,'Lost Woods':3,'Death Mountain Trail':4,'Dodongo Cavern':5,'Goron City':2,'Death Mountain Crater':2,'Zora River':4,'Zora Domain':1,'Zora Fountain':3,'Jabu-Jabu Belly':4,'Sacred Forest Meadow':1,'Forest Temple':5,'Fire Temple':5,'Ice Cavern':3,'Water Temple':5,'Bottom of the Well':3,'Shadow Temple':5,'Gerudo Fortress':2,'Haunted Wasteland':1,'Desert Colossus':3,'Spirit Temple':5};
+expect(group('Gold Skulltula').length===100,'Skulltula total');
+for(const[area,n]of Object.entries(skullCounts))expect(group('Gold Skulltula').filter(g=>g.area===area).length===n,'Skulltula regional mismatch '+area);
+const counts={'Bottle':5,'Mask':8,'Upgrade':17,'Great Fairy':6,'Trade Sequence':12,'Bean Planting':10,'Song':12,'Equipment':11,'Side Quest':14};
+for(const[type,n]of Object.entries(counts))expect(group(type).length===n,'Category mismatch '+type);
+expect(group('Heart Piece').filter(g=>g.area==='Zora River'&&g.age==='Child').length===4,'Young river Heart Pieces');
+expect(['Heart Piece:26','Heart Piece:27'].every(id=>db.entries[id].related?.length===1),'Frog reward cross-links');
+expect(!active.some(g=>g.area==='Market'),'Split Market region was not normalized');
+expect(active.every(g=>g.steps.length>=3&&g.sources.every(id=>db.sources[id])),'Unstructured or unsourced entry');
+expect(new Set(active.map(g=>g.type+'|'+g.area+'|'+g.name)).size===active.length,'Duplicate named collectible');
+for(const g of active)for(const id of g.related||[])expect(active.some(r=>r.id===id),'Dead reward link '+id);
+const budgets={};for(const g of records)for(const id of g.sources)budgets[id]=(budgets[id]||0)+(g.steps.join(' ')+' '+g.note).trim().split(/\s+/).length;
+const over=Object.entries(budgets).filter(([,n])=>n>200);
+console.log('COUNTS',Object.fromEntries([...new Set(active.map(e=>e.type))].map(t=>[t,group(t).length])));
+console.log('SOURCE BUDGETS',over.length?over:'All summaries within 200 words per source');
+fs.writeFileSync('.build/checklist-audit.json',JSON.stringify({active:active.length,total:records.length,heartCrosswalk:hearts.map((n,i)=>({sourceNumber:i+1,id:'Heart Piece:'+n,name:db.entries['Heart Piece:'+n].name})),skullCounts,counts,over},null,2));
+expect(!over.length,'Source summary budgets exceeded');
+console.log('PASS: 36 unique Heart Pieces, all four Young river pieces, 100 tokens by region, complete category totals, 12 songs, added equipment, valid sources and related links.');

@@ -1,0 +1,389 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hyrule Atlas · OoT Completion Tracker</title><style>
+:root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#100d09;color:#e9ddc6}*{box-sizing:border-box}body{max-width:840px;margin:auto;padding:22px 16px 65px;background:radial-gradient(ellipse 650px 320px at 90% 0%,#302319 0%,transparent 75%);min-height:100vh}h1{font-size:clamp(1.65rem,4vw,2.2rem);letter-spacing:-.045em;margin:0;font-weight:760}small,.sub{color:#a89a83}.panel{background:#1b1610;border:1px solid #3a2e20;border-radius:16px;padding:18px;margin:12px 0}button,input,textarea{font:inherit;color:inherit}button{cursor:pointer;background:#292116;border:1px solid #4b3b28;border-radius:9px;padding:8px 12px}button:hover{background:#3b2d1c}input[type=search]{width:100%;background:#120f0b;border:1px solid #453623;border-radius:9px;padding:11px 13px;outline:none}input:focus{border-color:#c6a35c}.stats{display:flex;justify-content:space-between;gap:12px;align-items:center}.count{font-size:1.7rem;color:#d6b46d;font-weight:800}.bar{height:5px;background:#3c3021;border-radius:9px;overflow:hidden;margin:13px 0}.fill{height:100%;background:linear-gradient(90deg,#7c9a67,#d1b168);width:0}.filterline{display:flex;flex-direction:column;gap:9px}.filterbuttons{display:flex;flex-wrap:wrap;gap:7px}.dropdown{position:relative}.filterbtn{background:#211b14;color:#d5c3a4;font-size:12px;padding:8px 10px;border:1px solid #473723;white-space:nowrap}.filterbtn span{color:#d9b872;margin-left:5px}.filterbtn.selected{color:#b7d49b;border-color:#648153}.pop{display:none;position:absolute;z-index:10;top:calc(100% + 5px);left:0;background:#251c13;border:1px solid #59462e;border-radius:11px;min-width:170px;max-width:min(85vw,300px);max-height:290px;overflow:auto;padding:5px;box-shadow:0 16px 32px #0009}.pop.shown{display:block}.popoption{display:block;text-align:left;width:100%;background:none;border:0;padding:10px;font-size:13px}.popoption.selected{color:#e1bd75;background:#3c2d1a}.filterfooter{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.subtle{border:0;background:none;color:#bda578;font-size:12px;padding:4px}.entry{padding:13px 0;border-bottom:1px solid #352a1d}.entry:last-child{border:0}.head{display:flex;align-items:center;gap:12px}.head input{width:18px;height:18px;accent-color:#7c9a67;flex-shrink:0}.typeicon{color:#d3ad63;display:flex;align-items:center;justify-content:center;flex-shrink:0;width:25px}.svgicon{width:25px;height:25px;object-fit:contain;display:block}.itemcopy{flex:1;min-width:0}.itemtitle{font-size:14px;font-weight:650;line-height:1.45}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.tag{font-size:10px;font-weight:600;letter-spacing:.015em;border-radius:5px;background:#2d261b;color:#ac9a80;padding:3px 6px;border:1px solid #423522}.regiontag{color:#d5b46c;background:#362a18;border-color:#544022}.typetag{color:#a7c38e;background:#253020;border-color:#394a31}.chevron{border:0;background:transparent;color:#a99371;padding:7px;display:flex;align-items:center;transition:transform .15s}.chevron.rotated{transform:rotate(180deg)}.done{text-decoration:line-through;opacity:.5}.steps{white-space:pre-line;background:#15120d;border-left:2px solid #9e844d;margin:12px 0 0 55px;padding:12px;font-size:13px;line-height:1.65;color:#c7b99f;border-radius:0 8px 8px 0}.steptitle{font-size:10px;letter-spacing:.1em;font-weight:800;color:#c5a15b;margin-bottom:5px}.req{font-size:11px;color:#d7a975;margin-top:7px}.locked{opacity:.55}.empty{text-align:center;color:#aa9980;padding:30px 8px;font-size:13px}#items{padding:2px 18px}.actions{display:flex;gap:8px;flex-wrap:wrap}textarea{width:100%;height:90px;background:#110e0a;border:1px solid #493925;border-radius:8px;padding:9px}.hidden{display:none}.warning{font-size:12px;line-height:1.6;color:#9e8d75}#notice{font-size:11px;color:#9db88a}@media(max-width:550px){body{padding:10px 9px 45px}.panel{padding:13px;border-radius:12px}#items{padding:2px 12px}.head{gap:9px}.steps{margin-left:42px}.filterbuttons{gap:5px}.filterbtn{font-size:11px;padding:7px 8px}}
+ .entry.event{background:linear-gradient(90deg,rgba(139,116,67,.10),transparent 68%);border-left:2px solid #a88b53;padding-left:10px;margin-left:-10px}.entry.event .itemtitle{color:#e0cc9e}.entry.event .typetag{background:#362a18;border-color:#544022;color:#d5b46c}.entry.event .typeicon{color:#d3ad63}.svgicon{overflow:visible}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px;background:#110e0a;border:1px solid #463723;border-radius:10px}.timelinebtn{border:0;background:transparent;padding:9px 5px;font-size:12px;color:#aa977b}.timelinebtn.selected{background:#44341f;color:#f1d394;box-shadow:0 1px 4px #0006}.typebar{display:flex;gap:5px;overflow-x:auto;scrollbar-width:thin;padding:2px 0 5px}.typebtn{display:flex;align-items:center;gap:6px;flex:0 0 auto;font-size:11px;padding:7px 9px;background:#211a13;border:1px solid #433422;color:#a9987e}.typebtn.selected{background:#41331e;border-color:#c4a363;color:#e5c47e}.typeglyph{font-size:16px;line-height:1}.iconframe{display:inline-flex;align-items:center;justify-content:center;color:#d3ad63}.iconfallback{opacity:.65}@media(max-width:550px){.typelabel{display:none}.typebtn{min-width:34px;justify-content:center}.typebtn:first-child{min-width:39px}}
+
+.undoaction{display:flex;align-items:center;gap:8px;justify-content:flex-end;margin-top:9px}.undoaction button{padding:7px 12px;font-size:12px;border-color:#76603c;color:#e7c989;background:#332719}.undoaction button:disabled{opacity:.35;cursor:default}.undoaction .undoinfo{font-size:11px;color:#a89a83}.entry{overflow:hidden}.entry.removing{pointer-events:none;transform-origin:top;transition:height 260ms cubic-bezier(.22,.8,.25,1),opacity 190ms ease,padding 260ms ease,margin 260ms ease,border-width 260ms ease;opacity:0!important}.entry.removing .head{transition:transform 240ms ease;transform:translateY(-9px)}@media(prefers-reduced-motion:reduce){.entry.removing,.entry.removing .head{transition-duration:0ms!important}}
+ .inventoryicon{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 1px 1px #0008)}.typeicon{width:30px}.typeglyph .inventoryicon{width:22px;height:22px}.entry.locked .inventoryicon{opacity:1}.entry.locked{opacity:.75} .inventoryicon{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 1px 1px #0008)}.typeicon{width:30px}.typeglyph .inventoryicon{width:22px;height:22px}.entry.locked .inventoryicon{opacity:1}.entry.locked{opacity:.75} .inventoryicon{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 1px 1px #0008)}.typeicon{width:30px}.typeglyph .inventoryicon{width:22px;height:22px}.entry.locked .inventoryicon{opacity:1}.entry.locked{opacity:.75} .inventoryicon{width:30px;height:30px;object-fit:contain;filter:drop-shadow(0 1px 1px #0008)}.typeicon{width:30px}.typeglyph .inventoryicon{width:22px;height:22px}.entry.locked .inventoryicon{opacity:1}.entry.locked{opacity:.75}</style><link rel="stylesheet" href="filters.css"><link rel="stylesheet" href="settings.css"><link rel="stylesheet" href="status-ui.css"><link rel="stylesheet" href="guide.css"></head><body><section class="panel"><div class="stats"><div><h1>Hyrule Atlas</h1><div class="sub">Collectibles & progression · Switch 2 remake</div></div><div style="text-align:right"><div id="pct" class="count">0%</div><small id="counts"></small></div></div><div class="bar"><div class="fill" id="fill"></div></div><div id="notice">● Saved automatically on this device</div><div class="undoaction"><span class="undoinfo" id="undoinfo">Last 5 actions</span><button id="undo" disabled aria-label="Undo last completion">↶ Undo</button></div></section><section class="panel"><div class="filters"><input id="search" type="search" placeholder="Search items, regions or instructions"><select id="age"><option value="">Both timelines</option><option>Child</option><option>Adult</option></select><select id="region"><option value="">All regions</option></select><select id="type"><option value="">All categories</option></select><select id="status"><option value="remaining">Remaining</option><option value="all">All items</option><option value="done">Completed</option></select></div><div class="stats" style="margin-top:12px"><small id="visible"></small><button id="expand">Expand visible</button></div></section><section id="items" class="panel"></section><section class="panel"><div class="actions"><button id="export">Export JSON</button><button id="import">Import JSON</button><button id="reset">Reset progress</button></div><div id="importbox" class="hidden" style="margin-top:12px"><textarea id="backup" placeholder="Paste a backup JSON here"></textarea><button id="restore">Restore backup</button></div><p class="warning">Switch 2 remake guide · Numbered routes and source links reviewed November 6, 2026. Follow the listed timeline, time of day, and equipment before traveling. Source disagreements are called out in the relevant entry. Progress saves privately on this phone; Export JSON keeps a portable backup. Clearing app data or uninstalling removes local saves.</p></section>
+<script src="icon-map.js"></script><script src="status-ui.js"></script><script src="filter-ui.js"></script><script src="guide-data.js"></script><script src="guide-runtime.js"></script><script>
+'use strict';
+const entries=[];
+function add(type,area,age,name,steps){entries.push({id:type+':'+entries.filter(e=>e.type===type).length,type,area,age,name,steps});}
+function lines(type,raw){raw.trim().split('\n').forEach(line=>{let [area,age,name,steps]=line.split('|');add(type,area,age==='C'?'Child':age==='A'?'Adult':'Both',name,steps||'Collect the reward at this location.');});}
+lines('Gold Skulltula',`Deku Tree|C|Compass room alcove|Explore the compass room and collect the wall token.
+Deku Tree|C|Basement vines|Look on the vines in the first basement.
+Deku Tree|C|Basement grate|Check the grate near the water.
+Market|C|Guardhouse crates|Break crates inside the entrance guardhouse.
+Hyrule Castle|C|Entrance tree|Roll into the tree on the castle path.
+Graveyard|C|Bean soil|Release bottled bugs on the soft soil.
+Kakariko|C|Unfinished house|Visit at night; check the construction wall.
+Kakariko|C|Skulltula house wall|Visit at night; inspect the exterior wall.
+Kakariko|C|Village tree|Roll into the tree near the entrance.
+Kakariko|C|Watchtower ladder|Shoot the spider on the ladder at night.
+Kakariko|C|Death Mountain gate house|Inspect the house wall at night.
+Lon Lon Ranch|C|Tree|Roll into the tree by the ranch buildings.
+Lon Lon Ranch|C|Corral shelter|Check the rain shelter at night.
+Gerudo Valley|C|River soil|Glide down with a Cucco and release bugs on the soil.
+Lake Hylia|C|Laboratory soil|Release bottled bugs into the bean patch.
+Lake Hylia|C|Island pillar|Look at the pillar at night.
+Kokiri Forest|C|Know-It-All house|Check the house wall at night.
+Lost Woods|C|First bean patch|Release bugs on the soil after turning left twice.
+Lost Woods|C|Scrub clearing soil|Release bugs into the bean patch.
+Kokiri Forest|C|Shop soil|Release bugs behind the shop.
+Death Mountain Trail|C|Cavern bean patch|Release bugs near Dodongo Cavern.
+Dodongo Cavern|C|Staircase vines|Climb toward the top of the giant staircase.
+Dodongo Cavern|C|Baby Dodongo corridor|Bomb the cracked wall.
+Dodongo Cavern|C|Armos room|Bomb the wall and defeat the Armos.
+Death Mountain Trail|B|Cracked trail wall|Bomb the suspicious wall along the trail.
+Goron City|C|Boulder maze|Bomb your way into the upper maze.
+Death Mountain Crater|C|Entrance crate|Break the crate near the trail entrance.
+Zora River|C|Entrance tree|Roll into the tree.
+Zora River|C|Waterfall ladder|Look on the ladder at night.
+Zora Fountain|C|Southeast tree|Roll into the tree.
+Jabu-Jabu Belly|C|Water room vines|Raise the water and reach the vines.
+Jabu-Jabu Belly|C|Lower chamber spider one|Check the lower chamber wall.
+Jabu-Jabu Belly|C|Lower chamber spider two|Check the second lower chamber wall.
+Jabu-Jabu Belly|C|Before boss|Look at the vines near the boss approach.
+Zora Fountain|C|Log wall|Use the Boomerang at night.
+Deku Tree|C|Hidden basement room|Burn the web, bomb the wall and use the Boomerang.
+Lon Lon Ranch|C|Ranch house wall|Look high on the ranch house at night.
+Lon Lon Ranch|C|Silo wall|Check the silo wall at night.
+Gerudo Valley|C|Waterfall wall|Check near the bridge waterfall at night.
+Lake Hylia|C|Laboratory wall|Check the building exterior at night.
+Graveyard|C|Back wall|Use the Boomerang at night.
+Dodongo Cavern|B|Upper staircase alcove|Look in the upper-floor alcove.
+Kakariko|A|Above Impa house|At night use Hookshot on the cliff spider.
+Hyrule Castle|A|Ganon Castle archway|Check the cliff by the archway.
+Kokiri Forest|A|Twins house roof|Hookshot the roof spider at night.
+Lost Woods|A|Bean plant clearing|Ride the bean at night.
+Sacred Forest Meadow|A|East wall|Use Hookshot at night.
+Forest Temple|A|Entrance courtyard|Inspect the tree vines.
+Forest Temple|A|Main hall|Check right of the northern door.
+Forest Temple|A|East courtyard|Look above the island.
+Forest Temple|A|West courtyard|Check the north wall.
+Forest Temple|A|Rotating basement|Search the southwest recess.
+Dodongo Cavern|A|Scarecrow ledge|Summon Pierre in the Baby Dodongo corridor.
+Goron City|A|Central platform|Look behind the suspended platform.
+Death Mountain Crater|C|Crater bean soil|Warp in and release bugs on the soil.
+Fire Temple|A|Flying tile room|Check the rear wall after the Like Like.
+Fire Temple|A|Lower boulder maze|Bomb the hollow wall.
+Fire Temple|A|Scarecrow fence|Use the Scarecrow route.
+Fire Temple|A|Scarecrow pit|Follow the upper Scarecrow route.
+Fire Temple|A|Before second Flare Dancer|Inspect the tile room wall.
+Death Mountain Trail|A|Upper red boulder|Hammer the red boulder at night.
+Death Mountain Trail|A|Cavern red boulder|Hammer the red boulder above the cavern.
+Zora River|A|Raised river ledge|Hookshot at night.
+Zora River|A|Domain entrance wall|Check the high wall at night.
+Zora Domain|A|Frozen waterfall|Inspect the wall at night.
+Ice Cavern|A|Blade room|Look behind the icicles.
+Ice Cavern|A|Compass room pillar|Check the pillar near the Heart Piece.
+Ice Cavern|A|Block room|Look at the wall by the entrance.
+Lake Hylia|A|Laboratory pool crate|Sink with Iron Boots and break the crate.
+Water Temple|A|South corridor floor|Look beneath the cracked floor.
+Water Temple|A|Whirlpool river|Look near the third whirlpool.
+Water Temple|A|Waterfall room|Check the right-hand wall.
+Water Temple|A|Central pillar|Look high inside the central pillar.
+Water Temple|A|Boulder room|Check by the small waterfall.
+Lake Hylia|A|Island tree|Inspect the tree at night.
+Hyrule Castle|C|Storms grotto|Play Song of Storms near the gate and bomb the wall.
+Bottom of the Well|C|West locked room|Open the west locked room and inspect behind the pots.
+Bottom of the Well|C|Central locked room|Use Lens of Truth for the invisible route.
+Bottom of the Well|C|Like Like room|Crawl into the northeast chamber.
+Shadow Temple|A|Scythe room|Use Lens of Truth to find the hidden spider.
+Shadow Temple|A|Falling spike room|Inspect the barred cell.
+Shadow Temple|A|Flaming skull room|Check the rear wall.
+Shadow Temple|A|Ferry room|Summon Pierre from the ladder.
+Shadow Temple|A|Invisible maze|Find the western spinning skull room.
+Gerudo Valley|A|Carpenter tent cliff|Check at night.
+Gerudo Valley|A|Tent pillar|Check the pillar at night.
+Gerudo Fortress|A|Upper wall|Look high on the fortress at night.
+Gerudo Fortress|A|Archery target|Look at the far target at night.
+Haunted Wasteland|A|Stone structure|Search the lower chamber.
+Desert Colossus|C|Temple bean soil|Release bugs in the bean patch.
+Desert Colossus|A|Raised rock|Ride the bean plant at night.
+Desert Colossus|A|Oasis palm|Check the palm tree at night.
+Spirit Temple|C|Silver Rupee fence|Look behind the fence after the bridge.
+Spirit Temple|C|Climbing wall|Check before the Bombchu room.
+Spirit Temple|C|Curved stairs|Look above the entrance door.
+Spirit Temple|A|Boulder room|Use Song of Time at the Time Block.
+Spirit Temple|A|Statue ledge|Summon Pierre.
+Zora Fountain|A|Silver rock cave|Lift the silver rock and search at night.
+Hyrule Field|C|Tree near Kokiri entrance|Roll into the isolated tree east of the field, near Kokiri Forest entrance.
+Hyrule Field|C|Southern woodland grotto|Bomb the hidden grotto entrance among the trees south of Hyrule Field near Lake Hylia; find the spider inside.
+Hyrule Field|A|Southeast marshland grotto|Bomb the marshland grotto in the southeast as child, then revisit it as adult to find the Gold Skulltula.`);
+lines('Heart Piece',`Kakariko|C|Rooftop man|Carry a Cucco up to the grassy ledge, glide to the purple rooftops and speak to the man.
+Graveyard|C|Dampé fourth dig|At night pay Dampé to dig his fourth mound; budget 20 rupees.
+Lon Lon Ranch|C|Storeroom crates|Move the crates and crawl into the storeroom passage.
+Gerudo Valley|C|Cliff chest|Use a Cucco to glide to the opposite rock shelf and open the chest.
+Gerudo Valley|B|Cliff stairs|Follow the waterfall-side staircase into the wooden chamber.
+Lake Hylia|C|Child fishing prize|Catch a qualifying large fish with the standard lure and claim the prize.
+Market|C|Richard the white dog|At night return Richard to his owner in the back alley.
+Lost Woods|C|Skull Kids melody game|Copy the Skull Kids' tunes for three rounds.
+Lost Woods|C|Skull Kid Saria Song|Play Saria's Song to the Skull Kid.
+Goron City|C|Stone-face pot|Light the torches and throw a bomb into the spinning pot.
+Death Mountain Crater|B|Crater net nook|Climb down the chain-link net to the hidden nook.
+Kakariko|C|Red rooftop|Accept Kaepora Gaebora's ride from Death Mountain summit, then drop onto the red roof.
+Hyrule Castle Town|C|Bombchu Bowling third prize|Win the third consecutive bowling prize for the Heart Piece.
+Zora River|C|Mossy islets|Carry a Cucco and glide across the little mossy islands.
+Zora River|C|Cliff and stream|Carry a Cucco along the cliff shelf past the bridge.
+Zora Domain|C|Torch chest|Light every unlit torch in the dark corridor and open the chest.
+Graveyard|A|Deku Flower ledge|Plant the Graveyard bean as a child, then ride the grown flower as an adult.
+Kakariko|A|Windmill ledge|Exit Dampé's tunnel into the windmill and collect the ledge piece.
+Graveyard|A|Dampé race rematch|Finish Dampé's second race in under one minute.
+Kakariko|B|Cursed Rich Man|Lift the Gold Skulltula curses and claim the house reward.
+Lake Hylia|B|Tower deck|Climb the inside and outside ladders of the lake tower.
+Lake Hylia|A|Laboratory tank|Use Golden Scale to dive to the grate; speak to the scientist.
+Death Mountain Trail|A|Deku Flower nook|Plant a bean as child and ride the flowers up the trail to the nook.
+Death Mountain Crater|A|Lava island|Plant the crater bean as child; ride flowers to the island.
+Zora Fountain|A|Icy ledge|Cross the ice floes to the far ledge.
+Zora Fountain|A|Underwater cave|With Zora Tunic, dive under the ice into the cave.
+Zora River|C|Frogs Song of Storms|Play Song of Storms to the frogs.
+Zora River|C|Frogs second song|Play Song of Time and complete the frog note game.
+Market|C|Treasure Box Shop|Use Lens of Truth to select the correct chests through five rooms.
+Gerudo Fortress|A|Scarecrow chest|Use Scarecrow Song and Longshot to reach the high terrace chest.
+Gerudo Fortress|A|Horseback archery prize|Score 750 points in horseback archery.
+Desert Colossus|A|Arch ride|Plant bean as child; ride the grown flower to the stone arch.
+Graveyard|C|Crypt chest|At night bomb the cracked doorway, traverse the chamber, then open the crypt chest.
+Hyrule Field|B|Business Scrub grotto|Find the grotto near Castle Town moat; give the password and pay 100 rupees.
+Hyrule Field|C|Canyon chest|Find the red-rock canyon chest hinted by Navi and open it.
+Death Mountain Crater|C|Business Scrub|Reflect the Scrub's shot with Deku Shield and pay 100 rupees.`);
+lines('Bottle',`Hyrule Castle Town|C|Potion Shop bug bottle|Visit the Potion Shop in the town square, accept the escaped bug task, catch the bug in the supplied bottle and keep the bottle.
+Kakariko|C|Cucco Lady bottle|Return all seven Cuccos.
+Lon Lon Ranch|C|Super Cucco bottle|Win Talon Super Cucco game.
+Lake Hylia|C|Ruto letter bottle|Recover letter and deliver it to King Zora.
+Hyrule Castle Town|A|Poe Collector bottle|Catch five Big Poes on Epona and sell them to the Poe Collector (500 points).`);
+lines('Mask',`Market|C|Keaton Mask|Sell to the Death Mountain guard.
+Market|C|Skull Mask|Sell to Skull Kid in Lost Woods.
+Market|C|Spooky Mask|Sell to the graveyard boy.
+Market|C|Bunny Hood|Sell to the Running Man in Hyrule Field.
+Market|C|Mask of Truth|Complete four mask sales and borrow it.
+Market|C|Goron Mask|Borrow after unlocking mask selection.
+Market|C|Zora Mask|Borrow after unlocking mask selection.
+Market|C|Gerudo Mask|Borrow after unlocking mask selection.`);
+lines('Upgrade',`Lost Woods|C|Bullet Bag 40|Hit three bullseyes at hanging target.
+Market|C|Bullet Bag 50|Perfect child Shooting Gallery.
+Kakariko|A|Quiver 40|Perfect adult Shooting Gallery.
+Gerudo Fortress|A|Quiver 50|Score 1500 in horseback archery.
+Goron City|C|Bomb Bag 30|Stop the rolling Goron with a bomb.
+Market|C|Bomb Bag 40|Win Bombchu Bowling bomb bag prize.
+Lost Woods|C|Deku Stick 20|Buy upgrade from Business Scrub.
+Lost Woods|C|Deku Stick 30|Wear Skull Mask at Forest Stage.
+Lost Woods|C|Deku Nut 30|Buy upgrade from Business Scrub.
+Lost Woods|C|Deku Nut 40|Wear Mask of Truth at Forest Stage.
+Kakariko|B|Adult Wallet|Claim 10-token reward.
+Kakariko|B|Giant Wallet|Claim 30-token reward.
+Zora Domain|C|Silver Scale|Win diving game.
+Lake Hylia|A|Golden Scale|Catch large adult fishing prize.
+Goron City|C|Goron Bracelet|Play Saria Song for Darunia.
+Spirit Temple|C|Silver Gauntlets|Open child-section treasure chest.
+Ganon Castle|A|Golden Gauntlets|Open Shadow Trial chest.`);
+lines('Great Fairy',`Death Mountain Summit|C|Magic Meter|Bomb entrance and play Zelda Lullaby.
+Hyrule Castle|C|Din Fire|Bomb rock and play Zelda Lullaby.
+Zora Fountain|C|Farore Wind|Bomb wall and play Zelda Lullaby.
+Death Mountain Crater|A|Double Magic|Hammer entrance and play Zelda Lullaby.
+Desert Colossus|B|Nayru Love|Bomb wall and play Zelda Lullaby.
+Ganon Castle|A|Double Defense|Lift pillar and play Zelda Lullaby.`);
+lines('Trade Sequence',`Kakariko|A|Pocket Egg|Receive from Cucco Lady.
+Kakariko|A|Pocket Cucco|Hatch the egg.
+Kakariko|A|Cojiro|Wake Talon and return Cucco to lady.
+Lost Woods|A|Odd Mushroom|Deliver Cojiro to forest man.
+Kakariko|A|Odd Potion|Deliver mushroom to Potion Shop before time expires.
+Lost Woods|A|Poacher Saw|Bring potion to forest girl.
+Gerudo Valley|A|Broken Goron Sword|Deliver saw to carpenter.
+Death Mountain Summit|A|Prescription|Show broken sword to Biggoron.
+Zora Domain|A|Eyeball Frog|Obtain frog from King Zora.
+Lake Hylia|A|Eye Drops|Deliver frog to scientist quickly.
+Death Mountain Summit|A|Claim Check|Deliver drops to Biggoron.
+Death Mountain Summit|A|Biggoron Sword|Wait and redeem claim check.`);
+lines('Magic Bean',`Zora River|C|Bean patch 1|Plant beside bean seller.
+Lost Woods|C|Bean patch 2|Plant near bridge.
+Lost Woods|C|Bean patch 3|Plant in Business Scrub clearing.
+Kokiri Forest|C|Bean patch 4|Plant beside shop.
+Graveyard|C|Bean patch 5|Plant in Graveyard soil.
+Death Mountain Trail|C|Bean patch 6|Plant beside Dodongo Cavern.
+Death Mountain Crater|C|Bean patch 7|Plant near warp platform.
+Lake Hylia|C|Bean patch 8|Plant beside laboratory.
+Gerudo Valley|C|Bean patch 9|Plant at riverside soil.
+Desert Colossus|C|Bean patch 10|Plant near temple.`);
+lines('Side Quest',`Kakariko|C|Seven Cuccos|Return all seven to the pen.
+Lon Lon Ranch|A|Epona|Win Ingo races and escape ranch.
+Lon Lon Ranch|A|Ranch cow|Win Malon obstacle course.
+Zora River|C|Frog song challenges|Play songs and complete note game.
+Hyrule Castle Town|C|Bombchu Bowling prizes|Win both Heart Piece and Bomb Bag.
+Gerudo Training Ground|A|Ice Arrows|Complete optional training ground.
+Hyrule Field|A|Ten Big Poes|Catch all ten distinct Poes on Epona.
+Lake Hylia|C|Scarecrow song|Teach Bonooru an eight-note tune.
+Lake Hylia|A|Activate Scarecrow song|Play the same tune for Bonooru.
+Kakariko|B|100 Skulltula reward|Return all 100 tokens to the cursed family.
+Lake Hylia|A|Fire Arrows|Shoot rising sun after Water Temple.
+Market|C|Treasure Chest Shop completed|Win final prize with Lens of Truth.
+Gerudo Fortress|A|Horseback Archery prizes|Earn both scoring prizes.`);
+lines('Equipment',`Graveyard|B|Hylian Shield|Follow the sourced equipment guide below.
+Spirit Temple|A|Mirror Shield|Follow the sourced equipment guide below.
+Goron City|A|Goron Tunic|Follow the sourced equipment guide below.
+Zora Domain|A|Zora Tunic|Follow the sourced equipment guide below.
+Shadow Temple|A|Hover Boots|Follow the sourced equipment guide below.
+Temple of Time|A|Light Arrows|Follow the sourced equipment guide below.
+Goron City|A|Giant’s Knife|Follow the sourced equipment guide below.
+Hyrule Castle Town|C|Bombchus|Follow the sourced equipment guide below.
+Kokiri Forest|C|Deku Sticks|Follow the sourced equipment guide below.
+Deku Tree|C|Deku Nuts|Follow the sourced equipment guide below.
+Kakariko|B|Echo Gem|Follow the sourced equipment guide below.`);
+add('Side Quest','Kakariko','Both','House of Skulltula: 40-token Bombchus','Claim the reward from the cursed family.');
+let saved={};const key='oot-collectibles-tracker-remake-v2';try{saved=JSON.parse(AtlasNative.read()||'{}')}catch(e){}
+if(saved.region==='Market')saved.region='Hyrule Castle Town';
+if(saved.type==='Magic Bean')saved.type='Bean Planting';
+const $=id=>document.getElementById(id),escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const milestones=[
+['Kokiri Sword','Kokiri Forest','Find the crawlspace in the training area; navigate the boulder maze and open the chest.',[],'⚔️'],
+['Deku Shield','Kokiri Forest','Collect 40 Rupees and purchase the shield at Kokiri Shop.',[],'🛡️'],
+['Deku Tree access','Kokiri Forest','Equip sword and shield and speak to Mido to enter the Great Deku Tree.',['Kokiri Sword','Deku Shield'],'🌳'],
+['Slingshot','Deku Tree','Find the Fairy Slingshot in the Deku Tree.',['Deku Tree access'],'🏹'],
+['Deku Tree cleared','Deku Tree','Defeat Queen Gohma and leave the dungeon.',['Slingshot'],'🌳'],
+['Hyrule Field access','Hyrule Field','Leave Kokiri Forest after the Deku Tree.',['Deku Tree cleared'],'🗺️'],
+['Zelda Letter','Hyrule Castle','Meet Princess Zelda in the castle courtyard.',['Hyrule Field access'],'✉️'],
+['Ocarina','Hyrule Field','Receive the Fairy Ocarina from Saria.',['Deku Tree cleared'],'🎶'],
+['Saria Song','Lost Woods','Meet Saria in Sacred Forest Meadow.',['Zelda Letter','Ocarina'],'🎵'],
+['Bomb Bag','Dodongo Cavern','Find the Bomb Bag inside Dodongo Cavern.',['Zelda Letter'],'💣'],
+['Zelda Lullaby','Hyrule Castle','Learn the song from Impa after meeting Zelda.',['Zelda Letter','Ocarina'],'🎼'],
+['Boomerang','Jabu-Jabu Belly','Find the Boomerang inside Jabu-Jabu.',['Bomb Bag'],'🪃'],
+['Song of Time','Hyrule Field','Obtain the three Spiritual Stones and witness Zelda leaving the castle.',['Boomerang','Bomb Bag'],'⏳'],
+['Adult access','Temple of Time','Play Song of Time at the Door of Time and take the Master Sword.',['Song of Time'],'🗡️'],
+['Hookshot','Graveyard','Race Dampé as Adult Link.',['Adult access'],'🪝'],
+['Epona','Lon Lon Ranch','Learn Epona Song as a child; as an adult win the ranch races.',['Adult access'],'🐴'],
+['Bow','Forest Temple','Find the Fairy Bow in Forest Temple.',['Hookshot'],'🏹'],
+['Hammer','Fire Temple','Find the Megaton Hammer in Fire Temple.',['Adult access','Hookshot'],'🔨'],
+['Iron Boots','Ice Cavern','Defeat the White Wolfos and open the chest.',['Adult access'],'🥾'],
+['Longshot','Water Temple','Defeat Dark Link and obtain the Longshot.',['Hookshot','Iron Boots'],'🪝'],
+['Song of Storms','Windmill','Learn the Song of Storms from the windmill man as adult.',['Adult access','Ocarina'],'🌧️'],
+['Lens of Truth','Bottom of the Well','As child, play Song of Storms at the windmill, drain the well, and find the Lens.',['Song of Storms'],'👁️'],
+['Sun Song','Graveyard','Play Zelda Lullaby at Royal Family Tomb and read the inscription.',['Zelda Lullaby'],'☀️'],
+['Silver Gauntlets','Spirit Temple','Complete the child-side Spirit Temple section.',['Adult access'],'🧤'],
+['Gerudo Card','Gerudo Fortress','Free all four carpenters as Adult Link.',['Adult access'],'🪪'],
+['Golden Scale','Lake Hylia','Catch a sufficiently large fish as adult.',['Adult access'],'🐟'],
+['Magic','Death Mountain Summit','Visit the Great Fairy on the summit.',['Bomb Bag','Zelda Lullaby'],'✨'],
+['Magic Bean','Zora River','Buy Magic Beans from the seller by the river.',['Hyrule Field access'],'🌱'],
+['Bottle','Kakariko','Return seven Cuccos to Anju or obtain another bottle.',['Hyrule Field access'],'🧴'],
+['Mask access','Market','After showing Zelda Letter to the guard, visit Happy Mask Shop.',['Zelda Letter'],'🎭']
+];
+milestones.push(...[["Epona Song","Lon Lon Ranch","Follow the sourced song lesson below.",["Ocarina"],""],["Minuet of Forest","Sacred Forest Meadow","Follow the sourced song lesson below.",["Ocarina"],""],["Prelude of Light","Temple of Time","Follow the sourced song lesson below.",["Ocarina"],""],["Bolero of Fire","Death Mountain Crater","Follow the sourced song lesson below.",["Ocarina"],""],["Serenade of Water","Ice Cavern","Follow the sourced song lesson below.",["Ocarina"],""],["Nocturne of Shadow","Kakariko","Follow the sourced song lesson below.",["Ocarina"],""],["Requiem of Spirit","Desert Colossus","Follow the sourced song lesson below.",["Ocarina"],""]]);
+const mMap=Object.fromEntries(milestones.map(m=>[m[0],m]));
+// Icons are from Iconify's curated game-icons collection, not custom drawings.
+// Loaded from Iconify's public SVG API; internet is required for the icons.
+const iconifyTypes={
+ 'Gold Skulltula':'game-icons:spider-alt','Bottle':'game-icons:potion-ball','Mask':'game-icons:tribal-mask',
+ 'Upgrade':'game-icons:upgrade','Great Fairy':'game-icons:fairy','Trade Sequence':'game-icons:swap-bag',
+ 'Magic Bean':'game-icons:beanstalk','Side Quest':'game-icons:exclamation-mark',
+ 'Sword':'game-icons:broadsword','Shield':'game-icons:shield','Progress':'game-icons:exclamation-mark',
+ 'Magic':'game-icons:magic-swirl','Song':'game-icons:musical-notes'
+};
+const specificIcons=[
+ [/kokiri sword|biggoron sword|broken goron sword|master sword/i,'game-icons:broadsword'],
+ [/deku shield|hylian shield|mirror shield/i,'game-icons:shield'],
+ [/ocarina/i,'game-icons:ocarina'],
+ [/song|bolero|serenade|nocturne|prelude|requiem|lullaby/i,'game-icons:musical-notes'],
+ [/bow|quiver|arrow|archery/i,'game-icons:bow-arrow'],
+ [/slingshot|bullet bag/i,'game-icons:slingshot'],
+ [/bombchu/i,'game-icons:mouse'],
+ [/bomb bag|bombs|bombchu bowling/i,'game-icons:lit-bomb'],
+ [/hookshot|longshot/i,'game-icons:grappling-hook'],
+ [/boomerang/i,'game-icons:boomerang'],
+ [/lens of truth/i,'game-icons:eye-target'],
+ [/iron boots|hover boots/i,'game-icons:boots'],
+ [/goron tunic|zora tunic/i,'game-icons:armor-vest'],
+ [/gauntlet|bracelet/i,'game-icons:gauntlet'],
+ [/scale|fishing/i,'game-icons:fish-cooked'],
+ [/bean/i,'game-icons:beanstalk'],
+ [/cucco|chicken|cojiro/i,'game-icons:chicken'],
+ [/egg/i,'game-icons:egg-clutch'],
+ [/poe|ghost/i,'game-icons:ghost'],
+ [/mask/i,'game-icons:tribal-mask'],
+ [/bottle|potion|eye drops/i,'game-icons:potion-ball'],
+ [/fairy|magic meter|double magic/i,'game-icons:fairy'],
+ [/horse|epona/i,'game-icons:horse-head'],
+ [/deku nut/i,'game-icons:acorn'],
+ [/deku stick/i,'game-icons:wood-stick'],
+ [/letter|prescription|claim check/i,'game-icons:envelope'],
+ [/mushroom/i,'game-icons:mushroom'],
+ [/saw/i,'game-icons:hand-saw'],
+ [/key/i,'game-icons:key'],
+ [/fire/i,'game-icons:flame'],
+ [/ice/i,'game-icons:snowflake-2']
+];
+const rupeeSvg=`<svg class="svgicon" viewBox="0 0 32 38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16 1 29 10v18L16 37 3 28V10Z" fill="#3d8b54" stroke="#a5d3a0" stroke-width="1.6"/><path d="M16 1v36L3 28V10Z" fill="#5db977"/><path d="M16 1 3 10h26Z" fill="#b5e6a6"/><path d="M16 5 24 12v14l-8 7-8-7V12Z" fill="#247646" opacity=".65"/><path d="M16 5 8 12v14l8 7Z" fill="#8bd998" opacity=".8"/><path d="m8 12 8-7 8 7" fill="none" stroke="#c7f5bc" stroke-width="1"/></svg>`;
+const heartPieceSvg=`<svg class="svgicon" viewBox="0 0 40 38" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 35 5.3 21.3C-6 9.7 9.2-3.8 20 8.6 30.8-3.8 46 9.7 34.7 21.3Z" transform="translate(0 0)" fill="#bf4e49" stroke="#eacb85" stroke-width="2.2" stroke-linejoin="round"/><path d="M20 29 10 19.5C3 12.1 12.7 4.7 20 13.1 27.3 4.7 37 12.1 30 19.5Z" fill="#f2a2a0" stroke="#ffe4b4" stroke-width="1.2"/><path d="M20 25 13 18.5C8.4 13.7 15.2 9.2 20 15 24.8 9.2 31.6 13.7 27 18.5Z" fill="#e75c65"/><path d="M10 10c2-2 4-1 5 0" fill="none" stroke="#fff3dc" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+const eventSvg=`<svg class="svgicon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 6v14" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="16" cy="26" r="2.4" fill="currentColor"/></svg>`;
+function isEvent(e){return e.type==='Side Quest'||e.type==='Progression'&&/access|cleared|completed|activate|mask access/i.test(e.name)}
+function icon(type,name='',event=false){return inventoryArt(type,name);}
+let checked=new Set(Array.isArray(saved.completed)?saved.completed:[]),obtained=new Set(Array.isArray(saved.milestones)?saved.milestones:[]),expanded=new Set(saved.expanded||[]);
+function prereqs(e){let r=[];const a=e.area,n=e.name+' '+e.steps,t=e.type;
+if(e.age==='Adult')r.push('Adult access');
+if(a==='Kokiri Forest'||a==='Lost Woods')r.push('Deku Tree access');
+else if(a==='Deku Tree')r.push('Deku Tree access');
+else r.push('Hyrule Field access');
+if(['Dodongo Cavern','Goron City','Death Mountain Trail'].includes(a))r.push('Zelda Letter');
+if(['Jabu-Jabu Belly','Zora Domain','Zora Fountain'].includes(a))r.push('Bomb Bag');
+if(a==='Bottom of the Well')r.push('Song of Storms');
+if(a==='Forest Temple')r.push('Hookshot');
+if(a==='Fire Temple')r.push('Hammer');
+if(a==='Water Temple')r.push('Iron Boots','Hookshot');
+if(a==='Ice Cavern')r.push('Adult access');
+if(a==='Shadow Temple')r.push('Lens of Truth','Adult access');
+if(a==='Spirit Temple')r.push('Gerudo Card');
+if(['Gerudo Fortress','Haunted Wasteland','Desert Colossus','Gerudo Training Ground'].includes(a))r.push('Gerudo Card');
+if(a==='Ganon Castle')r.push('Adult access');
+if(t==='Bottle'&&/Potion Shop/i.test(n))r.push('Hyrule Field access');
+if(t==='Magic Bean'||/bean patch|bean soil|soft soil|planted bean|ride bean/i.test(n))r.push('Magic Bean');
+if(/Boomerang/i.test(n))r.push('Boomerang');
+if(/Hookshot|cliff above Impa/i.test(n))r.push('Hookshot');
+if(/Longshot/i.test(n))r.push('Longshot');
+if(/Hammer|red boulder/i.test(n))r.push('Hammer');
+if(/Slingshot|watchtower ladder/i.test(n))r.push('Slingshot');
+if(/Lens of Truth|invisible|Treasure Chest Shop/i.test(n))r.push('Lens of Truth');
+if(/Bomb|cracked wall|grotto/i.test(n))r.push('Bomb Bag');
+if(/Epona|Horseback|Big Poe/i.test(n))r.push('Epona');
+if(/Sun.s Song|Royal Family/i.test(n))r.push('Sun Song');
+if(/Magic Meter|Magic meter|Din Fire|Farore Wind|Nayru Love/i.test(n))r.push('Magic');
+if(t==='Mask')r.push('Mask access');
+if(t==='Trading Quest')r.push('Adult access');
+if(t==='Bottle'&&/Poe Collector/i.test(n))r.push('Epona','Bow');
+if(t==='Heart Piece'&&/Dampé race/i.test(n))r.push('Hookshot');
+if(t==='Heart Piece'&&/Crypt chest/i.test(n))r.push('Bomb Bag');
+if(t==='Heart Piece'&&/Scarecrow chest/i.test(n))r.push('Longshot');
+if(t==='Heart Piece'&&/Deku Flower|Lava island|Arch ride/i.test(n))r.push('Magic Bean');
+if(t==='Heart Piece'&&/Laboratory tank/i.test(n))r.push('Golden Scale');
+return [...new Set(r)].filter(x=>mMap[x]);}
+entries.forEach(e=>{applyGuide(e);e.requires=guideRequirements(e)});
+for(const a of [...new Set(entries.map(e=>e.area).concat(milestones.map(m=>m[1])))].sort())$('region').add(new Option(a,a));for(const type of [...new Set(entries.map(e=>e.type))])$('type').add(new Option(type,type));
+for(const id of ['age','region','type','status'])if(saved[id]!==undefined)$(id).value=saved[id];
+// Merge progression into the exact same feed as collectibles.
+const progress=milestones.map((m,i)=>applyGuide({id:'progress:'+i,type:'Progression',area:m[1],age:m[0]==='Adult access'||['Hookshot','Bow','Hammer','Iron Boots','Longshot','Epona','Gerudo Card','Golden Scale'].includes(m[0])?'Adult':'Both',name:m[0],steps:m[2],requires:m[3],milestone:m[0]}));progress.forEach(e=>e.requires=guideRequirements(e));
+const allItems=[...entries.filter(e=>!e.guide?.retired),...progress];
+const typeSelect=$('type');typeSelect.add(new Option('Progression','Progression'));
+let showLocked=typeof saved.showLocked==='boolean'?saved.showLocked:true, activePopover=null;
+const filterPanel=document.querySelector('.filters').parentElement;
+filterPanel.innerHTML=filterMarkup();
+let filterState={age:saved.age||'',region:saved.region||'',type:saved.type||'',status:saved.status||'remaining'};
+const opts={age:[['','All'],['Child','Young Link'],['Adult','Adult Link']],region:[['','All'],...[...new Set(allItems.map(e=>e.area))].sort().map(v=>[v,v])],type:[['','All'],...[...new Set(allItems.map(e=>e.type))].sort().map(v=>[v,v])],status:[['remaining','Remaining'],['all','All items'],['done','Completed']]};
+buildTypeBar();
+let history=Array.isArray(saved.history)?saved.history.slice(-5):[];let animationTimer=null;function updateUndo(){let btn=$('undo');btn.disabled=!history.length;btn.textContent=history.length?`↶ Undo (${history.length})`:'↶ Undo'}
+function save(){try{if(!AtlasNative.write(JSON.stringify({completed:[...checked],milestones:[...obtained],...filterState,showLocked,visibilityVersion:2,leftSummaryOpen:document.getElementById('remainingSummary')?.open||false,expanded:[...expanded],history,statusScreen:inventoryStatusSnapshot(),search:$('search').value,scroll:window.scrollY})))throw Error('Save failed')}catch(e){$('notice').textContent='Storage unavailable. Export a backup.'}}
+function eligible(e){return e.requires.every(hasGuideMilestone)}
+function isDone(e){return e.milestone?obtained.has(e.milestone):checked.has(e.id)}
+function matchesContext(e,ignoreRegion=false){const q=$('search').value.toLowerCase();return (!filterState.age||e.age===filterState.age||e.age==='Both'||!!e.guide?.crossTime)&&(ignoreRegion||!filterState.region||e.area===filterState.region)&&(!filterState.type||e.type===filterState.type)&&(!q||[e.name,e.area,e.type,e.steps,...e.requires.map(guideRequirementLabel),...(e.guide?.equipment||[])].join(' ').toLowerCase().includes(q))}
+function filtered(){return allItems.filter(e=>matchesContext(e)&&(showLocked||eligible(e))&&(filterState.status==='all'||(filterState.status==='done'?isDone(e):!isDone(e))))}
+const chevron='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>';
+function render(){renderInventoryStatus();let count=allItems.filter(isDone).length;$('pct').textContent=Math.round(100*count/allItems.length)+'%';$('counts').textContent=count+' / '+allItems.length;$('fill').style.width=(100*count/allItems.length)+'%';let list=filtered();$('visible').textContent=`${list.length} shown · ${allItems.length-count} left overall`;
+$('items').innerHTML=list.length?list.map(e=>`<article class="entry ${eligible(e)?'':'locked'} ${isEvent(e)?'event':''}"><div class="head"><input type="checkbox" aria-label="Complete ${escape(e.name)}" data-check="${escape(e.id)}" ${isDone(e)?'checked':''}><span class="typeicon" title="${escape(e.type)}">${icon(e.milestone?(e.name==='Kokiri Sword'?'Sword':e.name==='Deku Shield'?'Shield':'Progress'):e.type,e.name,isEvent(e))}</span><div class="itemcopy"><div class="itemtitle ${isDone(e)?'done':''}">${escape(e.name)}</div><div class="tags"><span class="tag regiontag">${escape(e.area)}</span>${timelineTag(e)}<span class="tag typetag">${escape(e.type)}</span></div>${!eligible(e)?`<div class="req">Requires ${escape(e.requires.filter(r=>!hasGuideMilestone(r)).join(' · '))}</div>`:''}</div><button class="chevron ${expanded.has(e.id)?'rotated':''}" data-open="${escape(e.id)}" aria-label="Show directions for ${escape(e.name)}">${chevron}</button></div>${expanded.has(e.id)?guideHTML(e):''}</article>`).join(''):'<div class="empty">Nothing available with these filters. Complete an available progression step or change your filters.</div>';for(let k of ['region','status'])buildPop(k);document.querySelectorAll('[data-age]').forEach(b=>{let on=b.dataset.age===filterState.age;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))});document.querySelectorAll('[data-type]').forEach(b=>{let on=b.dataset.type===filterState.type;b.classList.toggle('selected',on);b.setAttribute('aria-pressed',String(on))});$('lockedbtn').classList.toggle('selected',showLocked);$('lockedbtn').setAttribute('aria-pressed',String(showLocked));updateFilterSummary();}
+$('items').addEventListener('change',ev=>{let input=ev.target,id=input.dataset.check;if(!id)return;let e=allItems.find(x=>x.id===id);if(!e)return;let set=e.milestone?obtained:checked,value=e.milestone||id,wasDone=set.has(value),nowDone=input.checked;if(wasDone===nowDone)return;history.push({id,wasDone});if(history.length>5)history.shift();nowDone?set.add(value):set.delete(value);save();updateUndo();if(animationTimer){clearTimeout(animationTimer);animationTimer=null;render();return}let row=input.closest('.entry');if(nowDone&&filterState.status==='remaining'&&row){input.disabled=true;const h=row.getBoundingClientRect().height;row.style.height=h+'px';row.style.boxSizing='border-box';row.style.overflow='hidden';row.getBoundingClientRect();requestAnimationFrame(()=>{row.classList.add('removing');row.style.height='0px';row.style.paddingTop='0px';row.style.paddingBottom='0px';row.style.marginTop='0px';row.style.marginBottom='0px';row.style.borderWidth='0px'});animationTimer=setTimeout(()=>{animationTimer=null;render()},290)}else render()});
+$('undo').onclick=()=>{if(!history.length)return;if(animationTimer){clearTimeout(animationTimer);animationTimer=null}let action=history.pop();if(undoBossHeart(action)){save();updateUndo();render();return}let e=allItems.find(x=>x.id===action.id);if(!e)return;let set=e.milestone?obtained:checked,value=e.milestone||e.id;action.wasDone?set.add(value):set.delete(value);save();updateUndo();render()};
+$('items').addEventListener('click',ev=>{let el=ev.target.closest('[data-open]');if(!el)return;let id=el.dataset.open;expanded.has(id)?expanded.delete(id):expanded.add(id);render();save()});
+filterPanel.addEventListener('click',handleFilterClick);
+document.addEventListener('click',ev=>{if(!ev.target.closest('.dropdown'))closeFilterPops()});
+$('search').value=saved.search||'';$('search').addEventListener('input',()=>{render();save()});
+$('expand').onclick=()=>{let list=filtered(),open=list.some(e=>!expanded.has(e.id));list.forEach(e=>open?expanded.add(e.id):expanded.delete(e.id));$('expand').textContent=open?'Collapse all':'Expand all';render();save()};
+$('export').onclick=()=>AtlasNative.export(JSON.stringify({version:4,completed:[...checked],milestones:[...obtained],statusScreen:inventoryStatusSnapshot()},null,2));
+$('import').onclick=()=>$('importbox').classList.toggle('hidden');$('restore').onclick=()=>{try{let obj=JSON.parse($('backup').value);if(!Array.isArray(obj.completed))throw Error();history=[];updateUndo();checked=new Set(obj.completed.filter(id=>entries.some(e=>e.id===id)));obtained=new Set((obj.milestones||[]).filter(id=>mMap[id]));if(obj.statusScreen!==undefined)restoreInventoryStatus(obj.statusScreen);save();render();$('importbox').classList.add('hidden')}catch(e){alert('Invalid backup JSON')}};
+$('reset').onclick=()=>{if(confirm('Clear all progress?')){checked.clear();obtained.clear();resetInventoryStatus();history=[];updateUndo();save();render()}};
+buildGuideArchive();updateUndo();render();requestAnimationFrame(()=>window.scrollTo(0,saved.scroll||0));let scrollSave;window.addEventListener('scroll',()=>{clearTimeout(scrollSave);scrollSave=setTimeout(save,180)},{passive:true});document.addEventListener('visibilitychange',save);
+</script><script src="settings.js"></script></body></html>

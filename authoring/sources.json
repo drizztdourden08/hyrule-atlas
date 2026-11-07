@@ -1,0 +1,786 @@
+[
+  {
+    "id": "c01",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/kokiri-forest/",
+    "status": 200,
+    "title": "Kokiri Forest Walkthrough",
+    "words": 3454
+  },
+  {
+    "id": "c02",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/great-deku-tree/",
+    "status": 200,
+    "title": "The Great Deku Tree Walkthrough",
+    "words": 3743
+  },
+  {
+    "id": "c03",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/kokiri-forest-to-hyrule-field/",
+    "status": 200,
+    "title": "Leaving Kokiri Forest Walkthrough",
+    "words": 2303
+  },
+  {
+    "id": "c04",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/hyrule-castle-town/",
+    "status": 200,
+    "title": "Hyrule Castle Town Walkthrough",
+    "words": 2683
+  },
+  {
+    "id": "c05",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/hyrule-castle/",
+    "status": 200,
+    "title": "Hyrule Castle Walkthrough",
+    "words": 3690
+  },
+  {
+    "id": "c06",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/kakariko-village/",
+    "status": 200,
+    "title": "Kakariko Village Walkthrough",
+    "words": 3750
+  },
+  {
+    "id": "c07",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/graveyard/",
+    "status": 200,
+    "title": "Graveyard Walkthrough",
+    "words": 2400
+  },
+  {
+    "id": "c08",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/lon-lon-ranch/",
+    "status": 200,
+    "title": "Lon Lon Ranch Walkthrough",
+    "words": 2532
+  },
+  {
+    "id": "c09",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/gerudo-valley/",
+    "status": 200,
+    "title": "Gerudo Valley Walkthrough",
+    "words": 2262
+  },
+  {
+    "id": "c10",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/lake-hylia/",
+    "status": 200,
+    "title": "Lake Hylia Walkthrough",
+    "words": 2290
+  },
+  {
+    "id": "c11",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/lost-woods-and-sacred-grove/",
+    "status": 200,
+    "title": "Lost Woods and Sacred Grove Walkthrough",
+    "words": 4637
+  },
+  {
+    "id": "c12",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/death-mountain-trail-and-goron-city/",
+    "status": 200,
+    "title": "Death Mountain Trail and Goron City Walkthrough",
+    "words": 2912
+  },
+  {
+    "id": "c13",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/dodongo-cavern/",
+    "status": 200,
+    "title": "Dodongo Cavern Walkthrough",
+    "words": 4631
+  },
+  {
+    "id": "c14",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/death-mountain-summit-and-crater/",
+    "status": 200,
+    "title": "Death Mountain Summit and Crater Walkthrough",
+    "words": 3937
+  },
+  {
+    "id": "c15",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/bombchu-bowling-and-spin-attack/",
+    "status": 200,
+    "title": "Bombchu Bowling and the Great Fairy of Power Walkthrough",
+    "words": 2227
+  },
+  {
+    "id": "c16",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/zora-river-and-zora-domain/",
+    "status": 200,
+    "title": "Zora River and Zora Domain Walkthrough",
+    "words": 3999
+  },
+  {
+    "id": "c17",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/lord-jabu-jabus-belly/",
+    "status": 200,
+    "title": "Lord Jabu-Jabu’s Belly Walkthrough",
+    "words": 4916
+  },
+  {
+    "id": "c18",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/last-child-errands/",
+    "status": 200,
+    "title": "Errands Before the Temple of Time Walkthrough",
+    "words": 5178
+  },
+  {
+    "id": "c19",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/temple-of-time/",
+    "status": 200,
+    "title": "Temple of Time Walkthrough",
+    "words": 3407
+  },
+  {
+    "id": "c20",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/ingo-ranch-and-epona/",
+    "status": 200,
+    "title": "Ingo Ranch and Epona Walkthrough",
+    "words": 2497
+  },
+  {
+    "id": "c21",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/kakariko-and-the-hookshot/",
+    "status": 200,
+    "title": "Kakariko Village and the Hookshot Walkthrough",
+    "words": 2349
+  },
+  {
+    "id": "c22",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/sacred-grove-adult/",
+    "status": 200,
+    "title": "Sacred Grove as an Adult Walkthrough",
+    "words": 3610
+  },
+  {
+    "id": "c23",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/forest-temple/",
+    "status": 200,
+    "title": "Forest Temple Walkthrough",
+    "words": 5799
+  },
+  {
+    "id": "c24",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/poes-and-lake-hylia-as-an-adult/",
+    "status": 200,
+    "title": "Poes, the Hall of Fallen Foes and Lake Hylia Walkthrough",
+    "words": 4517
+  },
+  {
+    "id": "c25",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/goron-city-adult/",
+    "status": 200,
+    "title": "Goron City as an Adult Walkthrough",
+    "words": 3396
+  },
+  {
+    "id": "c26",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/fire-temple/",
+    "status": 200,
+    "title": "Fire Temple Walkthrough",
+    "words": 5960
+  },
+  {
+    "id": "c27",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/double-magic-and-death-mountain/",
+    "status": 200,
+    "title": "Double Magic and Death Mountain Walkthrough",
+    "words": 2817
+  },
+  {
+    "id": "c28",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/ice-cavern/",
+    "status": 200,
+    "title": "Ice Cavern Walkthrough",
+    "words": 4064
+  },
+  {
+    "id": "c29",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/biggoron-sword-route/",
+    "status": 200,
+    "title": "The Biggoron Sword Route Walkthrough",
+    "words": 3919
+  },
+  {
+    "id": "c30",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/water-temple/",
+    "status": 200,
+    "title": "Water Temple Walkthrough",
+    "words": 6033
+  },
+  {
+    "id": "c31",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/nocturne-of-shadow/",
+    "status": 200,
+    "title": "Kakariko Village and the Nocturne of Shadow Walkthrough",
+    "words": 3836
+  },
+  {
+    "id": "c32",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/bottom-of-the-well/",
+    "status": 200,
+    "title": "Bottom of the Well Walkthrough",
+    "words": 3942
+  },
+  {
+    "id": "c33",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/treasure-chest-game/",
+    "status": 200,
+    "title": "Treasure Box Shop and the Way to the Shadow Temple Walkthrough",
+    "words": 2073
+  },
+  {
+    "id": "c34",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/shadow-temple/",
+    "status": 200,
+    "title": "Shadow Temple Walkthrough",
+    "words": 5308
+  },
+  {
+    "id": "c35",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/gerudo-fortress/",
+    "status": 200,
+    "title": "Gerudo Fortress Walkthrough",
+    "words": 4697
+  },
+  {
+    "id": "c36",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/mirage-desert-and-desert-colossus/",
+    "status": 200,
+    "title": "Mirage Desert and Evil Desert Colossus Walkthrough",
+    "words": 3754
+  },
+  {
+    "id": "c37",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/spirit-temple/",
+    "status": 200,
+    "title": "Spirit Temple Walkthrough",
+    "words": 6262
+  },
+  {
+    "id": "c38",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/gerudo-proving-grounds/",
+    "status": 200,
+    "title": "Gerudo Proving Grounds Walkthrough",
+    "words": 4162
+  },
+  {
+    "id": "c39",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/final-collectibles/",
+    "status": 200,
+    "title": "Last Heart Pieces and Gold Skulltulas Walkthrough",
+    "words": 3626
+  },
+  {
+    "id": "c40",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/ganondorfs-castle/",
+    "status": 200,
+    "title": "Ganondorf’s Castle Walkthrough",
+    "words": 5868
+  },
+  {
+    "id": "c41",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/walkthrough/ganondorf-and-ganon/",
+    "status": 200,
+    "title": "Ganondorf and Ganon Walkthrough",
+    "words": 4091
+  },
+  {
+    "id": "r01",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/gold-skulltula-locations/",
+    "status": 200,
+    "title": "Gold Skulltula Locations",
+    "words": 13442
+  },
+  {
+    "id": "r02",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/heart-pieces/",
+    "status": 200,
+    "title": "Heart Piece Locations",
+    "words": 5325
+  },
+  {
+    "id": "r03",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/bottles/",
+    "status": 200,
+    "title": "Bottle Locations",
+    "words": 1738
+  },
+  {
+    "id": "r04",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/equipment-upgrades/",
+    "status": 200,
+    "title": "Capacity Upgrades",
+    "words": 1701
+  },
+  {
+    "id": "r05",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/great-fairy-fountains/",
+    "status": 200,
+    "title": "Great Fairy Fountains",
+    "words": 1998
+  },
+  {
+    "id": "r06",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/soft-soil-locations/",
+    "status": 200,
+    "title": "Magic Bean Locations",
+    "words": 1181
+  },
+  {
+    "id": "r07",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/mask-guide/",
+    "status": 200,
+    "title": "Mask Trading Sequence",
+    "words": 985
+  },
+  {
+    "id": "r08",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/biggoron-sword-guide/",
+    "status": 200,
+    "title": "Biggoron Sword Trading Sequence",
+    "words": 1277
+  },
+  {
+    "id": "r09",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/big-poes/",
+    "status": 200,
+    "title": "Big Poes",
+    "words": 1010
+  },
+  {
+    "id": "r10",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/ocarina-songs/",
+    "status": 200,
+    "title": "Ocarina Songs",
+    "words": 2934
+  },
+  {
+    "id": "r11",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/secret-grottos/",
+    "status": 200,
+    "title": "Secret Grottos",
+    "words": 2226
+  },
+  {
+    "id": "r12",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/side-quests/",
+    "status": 200,
+    "title": "Side Quests",
+    "words": 3266
+  },
+  {
+    "id": "r13",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/mini-games/",
+    "status": 200,
+    "title": "Mini-Games",
+    "words": 4972
+  },
+  {
+    "id": "r14",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/items-equipment/",
+    "status": 200,
+    "title": "Items and Equipment",
+    "words": 3265
+  },
+  {
+    "id": "r15",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/business-scrubs/",
+    "status": 200,
+    "title": "Business Scrubs and Scrub Seeds",
+    "words": 2514
+  },
+  {
+    "id": "r16",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/shops-and-prices/",
+    "status": 200,
+    "title": "Shops and Prices",
+    "words": 1495
+  },
+  {
+    "id": "r17",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/changes-from-the-original/",
+    "status": 200,
+    "title": "Changes From the Original",
+    "words": 2285
+  },
+  {
+    "id": "r18",
+    "url": "https://zeldacentral.com/games/ocarina-of-time-remake/maps/",
+    "status": 200,
+    "title": "Hyrule Maps",
+    "words": 2692
+  },
+  {
+    "id": "v90",
+    "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-lost-woods-map-how-to-navigate/",
+    "status": 200,
+    "title": "Zelda OOT Remake: Lost Woods map, how to navigate",
+    "words": 654
+  },
+  {
+    "id": "v91",
+    "url": "https://www.videogameschronicle.com/guide/zelda-oot-remake-all-kakariko-village-cucco-locations/",
+    "status": 200,
+    "title": "Zelda OOT Remake: All Kakariko Village Cucco locations",
+    "words": 610
+  },
+  {
+    "id": "g01",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-1",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 1: Kokiri Forest, Getting a Sword and Shield",
+    "words": 890
+  },
+  {
+    "id": "g02",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-2",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 2: Inside The Great Deku Tree",
+    "words": 1460
+  },
+  {
+    "id": "g03",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-3",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 3: Market & Hyrule Castle",
+    "words": 1307
+  },
+  {
+    "id": "g04",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-4",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 4: Lon Lon Ranch & Epona’s Song",
+    "words": 583
+  },
+  {
+    "id": "g05",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-5",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 5: Kakariko Village & Graveyard",
+    "words": 1683
+  },
+  {
+    "id": "g06",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-6",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 6: Goron City & Lost Woods",
+    "words": 1782
+  },
+  {
+    "id": "g07",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-7",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 7: Dodongo Cavern",
+    "words": 1946
+  },
+  {
+    "id": "g08",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-8",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 8: Death Mountain Crater & Zora River",
+    "words": 1635
+  },
+  {
+    "id": "g09",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-9",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 9: Zora Domain & Zora Fountain",
+    "words": 1124
+  },
+  {
+    "id": "g10",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-10",
+    "status": 200,
+    "title": "Zelda Ocarina of Time Remake Walkthrough – Chapter 10: Inside Lord Jabu Jabu’s Belly",
+    "words": 1998
+  },
+  {
+    "id": "g11",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-11",
+    "status": 404
+  },
+  {
+    "id": "g12",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-12",
+    "status": 404
+  },
+  {
+    "id": "g13",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-13",
+    "status": 404
+  },
+  {
+    "id": "g14",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-14",
+    "status": 404
+  },
+  {
+    "id": "g15",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-15",
+    "status": 404
+  },
+  {
+    "id": "g16",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-16",
+    "status": 404
+  },
+  {
+    "id": "g17",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-17",
+    "status": 404
+  },
+  {
+    "id": "g18",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-18",
+    "status": 404
+  },
+  {
+    "id": "g19",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-19",
+    "status": 404
+  },
+  {
+    "id": "g20",
+    "url": "https://www.gamerguruguides.com/guides/ocarina-of-time-remake-walkthrough-part-20",
+    "status": 404
+  },
+  {
+    "id": "n01",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-gold-skulltula-locations-rewards-switch-2",
+    "status": 200,
+    "title": "All Gold Skulltula Locations & Rewards In Zelda: Ocarina Of Time",
+    "words": 5710
+  },
+  {
+    "id": "p01",
+    "url": "https://www.rpgsite.net/guide/21634-the-legend-zelda-ocarina-time-remake-gold-skulltula-locations-guide-all-100-token-locations",
+    "status": 200,
+    "title": "The Legend of Zelda Ocarina of Time Remake Gold Skulltula Locations guide: All 100 Token Locations",
+    "words": 4375
+  },
+  {
+    "id": "p02",
+    "url": "https://www.rpgsite.net/guide/21671-the-legend-zelda-ocarina-time-remake-minimalist-100-walkthrough-all-items-gold-skulltula-tokens-heart-pieces",
+    "status": 200,
+    "title": "The Legend of Zelda: Ocarina of Time Remake Minimalist 100% Walkthrough - All Items, Gold Skulltula Tokens, & Heart Pieces",
+    "words": 7815
+  },
+  {
+    "id": "v01",
+    "url": "https://www.videogameschronicle.com/guide/all-inside-the-deku-tree-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Inside the Deku Tree Gold Skulltula Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v02",
+    "url": "https://www.videogameschronicle.com/guide/all-kokiri-forest-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Kokiri Forest Gold Skulltula Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v03",
+    "url": "https://www.videogameschronicle.com/guide/all-hyrule-field-gold-skulltulas-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Hyrule Field Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v04",
+    "url": "https://www.videogameschronicle.com/guide/all-hyrule-castle-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Hyrule Castle Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v05",
+    "url": "https://www.videogameschronicle.com/guide/all-kakariko-village-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Kakariko Village Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v06",
+    "url": "https://www.videogameschronicle.com/guide/lon-lon-ranch-gold-skulltulas/",
+    "status": 200,
+    "title": "All Lon Lon Ranch Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v07",
+    "url": "https://www.videogameschronicle.com/guide/all-goron-city-and-death-mountain-trail-gold-skulltulas-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Goron City and Death Mountain Trail Gold Skulltulas in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v08",
+    "url": "https://www.videogameschronicle.com/guide/all-dodongos-cavern-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Dodongo's Cavern Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v09",
+    "url": "https://www.videogameschronicle.com/guide/all-death-mountain-crater-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Death Mountain Crater Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v10",
+    "url": "https://www.videogameschronicle.com/guide/all-zora-river-domain-and-fountain-gold-skulltulas-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Zora River, Domain, and Fountain Gold Skulltulas in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v11",
+    "url": "https://www.videogameschronicle.com/guide/all-jabu-jabus-belly-gold-skulltulas-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Jabu Jabu’s Belly Gold Skulltulas Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v12",
+    "url": "https://www.videogameschronicle.com/guide/all-forest-temple-gold-skulltulas/",
+    "status": 200,
+    "title": "All Forest Temple Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v13",
+    "url": "https://www.videogameschronicle.com/guide/all-fire-temple-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Fire Temple Gold Skulltula Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v14",
+    "url": "https://www.videogameschronicle.com/guide/all-ice-cavern-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Ice Cavern Gold Skulltula Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v15",
+    "url": "https://www.videogameschronicle.com/guide/all-lake-hylia-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Lake Hylia Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v16",
+    "url": "https://www.videogameschronicle.com/guide/all-water-temple-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Water Temple Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v17",
+    "url": "https://www.videogameschronicle.com/guide/all-bottom-of-the-well-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Bottom of the Well Gold Skulltula locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v18",
+    "url": "https://www.videogameschronicle.com/guide/all-shadow-temple-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Shadow Temple Gold Skulltula Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v19",
+    "url": "https://www.videogameschronicle.com/guide/all-gerudo-valley-gold-skulltulas-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Gerudo Valley Gold Skulltulas Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "v20",
+    "url": "https://www.videogameschronicle.com/guide/all-spirit-temple-gold-skulltula-locations-in-zelda-ocarina-of-time-switch-2/",
+    "status": 200,
+    "title": "All Spirit Temple Gold Skulltula Locations in Zelda: Ocarina of Time Switch 2"
+  },
+  {
+    "id": "ni-heart",
+    "title": "Remake Heart Piece Locations — Nintendo Insider",
+    "url": "https://www.nintendo-insider.com/zelda-ocarina-of-time-remake-heart-piece-locations-guide/",
+    "status": 200
+  },
+  {
+    "id": "p03",
+    "title": "Remake 100% Walkthrough — Respec",
+    "url": "https://www.respec.net/guide/276-the-legend-zelda-ocarina-time-remake-walkthrough-100-completion-guide-with-all-switch-2-changes",
+    "status": 200
+  },
+  {
+    "id": "nl-heart",
+    "title": "Remake Heart Piece Locations — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-heart-piece-locations-switch-2",
+    "status": 200
+  },
+  {
+    "id": "nl-epona",
+    "title": "How to Get Epona — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-horse-epona-how-to-get-switch-2",
+    "status": 200
+  },
+  {
+    "id": "nl-scarecrow",
+    "title": "Scarecrow Song — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-scarecrows-song-switch-2",
+    "status": 200
+  },
+  {
+    "id": "nl-fairy",
+    "title": "Remake Great Fairy Fountains — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-great-fairy-fountain-locations-all-switch-2",
+    "status": 200
+  },
+  {
+    "id": "nl-arrows",
+    "title": "Bow and Arrow Types — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-bow-arrow-fire-ice-light-arrows-switch-2",
+    "status": 200
+  },
+  {
+    "id": "nl-password",
+    "title": "Business Scrub Password — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-business-scrub-password-switch-2",
+    "status": 200
+  },
+  {
+    "id": "v-trade",
+    "title": "Biggoron Trading Sequence — VGC",
+    "url": "https://www.videogameschronicle.com/guide/zelda-oot-biggorons-sword-trade-sequence-quest/",
+    "status": 200
+  },
+  {
+    "id": "rk-scale",
+    "title": "Remake Diving and Scales — Raider King",
+    "url": "https://raiderking.com/ocarina-of-time-remake-how-to-dive-deeper-zora-scale-locations/",
+    "status": 200
+  },
+  {
+    "id": "s-hookshot",
+    "title": "Find the Hookshot — Shacknews",
+    "url": "https://www.shacknews.com/article/151278/how-to-find-the-hookshot-the-legend-of-zelda-ocarina-of-time",
+    "status": 200
+  },
+  {
+    "id": "nl-ice",
+    "title": "Ice Cavern Walkthrough — Nintendo Life",
+    "url": "https://www.nintendolife.com/guides/zelda-ocarina-of-time-ice-cavern-walkthrough-switch-2",
+    "status": 200
+  },
+  {
+    "id": "fb-gear",
+    "title": "Remake equipment — FinalBoss",
+    "url": "https://finalboss.io/zelda-oot-switch-2-weapons-shields-tunics",
+    "status": 200
+  },
+  {
+    "id": "s4-songs",
+    "title": "All 12 remake songs — SPACE4GAMES",
+    "url": "https://space4games.com/en/games-en/zelda-ocarina-of-time-remake-all-songs-inputs/",
+    "status": 200
+  },
+  {
+    "id": "click-echo",
+    "title": "Remake Echo Gem — The Click",
+    "url": "https://www.theclick.gg/ocarina-of-time-switch-2-echo-gem/",
+    "status": 200
+  },
+  {
+    "id": "np-hearts",
+    "title": "Remake Heart Pieces — NintendoPress",
+    "url": "https://nintendopress.com/in-deep/zelda-ocarina-of-time-all-36-heart-piece-locations-guide/",
+    "status": 200
+  }
+]
