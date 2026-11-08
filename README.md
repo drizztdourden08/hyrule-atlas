@@ -6,7 +6,7 @@ An offline Android completion tracker and guide with an illustrated inventory, l
 
 ## Download
 
-Install the APK from the [v1.6 release](https://github.com/drizztdourden08/hyrule-atlas/releases/tag/v1.6). Android 11 or newer is required.
+Install the signed APK from the [latest release](https://github.com/drizztdourden08/hyrule-atlas/releases/latest). Android 11 or newer is required. A SHA-256 checksum is published beside the APK.
 
 Install updates over the existing app to retain local progress. The package is `com.hyruleatlas.local`; updates must use the same signing key. JSON export/import provides a portable progress backup.
 
@@ -83,6 +83,24 @@ To install over an existing copy:
 ```powershell
 adb install -r outputs/Hyrule-Atlas.apk
 ```
+
+## Automated releases
+
+GitHub Actions regenerates the guide and runs progression and browser checks on
+pull requests and pushes to `main`. Pushing a version tag such as `v1.6.2` runs
+the same checks, builds and signs the APK, and publishes it to a GitHub Release.
+The tag must match both `package.json` and the Android manifest version.
+Increment the manifest's `versionCode` for every app update.
+
+You can also run **Validate and release Android APK** manually from the Actions
+tab on `main`. This publishes the current app version and can replace its APK
+when retrying a release. Releases include `Hyrule-Atlas.apk` and its checksum.
+
+The existing signing key is stored only in repository Actions secrets:
+`ATLAS_KEYSTORE_BASE64` and `ATLAS_KEYSTORE_PASSWORD`. Signing credentials are
+used only in the release job, not in pull-request validation. The runner deletes
+the decoded keystore after signing. Keep the original private keystore backed
+up outside this repository so future APKs can update existing installations.
 
 ## Guide coverage
 

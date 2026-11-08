@@ -1,0 +1,108 @@
+name: Validate and release Android APK
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  validate:
+    runs-on: windows-2025
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+      - name: Regenerate and verify committed guide data
+        run: |
+          npm run guide:build
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git diff --exit-code
+          if ($LASTEXITCODE -ne 0) { throw 'Generated guide data is stale. Run npm run guide:build and commit it.' }
+      - name: Audit and progression regression tests
+        run: npm test
+      - name: Browser and phone-layout regression tests
+        run: npm run test:ui
+
+  release:
+    needs: validate
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' || github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: windows-2025
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Validate release version
+        id: version
+        run: |
+          $package = Get-Content -Raw package.json | ConvertFrom-Json
+          [xml]$manifest = Get-Content -Raw android/AndroidManifest.xml
+          $manifestVersion = $manifest.manifest.GetAttribute('versionName', 'http://schemas.android.com/apk/res/android')
+          if ($package.version -ne $manifestVersion) { throw 'package.json and Android versionName must match.' }
+          if ($package.version -notmatch '^\d+\.\d+\.\d+$') { throw 'Expected a stable semantic version.' }
+          $tag = 'v' + $package.version
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and $env:GITHUB_REF_NAME -ne $tag) { throw 'Release tag must match the app version.' }
+          "tag=$tag" >> $env:GITHUB_OUTPUT
+      - uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install pinned Android SDK components
+        run: |
+          $sdkManager = Join-Path $env:ANDROID_HOME 'cmdline-tools/latest/bin/sdkmanager.bat'
+          if (!(Test-Path -LiteralPath $sdkManager)) { throw 'Android SDK manager is missing from the runner.' }
+          1..100 | ForEach-Object { 'y' } | & $sdkManager --licenses
+          if ($LASTEXITCODE -ne 0) { throw 'Android SDK license acceptance failed.' }
+          & $sdkManager 'platforms;android-36' 'build-tools;36.0.0'
+          if ($LASTEXITCODE -ne 0) { throw 'Android SDK component installation failed.' }
+      - name: Build with the existing app signing key
+        env:
+          ATLAS_KEYSTORE_BASE64: ${{ secrets.ATLAS_KEYSTORE_BASE64 }}
+          ATLAS_KEYSTORE_PASSWORD: ${{ secrets.ATLAS_KEYSTORE_PASSWORD }}
+        run: |
+          if (!$env:ATLAS_KEYSTORE_BASE64 -or !$env:ATLAS_KEYSTORE_PASSWORD) { throw 'Repository signing secrets are not configured.' }
+          $env:ATLAS_KEYSTORE_PATH = Join-Path $env:RUNNER_TEMP 'atlas-signing.p12'
+          try {
+            [IO.File]::WriteAllBytes($env:ATLAS_KEYSTORE_PATH, [Convert]::FromBase64String($env:ATLAS_KEYSTORE_BASE64))
+            ./build.ps1 -SdkPath $env:ANDROID_HOME
+          } finally {
+            if (Test-Path -LiteralPath $env:ATLAS_KEYSTORE_PATH) { Remove-Item -LiteralPath $env:ATLAS_KEYSTORE_PATH -Force }
+          }
+      - name: Publish signed APK and checksum
+        env:
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          $apk = 'outputs/Hyrule-Atlas.apk'
+          $checksum = (Get-FileHash -Algorithm SHA256 -LiteralPath $apk).Hash.ToLowerInvariant() + '  Hyrule-Atlas.apk'
+          [IO.File]::WriteAllText((Join-Path $PWD 'outputs/Hyrule-Atlas.apk.sha256'), "$checksum`n")
+          gh release view $env:RELEASE_TAG *> $null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create $env:RELEASE_TAG --target $env:GITHUB_SHA --title "Hyrule Atlas $env:RELEASE_TAG" --generate-notes --draft
+            if ($LASTEXITCODE -ne 0) { throw 'Could not create the release.' }
+          }
+          gh release upload $env:RELEASE_TAG $apk 'outputs/Hyrule-Atlas.apk.sha256' --clobber
+          if ($LASTEXITCODE -ne 0) { throw 'Could not upload release assets.' }
+          gh release edit $env:RELEASE_TAG --draft=false --latest
+          if ($LASTEXITCODE -ne 0) { throw 'Could not publish the release.' }
