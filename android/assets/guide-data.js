@@ -2402,13 +2402,13 @@ const guideDatabase={
       "age": "Adult",
       "time": "Night",
       "equipment": [
-        "Hookshot"
+        "Longshot"
       ],
       "steps": [
         "Enter frozen Zora Domain.",
         "Climb to the ledge where the childhood diving game started.",
         "At night, face the wall to the left of the frozen waterfall.",
-        "Hookshot the gold spider above the ledge and retrieve its token."
+        "Use the Longshot to defeat the gold spider above the ledge and retrieve its token."
       ],
       "sources": [
         "v10"
@@ -2418,7 +2418,7 @@ const guideDatabase={
         "Hyrule Field access",
         "Zelda Lullaby",
         "Adult access",
-        "Hookshot"
+        "Longshot"
       ]
     },
     "Gold Skulltula:65": {
@@ -3079,13 +3079,14 @@ const guideDatabase={
       "age": "Adult",
       "time": "Night",
       "equipment": [
-        "Longshot"
+        "Hookshot",
+        "Epona or Longshot"
       ],
       "steps": [
         "Cross the broken valley bridge as an adult using Epona or the Longshot.",
         "Go around the carpenter camp or merchant tent on the far side.",
         "At night, inspect the cliff directly behind the camp.",
-        "Longshot the gold spider and retrieve its token."
+        "Use the Hookshot to defeat the gold spider and retrieve its token; the Longshot is not required."
       ],
       "sources": [
         "v19"
@@ -3094,7 +3095,7 @@ const guideDatabase={
       "requires": [
         "Hyrule Field access",
         "Adult access",
-        "Longshot",
+        "Hookshot",
         {
           "any": [
             "Longshot",
@@ -6259,12 +6260,11 @@ const guideDatabase={
       "time": "Any time",
       "equipment": [
         "Poacher’s Saw",
-        "Longshot or Epona",
-        "Hammer"
+        "Epona or Longshot"
       ],
       "steps": [
         "Cross the broken main bridge in Gerudo Valley using Epona or the Longshot.",
-        "Reach the carpenter camp on the far side and clear the dark breakable rocks if necessary.",
+        "Walk to the carpenter camp on the far side; no Hammer is needed to reach the craftsman.",
         "Speak to the Master Craftsman standing near his tent.",
         "Show him the saw and accept the Broken Goron Sword, which he directs you to Biggoron to repair."
       ],
@@ -6280,8 +6280,7 @@ const guideDatabase={
             "Longshot",
             "Epona"
           ]
-        },
-        "Hammer"
+        }
       ]
     },
     "Trade Sequence:7": {

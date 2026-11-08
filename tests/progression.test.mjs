@@ -53,6 +53,21 @@ check(db.logic.sequences['Adult trading quest'].filter(id=>trade.sequenceVisible
 check(trade.setDone(get('Trade Sequence:0'),true),'Start adult trade');
 check(!trade.sequenceVisible(get('Trade Sequence:0'),'all')&&trade.sequenceVisible(get('Trade Sequence:1'),'all'),'Trade did not advance to exactly one next step');
 check(!trade.setDone(get('Trade Sequence:3'),true),'Future trade bypassed predecessor');
+// The valley crossing needs Epona OR Longshot, never the Hammer. The token
+// behind the tent is within Hookshot range once the camp has been reached.
+const valley=make({schemaVersion:6,milestones:['Adult access','Epona','Hookshot'],completed:Array.from({length:6},(_,i)=>'Trade Sequence:'+i)});
+check(valley.eligible(get('Trade Sequence:6')),'Broken Sword blocked despite saw and Epona, without Hammer');
+check(valley.eligible(get('Gold Skulltula:84')),'Tent token incorrectly requires Longshot instead of Hookshot');
+const noCrossing=make({schemaVersion:6,milestones:['Adult access','Hookshot'],completed:Array.from({length:6},(_,i)=>'Trade Sequence:'+i)});
+check(!noCrossing.eligible(get('Trade Sequence:6'))&&!noCrossing.eligible(get('Gold Skulltula:84')),'Valley crossing can be bypassed without Epona or Longshot');
+const longCrossing=make({schemaVersion:6,milestones:['Adult access','Longshot'],completed:Array.from({length:6},(_,i)=>'Trade Sequence:'+i)});
+check(longCrossing.eligible(get('Trade Sequence:6'))&&longCrossing.eligible(get('Gold Skulltula:84')),'Longshot alternative needs Epona, Hammer or a separate Hookshot');
+const noSaw=make({schemaVersion:6,milestones:['Adult access','Epona']});
+check(!noSaw.eligible(get('Trade Sequence:6')),'Broken Sword exchange bypasses the Poacher’s Saw');
+const domainHookshot=make({schemaVersion:6,milestones:['Adult access','Zelda Lullaby','Hookshot']});
+check(!domainHookshot.eligible(get('Gold Skulltula:64')),'Frozen Domain token incorrectly unlocks with only Hookshot');
+const domainLongshot=make({schemaVersion:6,milestones:['Adult access','Zelda Lullaby','Longshot']});
+check(domainLongshot.eligible(get('Gold Skulltula:64')),'Frozen Domain token does not unlock with Longshot');
 // Adult note -> Young pickup; nothing is acquired after only the first phase.
 const note=make({schemaVersion:6,milestones:['Adult access','Bomb Bag'],completed:['Event:time-travel']});
 const h=get('Heart Piece:33');

@@ -109,7 +109,7 @@ export function refineGuide(g){
  g['Heart Piece:13'].note='Use the high island; a low riverbank jump can fall short.';
  // Each adult trade step needs the item produced by its immediate predecessor.
  for(let i=0;i<12;i++)g['Trade Sequence:'+i].requires=['Adult access',...(i?['Trade Sequence:'+(i-1)]:[])];
- g['Trade Sequence:6'].requires.push({any:['Epona','Longshot']},'Hammer');
+ g['Trade Sequence:6'].requires.push({any:['Epona','Longshot']});
  g['Trade Sequence:8'].requires.push('Bottle');
  g['Trade Sequence:9'].requires.push('Epona');
  g['Trade Sequence:11'].requires.push('Equipment:6');

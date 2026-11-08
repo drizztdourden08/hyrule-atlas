@@ -47,12 +47,12 @@ export function applyProgressionV6(g){
  batch('Gold Skulltula',[22,23,24,25,99],'Bomb Bag');add('Gold Skulltula:22','Slingshot');add('Gold Skulltula:99','Slingshot');
  batch('Gold Skulltula',[28,31,32,33,34,36,37,38,39,40,75,76,77,78,92,93,94],'Boomerang');add('Gold Skulltula:30','Slingshot');add('Gold Skulltula:33','Slingshot');
  add('Gold Skulltula:35','Deku Sticks','Slingshot');add('Gold Skulltula:41','Bomb Bag','Slingshot');
- batch('Gold Skulltula',[42,43,44,45,46,47,48,49,50,51,52,53,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,79,80,81,85,95,97],'Hookshot');
+ batch('Gold Skulltula',[42,43,44,45,46,47,48,49,50,51,52,53,55,56,57,58,59,60,61,62,63,65,66,67,68,69,79,80,81,84,85,95,97],'Hookshot');
  add('Gold Skulltula:55','Song of Time');add('Gold Skulltula:56','Bomb Bag');
  batch('Gold Skulltula',[59,60,61],'Hammer');
  batch('Gold Skulltula',[66,67],'Event:blue-fire');
  add('Gold Skulltula:68','Iron Boots','Zora Tunic');add('Gold Skulltula:69','Bomb Bag');
- batch('Gold Skulltula',[70,71,72,73,74,82,83,84,86,87,88,91,96],'Longshot');
+ batch('Gold Skulltula',[64,70,71,72,73,74,82,83,86,87,88,91,96],'Longshot');
  add('Gold Skulltula:74','Event:water');
  batch('Gold Skulltula',[79,80,81,82,83],'Lens of Truth','Hover Boots');add('Gold Skulltula:83','Bomb Bag');
  batch('Gold Skulltula',[84,85],crossing);batch('Gold Skulltula',[86,87],'Gerudo Card');
@@ -90,7 +90,7 @@ export function applyProgressionV6(g){
  add('Great Fairy:4',{wallet:300});
  set('Great Fairy:5','Adult access','Event:ganon-bridge','Golden Gauntlets','Zelda Lullaby','Magic',{wallet:500});
  for(let i=0;i<12;i++)set('Trade Sequence:'+i,'Adult access',...(i?['Trade Sequence:'+(i-1)]:[]));
- add('Trade Sequence:6',crossing,'Hammer');add('Trade Sequence:8','Event:king-thawed');
+ add('Trade Sequence:6',crossing);add('Trade Sequence:8','Event:king-thawed');
  // Epona is a route convenience on timed deliveries, not a hard requirement.
  add('Trade Sequence:11','Equipment:6');
  for(let i=0;i<10;i++)add('Magic Bean:'+i,'Magic Bean');
