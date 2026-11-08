@@ -2378,13 +2378,13 @@ const guideDatabase={
       "age": "Adult",
       "time": "Night",
       "equipment": [
-        "Hookshot"
+        "Longshot"
       ],
       "steps": [
         "Go to the last bridge before the waterfall into Zora Domain.",
         "At night, look high on the northwestern rock wall beyond the bridge.",
         "Stand on the stone railing to get a clear line of sight.",
-        "Hookshot the gold spider; use the Longshot if your current position is out of range."
+        "Use the Longshot to defeat the gold spider and retrieve its token."
       ],
       "sources": [
         "v10"
@@ -2393,7 +2393,7 @@ const guideDatabase={
       "requires": [
         "Hyrule Field access",
         "Adult access",
-        "Hookshot"
+        "Longshot"
       ]
     },
     "Gold Skulltula:64": {
@@ -2402,13 +2402,13 @@ const guideDatabase={
       "age": "Adult",
       "time": "Night",
       "equipment": [
-        "Longshot"
+        "Hookshot"
       ],
       "steps": [
         "Enter frozen Zora Domain.",
         "Climb to the ledge where the childhood diving game started.",
         "At night, face the wall to the left of the frozen waterfall.",
-        "Use the Longshot to defeat the gold spider above the ledge and retrieve its token."
+        "Hookshot the gold spider above the ledge and retrieve its token."
       ],
       "sources": [
         "v10"
@@ -2418,7 +2418,7 @@ const guideDatabase={
         "Hyrule Field access",
         "Zelda Lullaby",
         "Adult access",
-        "Longshot"
+        "Hookshot"
       ]
     },
     "Gold Skulltula:65": {

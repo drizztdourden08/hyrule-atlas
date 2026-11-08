@@ -1,6 +1,6 @@
 {
   "name": "hyrule-atlas",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "private": true,
   "description": "Offline Android completion tracker with an illustrated inventory and local progress storage.",
   "type": "module",

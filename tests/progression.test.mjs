@@ -65,9 +65,11 @@ check(longCrossing.eligible(get('Trade Sequence:6'))&&longCrossing.eligible(get(
 const noSaw=make({schemaVersion:6,milestones:['Adult access','Epona']});
 check(!noSaw.eligible(get('Trade Sequence:6')),'Broken Sword exchange bypasses the Poacher’s Saw');
 const domainHookshot=make({schemaVersion:6,milestones:['Adult access','Zelda Lullaby','Hookshot']});
-check(!domainHookshot.eligible(get('Gold Skulltula:64')),'Frozen Domain token incorrectly unlocks with only Hookshot');
+check(!domainHookshot.eligible(get('Gold Skulltula:63')),'Final river bridge token incorrectly unlocks with only Hookshot');
+check(domainHookshot.eligible(get('Gold Skulltula:64')),'Frozen Domain token incorrectly requires Longshot');
 const domainLongshot=make({schemaVersion:6,milestones:['Adult access','Zelda Lullaby','Longshot']});
-check(domainLongshot.eligible(get('Gold Skulltula:64')),'Frozen Domain token does not unlock with Longshot');
+check(domainLongshot.eligible(get('Gold Skulltula:63')),'Final river bridge token does not unlock with Longshot');
+check(domainLongshot.eligible(get('Gold Skulltula:64')),'Longshot no longer satisfies frozen Domain Hookshot retrieval');
 // Adult note -> Young pickup; nothing is acquired after only the first phase.
 const note=make({schemaVersion:6,milestones:['Adult access','Bomb Bag'],completed:['Event:time-travel']});
 const h=get('Heart Piece:33');
